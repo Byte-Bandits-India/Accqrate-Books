@@ -35,10 +35,10 @@ export default function AccountSections() {
   ];
 
   return (
-    <div className="bg-[#1976D2] py-[6%] rounded-xl space-y-10">
+    <div className="bg-[#1976D2] py-[4%] rounded-xl">
       <div className="space-y-10 px-4 md:px-2 mb-10">
         {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">

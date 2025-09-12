@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import styles from "../styles/header.module.css";
 
 const menus = [
   {
@@ -61,7 +60,7 @@ const menus = [
   },
   {
     id: "safety",
-    title: "Data & Safety Management",
+    title: "Data & Safety",
     href: "#",
     items: [
       "Data Security",
@@ -97,7 +96,6 @@ const countries = [
   { name: "Jordan", code: "JO", flag: "/images/flag-jordan.svg" },
 ];
 
-
 const LangCountryDropdown = ({
   selectedLanguage,
   setSelectedLanguage,
@@ -121,7 +119,7 @@ const LangCountryDropdown = ({
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md"
+        className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md border border-gray-300"
         onClick={() => setShow((prev) => !prev)}
       >
         <img
@@ -129,15 +127,17 @@ const LangCountryDropdown = ({
           alt={selectedCountry}
           className="w-5 h-5"
         />
-       <span className="text-black truncate text-sm lg:text-base">
-          {languages.find((l) => l.name === selectedLanguage)?.display} / {countries.find((c) => c.name === selectedCountry)?.code}
+        <span className="text-black truncate text-sm lg:text-base">
+          {languages.find((l) => l.name === selectedLanguage)?.display} /{" "}
+          {countries.find((c) => c.name === selectedCountry)?.code}
         </span>
         <i className="fa-solid fa-angle-down ml-1"></i>
       </button>
 
       {show && (
         <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 -full max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
+          className={`absolute ${align === "right" ? "right-0" : "left-0"
+            } top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700 border border-gray-200`}
         >
           {/* Languages */}
           <div className="mb-2 font-semibold text-black">Select Language</div>
@@ -145,11 +145,10 @@ const LangCountryDropdown = ({
             {languages.map((lang) => (
               <button
                 key={lang.code}
-                className={`px-3 py-1 rounded-full transition ${
-                  selectedLanguage === lang.name
+                className={`px-3 py-1 rounded-full transition ${selectedLanguage === lang.name
                     ? "bg-gray-100 text-black font-semibold"
                     : "text-black"
-                }`}
+                  }`}
                 onClick={() => {
                   setSelectedLanguage(lang.name);
                   setShow(false);
@@ -173,7 +172,11 @@ const LangCountryDropdown = ({
                   setShow(false);
                 }}
               >
-                <img src={country.flag} alt={country.name} className="w-5 h-5 mr-2" />
+                <img
+                  src={country.flag}
+                  alt={country.name}
+                  className="w-5 h-5 mr-2"
+                />
                 <span className="text-black">{country.name}</span>
               </div>
             ))}
@@ -210,7 +213,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1280) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -235,12 +238,12 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header}  w-full bg-white shadow`}>
+    <header className="w-full bg-white shadow sticky top-0 z-50">
       <div className="w-full py-2 md:py-3 px-3 md:px-6">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="logo-container">
-            <Link href="/" className="shrink-0">
+          <div className="logo-container shrink-0">
+            <Link href="/">
               <img
                 src="/images/logo.svg"
                 alt="Accqrate Logo"
@@ -249,96 +252,98 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav (≥1280px) */}
           <nav
             ref={navRef}
-            className="hidden lg:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
+            className="hidden xl:flex items-center justify-between flex-1 ml-6"
           >
-            {menus.map(({ title, href, id, items }) => (
-    <div
-      key={id}
-      className="relative"
-      onMouseEnter={() => handleMouseEnter(id)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Link
-        href={href}
-        className={`pb-1 border-b-2 ${
-          activeDropdown === id
-            ? "border-pink-600 text-black"
-            : "border-transparent hover:border-pink-600 hover:text-pink-600 transition"
-        }`}
-      >
-        {title}
-      </Link>
-      {activeDropdown === id && (
-        <ul className="absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-          {items.map((item, idx) => (
-            <li
-              key={idx}
-              className={`px-4 py-2 cursor-pointer whitespace-nowrap ${
-                activeSubmenu === item
-                  ? "text-pink-600 font-semibold"
-                  : "text-gray-700"
-              }`}
-              onMouseEnter={() => setActiveSubmenu(item)}
-              onMouseLeave={() => setActiveSubmenu(null)}
+            <div className="flex items-center justify-start flex-wrap gap-4 2xl:gap-6 text-sm text-gray-600 max-w-[70%]">
+              {menus.map(({ title, href, id, items }) => (
+                <div
+                  key={id}
+                  className="relative group"
+                  onMouseEnter={() => handleMouseEnter(id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Link
+                    href={href}
+                    className={`py-2 whitespace-nowrap border-b-2 ${activeDropdown === id
+                        ? "border-pink-600 text-black"
+                        : "border-transparent group-hover:border-pink-600 group-hover:text-pink-600 transition-colors duration-200"
+                      }`}
+                  >
+                    {title}
+                  </Link>
+                  {activeDropdown === id && (
+                    <div className="absolute left-0 top-full mt-1 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50 py-2">
+                      {items.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          href="#"
+                          className={`block px-4 py-2 whitespace-normal text-sm ${activeSubmenu === item
+                              ? "text-pink-600 font-semibold bg-gray-50"
+                              : "text-gray-700 hover:text-pink-600 hover:bg-gray-50"
+                            }`}
+                          onMouseEnter={() => setActiveSubmenu(item)}
+                          onMouseLeave={() => setActiveSubmenu(null)}
+                        >
+                          {item}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right Section (≥1280px) */}
+            <div className="flex items-center gap-3 shrink-0">
+              <LangCountryDropdown
+                selectedLanguage={selectedLanguage}
+                setSelectedLanguage={setSelectedLanguage}
+                selectedCountry={selectedCountry}
+                setSelectedCountry={setSelectedCountry}
+                show={showLangCountryDropdown}
+                setShow={setShowLangCountryDropdown}
+                align="right"
+              />
+              <Link
+                href="/request-demo"
+                className="hidden xl:inline-block text-white py-2 px-4 rounded-full text-sm font-bold whitespace-nowrap"
+                style={{ backgroundColor: "#C2185C" }}
+              >
+                REQUEST DEMO
+              </Link>
+            </div>
+          </nav>
+
+          {/* Mobile/Tablet/Laptop Section (<1280px) */}
+          <div className="flex xl:hidden items-center gap-3">
+            <LangCountryDropdown
+              selectedLanguage={selectedLanguage}
+              setSelectedLanguage={setSelectedLanguage}
+              selectedCountry={selectedCountry}
+              setSelectedCountry={setSelectedCountry}
+              show={showLangCountryDropdown}
+              setShow={setShowLangCountryDropdown}
+              align="right"
+            />
+            <button
+              className="shrink-0 text-gray-700 text-xl p-2 rounded-md hover:bg-gray-100"
+              aria-label="Toggle mobile menu"
+              onClick={() => setIsMobileMenuOpen((p) => !p)}
             >
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  ))}
-</nav>
-
-{/* Right Section (only ≥1024px) */}
-<div className="hidden lg:flex items-center gap-3 shrink-0">
-  <LangCountryDropdown
-    selectedLanguage={selectedLanguage}
-    setSelectedLanguage={setSelectedLanguage}
-    selectedCountry={selectedCountry}
-    setSelectedCountry={setSelectedCountry}
-    show={showLangCountryDropdown}
-    setShow={setShowLangCountryDropdown}
-    align="right"
-  />
-  <Link
-    href="/request-demo"
-    className="hidden lg:inline-block text-white py-2 px-4 rounded-full text-sm font-bold"
-    style={{ backgroundColor: "#C2185C" }}
-  >
-    REQUEST DEMO
-  </Link>
-</div>
-
-{/* Mobile/Tablet Section (<1024px) */}
-<div className="flex md:flex lg:hidden items-center gap-3">
-  <LangCountryDropdown
-    selectedLanguage={selectedLanguage}
-    setSelectedLanguage={setSelectedLanguage}
-    selectedCountry={selectedCountry}
-    setSelectedCountry={setSelectedCountry}
-    show={showLangCountryDropdown}
-    setShow={setShowLangCountryDropdown}
-    align="right"
-  />
-  <button
-    className={`${styles.hamburger} shrink-0 text-gray-700 text-xl`}
-    aria-label="Toggle mobile menu"
-    onClick={() => setIsMobileMenuOpen((p) => !p)}
-  >
-    <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
-  </button>
-</div>
-
+              <i
+                className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}
+              ></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (<1280px) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed top-[60px] left-0 w-full h-screen overflow-y-auto bg-white border-t border-gray-200 px-6 py-4 z-[999]">
+        <div className="xl:hidden fixed top-full left-0 w-full h-screen overflow-y-auto bg-white border-t border-gray-200 px-6 py-4 z-[999]">
           {menus.map(({ id, title, items }) => (
             <div key={id} className="mb-4">
               <button
@@ -347,9 +352,8 @@ const Header = () => {
               >
                 {title}
                 <i
-                  className={`fa-solid fa-angle-down transition-transform duration-200 ${
-                    expandedSections[id] ? "rotate-180" : ""
-                  }`}
+                  className={`fa-solid fa-angle-down transition-transform duration-200 ${expandedSections[id] ? "rotate-180" : ""
+                    }`}
                 ></i>
               </button>
               {expandedSections[id] && (
@@ -357,7 +361,7 @@ const Header = () => {
                   {items.map((item, i) => (
                     <li
                       key={i}
-                      className="text-gray-600 text-sm py-2 border-b border-gray-200 cursor-pointer"
+                      className="text-gray-600 text-sm py-2 border-b border-gray-200 cursor-pointer hover:text-pink-600"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item}
@@ -371,7 +375,7 @@ const Header = () => {
           <div className="mt-6">
             <Link
               href="/request-demo"
-              className="block w-full text-center text-white py-2 rounded-full text-sm font-bold"
+              className="block w-full text-center text-white py-3 rounded-full text-sm font-bold"
               style={{ backgroundColor: "#C2185C" }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -382,6 +386,6 @@ const Header = () => {
       )}
     </header>
   );
-}
+};
 
 export default Header;

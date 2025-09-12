@@ -41,7 +41,7 @@ export default function AccountSections() {
   ];
 
   return (
-    <div className="space-y-10 px-4 md:px-2 mb-10">
+    <div className="space-y-10 px-4 md:px-2 mb-10 mt-[6%]">
       <div className="bg-[#1976D2] w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] py-[4%] space-y-4 rounded-xl">
         {/* Bottom Two Rows */}
         <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] mx-auto">
@@ -192,10 +192,10 @@ export default function AccountSections() {
         </div>
       </div>
 
-      <div className="space-y-10 px-4 md:px-2 mb-10 ">
+      <div className="px-4 md:px-2 mb-10 ">
         {/* ================= Financial Statements ================= */}
         <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%] space-x-4">
+  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:my-[4%] space-x-4">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
