@@ -1,0 +1,38 @@
+.header {
+  z-index: 50;
+  margin:0;
+  padding:0;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+.hamburger i {
+  color: #333;
+}
+
+@media screen and (max-width: 1023px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .items-center {
+    max-width: 1440px;
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  .shrink-0{
+    height:26px;
+  }
+}
+
+
