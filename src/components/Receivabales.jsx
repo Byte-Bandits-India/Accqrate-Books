@@ -41,7 +41,7 @@ export default function AccountSections() {
   ];
 
   return (
-    <div className="space-y-10 px-4 mb-10">
+    <div className="space-y-10 px-4 md:px-2 mb-10">
       <div className="bg-[#1976D2] w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] py-[4%] space-y-4 rounded-xl">
         {/* Bottom Two Rows */}
         <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] mx-auto">
@@ -63,7 +63,7 @@ export default function AccountSections() {
           </div>
         </div>
 
-        <div className="space-y-10 px-4 mb-10">
+        <div className="space-y-10 px-4 md:px-2 mb-10">
           {/* ================= Account Receivables ================= */}
           <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
             {/* Left Side */}
@@ -192,54 +192,55 @@ export default function AccountSections() {
         </div>
       </div>
 
+      <div className="space-y-10 px-4 md:px-2 mb-10 ">
+        {/* ================= Financial Statements ================= */}
+        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%] space-x-4">
 
-      {/* ================= Financial Statements ================= */}
-      <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
-
-        {/* Left Side */}
-        <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-          <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
-            Financial Statements –
-            <span className="tracking-tight md:text-[30px] lg:text-[42px] block text-[#1976D2] font-semibold">
-              Audit-Ready, Always-On
-            </span>
-          </h2>
-          <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
-            Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
-          </p>
-          <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-            {financialDropdowns.map((item, index) => (
-              <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                <div
-                  onClick={() => toggleDropdown("fin", index)}
-                  className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                >
-                  <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
-                    {item.title}
-                  </span>
-                  <FaChevronDown
-                    className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""}`}
-                  />
+          {/* Left Side */}
+          <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
+              Financial Statements –
+              <span className="tracking-tight md:text-[30px] lg:text-[42px] block text-[#1976D2] font-semibold">
+                Audit-Ready, Always-On
+              </span>
+            </h2>
+            <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
+              Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
+            </p>
+            <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+              {financialDropdowns.map((item, index) => (
+                <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                  <div
+                    onClick={() => toggleDropdown("fin", index)}
+                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+                  >
+                    <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
+                      {item.title}
+                    </span>
+                    <FaChevronDown
+                      className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""}`}
+                    />
+                  </div>
+                  {openIndex === `fin-${index}` && (
+                    <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
+                  )}
                 </div>
-                {openIndex === `fin-${index}` && (
-                  <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Right Side */}
-        <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-          <video
-            className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
-            autoPlay muted loop
-          >
-            <source src="videos/financial-statements.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+          {/* Right Side */}
+          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+            <video
+              className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+              autoPlay muted loop
+            >
+              <source src="videos/financial-statements.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+      </div>
 
 
     </div>

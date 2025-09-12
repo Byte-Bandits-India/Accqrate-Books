@@ -31,7 +31,8 @@ export default function AutomationSection() {
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       {/* ================= AI-Driven Automation ================= */}
-      <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+      <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
 
         {/* Left Side */}
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -68,13 +69,19 @@ export default function AutomationSection() {
           </div>
         </div>
 
-        {/* Right Side
-        <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-          <div
-            className="bg-[#D9D9D9] rounded-lg w-[557px] md:h-[300px] lg:h-auto xl:h-[420px] object-contain">
-          </div>
-        </div> */}
+        {/* Right Side */}
+        <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-center">
+          <video
+            className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+            autoPlay
+            muted
+            loop
+          >
+            <source src="videos/ai-driven-automation.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
+
 
       {/* Bottom Section */}
       <div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl ">
@@ -96,9 +103,9 @@ export default function AutomationSection() {
         </div>
 
         {/* Unified Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Box 1 - On Demand Training */}
-          <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
+          <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
             <div
               className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
               style={{
@@ -113,42 +120,46 @@ export default function AutomationSection() {
                     "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
                 }}
               >
+                {/* Mobile Video */}
                 <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-[125px] mt-8 md:h-[200px] object-cover rounded-t-lg"
+                    className="w-full h-[125px] mt-8 object-cover rounded-t-lg"
                   >
                     <source src="/videos/on-demand-training.mp4" type="video/mp4" />
                   </video>
                 </div>
+
+                {/* Tablet & Desktop Video */}
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="md:block hidden w-full h-[125px]  md:h-[200px] object-cover rounded-t-lg"
+                  className="hidden md:block w-full h-[200px] object-cover rounded-t-lg"
                 >
                   <source src="/videos/on-demand-training.mp4" type="video/mp4" />
                 </video>
 
+                {/* Content */}
                 <div className="p-2 flex-1">
                   <h3 className="font-semibold text-fluid-body text-center">
                     On Demand Training
                   </h3>
                   <p className="text-[#737373] text-fluid-small mt-2 text-center">
-                    Learn Accqrate Books in under 60 minutes; video modules for every
-                    type.
+                    Learn Accqrate Books in under 60 minutes; video modules for every type.
                   </p>
-                  <p className="absolute bottom-1 left-2 md:text-fluid-body text-[#1976D2] font-bold leading-tight text-[12px] inline-block">
+                  <p className="absolute bottom-1 left-2 md:text-[16px] lg:text-fluid-body text-[#1976D2] font-bold leading-tight text-[12px] inline-block">
                     Book An <br /> Appointment
                   </p>
                 </div>
               </div>
             </div>
 
+            {/* Arrow Layer */}
             <div className="pointer-events-none absolute inset-0 z-20">
               <div
                 className="absolute inset-0 bg-[#1976D2] rounded-lg"
@@ -156,14 +167,15 @@ export default function AutomationSection() {
                   clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
                 }}
               />
-              <div className="absolute right-8 bottom-2 md:right-10 md:bottom-1 text-white text-lg font-bold">
+              <div className="absolute right-8 bottom-2 md:right-10 md:bottom-1 text-white font-bold">
                 <FaArrowRightLong className="text-[20px] md:text-[30px]" />
               </div>
             </div>
           </div>
 
+
           {/* Box 2 - Local Support */}
-          <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
+          <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
             <div
               className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
               style={{
@@ -189,13 +201,7 @@ export default function AutomationSection() {
                     <source src="/videos/local-support.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="hidden md:block w-full h-24 md:h-[200px] object-cover rounded-t-lg"
-                >
+                <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
                   <source src="/videos/local-support.mp4" type="video/mp4" />
                 </video>
 
@@ -206,7 +212,7 @@ export default function AutomationSection() {
                   <p className="text-[#737373] text-fluid-small mt-2 text-center">
                     In English & Arabic—phone, WhatsApp, email, or chat.
                   </p>
-                  <p className="absolute bottom-4 left-2 text-[#1976D2] md:text-fluid-body text-left font-bold text-[12px] inline-block">
+                  <p className="absolute bottom-4 left-2 text-[#1976D2] md:text-[16px] lg:text-fluid-body text-left font-bold text-[12px] inline-block">
                     +971505515388
                   </p>
                 </div>
@@ -227,7 +233,7 @@ export default function AutomationSection() {
           </div>
 
           {/* Box 3 - Knowledge Center */}
-          <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
+          <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
             <div
               className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
               style={{
@@ -243,23 +249,11 @@ export default function AutomationSection() {
                 }}
               >
                 <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-[125px] mt-6 md:h-[200px] object-cover rounded-t-lg"
-                  >
+                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
                     <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="hidden md:block w-full h-24 md:h-[200px] object-cover rounded-t-lg"
-                >
+                <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
                   <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                 </video>
 
@@ -270,7 +264,7 @@ export default function AutomationSection() {
                   <p className="text-[#737373] text-fluid-small mt-2 text-center">
                     Step-by-step Guides for every process.
                   </p>
-                  <p className="absolute bottom-1 left-2 text-[#1976D2] md:text-fluid-body font-bold leading-tight text-[12px] inline-block">
+                  <p className="absolute bottom-1 left-2 text-[#1976D2] md:text-[16px] lg:text-fluid-body font-bold leading-tight text-[12px] inline-block">
                     Knowledge <br /> Center
                   </p>
                 </div>
@@ -319,6 +313,6 @@ export default function AutomationSection() {
           <li>Flexible price: Flexible plans for every business, from startups to enterprises. Your data stays secure on our Saudi e-invoicing platform with cloud accounting software benefits.</li>
         </ul>
       </div>
-    </div>
+    </div >
   );
 }
