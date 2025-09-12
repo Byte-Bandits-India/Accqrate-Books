@@ -2,7 +2,7 @@
 
 export default function FeatureSection() {
   return (
-    <div className="px-4 py-8">
+    <div className="px-4">
       {/* Heading */}
       <h2 className="text-fluid-h2 font-inter font-medium text-center mb-3">
         Effortless <span className="text-[#1976D2]">Onboarding</span> &
@@ -176,29 +176,30 @@ export default function FeatureSection() {
           Compliance is non-negotiable. With Accqrate Books, you’re always
           audit-ready.
         </p>
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-12 md:gap-8 lg:gap-12 md:mt-16 max-w-[1600px] 2xl:max-w-[1920px] mx-auto px-6">
+        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-stretch gap-6 md:gap-8 lg:gap-12 md:mt-16 max-w-[1600px] 2xl:max-w-[1920px] mb-[4%] mx-auto px-6">
           {/* Seamless Integration */}
-          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6 md:h-[360px] lg:h-[380px] xl:h-[400px] 2xl:h-[440px]">
-
+          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6 flex flex-col justify-between h-[320px] md:h-[380px] lg:h-[400px]">
             {/* Circle hover background */}
-            <div className=" absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-                    -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-                    group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
+            <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
+      -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
+      group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
             {/* Default content */}
-            <div className=" transition-opacity w-[300px] h-[260px] md:w-full md:max-w-[320px] md:h-[320px] lg:h-[350px] xl:h-[300px] mx-auto duration-500 group-hover:opacity-0">
-              <h4 className="lg:text-[40px] xl:text-[32px] text-fluid-body font-semibold md:font-normal mx-auto text-[#1976D2] mb-8 leading-tight">Seamless Integration</h4>
+            <div className="transition-opacity duration-500 group-hover:opacity-0 flex flex-col items-center justify-between h-full">
+              <h4 className="lg:text-[32px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-4">
+                Seamless Integration
+              </h4>
               <img
                 src="images/seamless.webp"
                 alt="Seamless Integration"
-                className=" h-[220px] md:h-[225px] xl:h-[200px] mx-auto lg:rounded-xl object-cover"
+                className="h-[180px] md:h-[200px] lg:h-[220px] mx-auto rounded-lg object-contain"
               />
             </div>
 
             {/* Hover content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
-                    text-white opacity-0 transition-opacity duration-500 
-                    group-hover:opacity-100">
+      text-white opacity-0 transition-opacity duration-500 
+      group-hover:opacity-100">
               <h4 className="text-fluid-body font-bold mb-2">Seamless Integration</h4>
               <p className="text-fluid-small leading-relaxed">
                 Phase 2 E-invoicing Integration – Generate, validate and transmit XML e-invoices directly to ZATCA.
@@ -206,17 +207,18 @@ export default function FeatureSection() {
             </div>
           </div>
 
+
           {/* Digital Archive */}
-          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6 md:h-[360px] lg:h-[380px] xl:h-[360px]">
+          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6">
             <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
-            <div className="transition-opacity w-[300px] h-[250px] md:w-full md:max-w-[320px] md:h-[320px] lg:h-[350px] xl:h-[300px] duration-500 group-hover:opacity-0 lg:flex lg:flex-col lg:items-center">
-              <h4 className="hidden text-center lg:block lg:text-[40px] xl:text-[32px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-8 leading-tight">Digital <br /> Archive</h4>
+            <div className="transition-opacity w-[300px] md:h-[350px] h-[250px] duration-500 group-hover:opacity-0">
+              <h4 className="hidden lg:block lg:text-[40px] text-fluid-body font-semibold md:font-normal  text-[#1976D2] mb-8 leading-tight">Digital <br /> Archive</h4>
               <h4 className="lg:hidden  text-fluid-body font-semibold md:font-normal  text-[#1976D2] mb-8 leading-tight">Digital  Archive</h4>
               <video
-                className=" h-[200px] md:h-[225px] lg:h-[200px] mx-auto rounded-lg object-cover"
+                className=" h-[200px] md:h-[225px] mx-auto  rounded-lg object-cover"
                 autoPlay muted loop playsInline preload="auto"
               >
                 <source src="videos/digital-archive.mp4" type="video/mp4" />
@@ -234,15 +236,15 @@ export default function FeatureSection() {
           </div>
 
           {/* Regulation Ready */}
-          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6 md:h-[360px] lg:h-[380px] xl:h-[360px]">
+          <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
             <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
-            <div className=" transition-opacity duration-500 w-[300px] h-[250px] md:w-full md:max-w-[320px] md:h-[320px] lg:h-[350px] xl:h-[300px] group-hover:opacity-0 lg:flex lg:flex-col lg:items-center">
-              <h4 className="lg:text-[40px] xl:text-[32px] text-center font-fluid-body font-semibold md:font-normal text-[#1976D2] mb-8 leading-tight">Regulation-Ready</h4>
+            <div className=" transition-opacity duration-500 w-[300px] h-[250px] md:h-[350px] group-hover:opacity-0">
+              <h4 className="lg:text-[40px] font-fluid-body font-semibold md:font-normal text-[#1976D2] mb-8 leading-tight">Regulation-Ready</h4>
               <video
-                className="h-[200px] md:h-[225px] lg:h-[200px] mx-auto rounded-lg object-cover"
+                className="h-[200px] md:h-[225px] mx-auto rounded-lg object-cover"
                 autoPlay muted loop playsInline preload="auto"
               >
                 <source src="videos/regulation-ready.mp4" type="video/mp4" />

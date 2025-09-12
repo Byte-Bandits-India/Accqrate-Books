@@ -63,174 +63,167 @@ export default function AccountSections() {
           </div>
         </div>
 
-
-        {/* ================= Account Receivables ================= */}
-        <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto md:flex  md:px-10 md:mx-20 md:mt-[6%]">
-          {/* Left Side */}
-          <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[38px] font-semibold leading-snug">
-              Account Receivables-
-              <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
-                Accelerate your cash flow
-              </span>
-            </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
-              Stay on top of collections and improve working capital - without chasing payments manually.
-            </p>
-
-            <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
-              {receivableDropdowns.map((item, index) => (
-                <div key={index} className="max-w-[250px] md:max-w-[400px]">
-                  <div
-                    onClick={() => toggleDropdown("rec", index)}
-                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                  >
-                    <span className="font-normal text-[16px] md:font-medium">{item.title}</span>
-                    <FaChevronDown
-                      className={`transition-transform ${openIndex === `rec-${index}` ? "rotate-180" : ""
-                        }`}
-                    />
+        <div className="space-y-10 px-4 mb-10">
+          {/* ================= Account Receivables ================= */}
+          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] font-semibold leading-snug lg:leading-tight">
+                Account Receivables-
+                <span className="tracking-tight md:text-[30px] lg:text-[36px] md:mb-6 lg:mb-10 block text-[#1976D2] font-normal">
+                  Accelerate your cash flow
+                </span>
+              </h2>
+              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
+                Stay on top of collections and improve working capital - without chasing payments manually.
+              </p>
+              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                {receivableDropdowns.map((item, index) => (
+                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                    <div
+                      onClick={() => toggleDropdown("rec", index)}
+                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+                    >
+                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
+                      <FaChevronDown
+                        className={`transition-transform ${openIndex === `rec-${index}` ? "rotate-180" : ""
+                          }`}
+                      />
+                    </div>
+                    {openIndex === `rec-${index}` && (
+                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
+                    )}
                   </div>
-                  {openIndex === `rec-${index}` && (
-                    <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-0 md:flex md:justify-start md:items-end">
-            <video className="rounded-lg w-full  md:h-[420px] object-contain" autoPlay muted loop>
-              <source src="videos/account-receivables.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </section>
+            {/* Right Side */}
+            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
+                <source src="videos/account-receivables.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
 
-
-
-        {/* ================= Account Payables ================= */}
-        <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
-  md:flex md:px-10 md:mx-20 md:mt-[6%]">
-
-          {/* Left Side */}
-          <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[38px] font-semibold leading-snug">
-              Accounts Payables -
-              <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
-                Control of Vendor Spend
-              </span>
-            </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
-              Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out.
-            </p>
-
-            <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
-              {payableDropdowns.map((item, index) => (
-                <div key={index} className="max-w-[250px] md:max-w-[400px]">
-                  <div
-                    onClick={() => toggleDropdown("pay", index)}
-                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                  >
-                    <span className="font-normal text-[16px] md:font-medium">{item.title}</span>
-                    <FaChevronDown
-                      className={`transition-transform ${openIndex === `pay-${index}` ? "rotate-180" : ""
-                        }`}
-                    />
+          {/* ================= Account Payables ================= */}
+          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
+                Accounts Payables -
+                <span className="tracking-tight md:text-[30px] lg:text-[42px] md:mb-6 lg:mb-10 block text-[#1976D2] font-normal">
+                  Control of Vendor Spend
+                </span>
+              </h2>
+              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
+                Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out.
+              </p>
+              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                {payableDropdowns.map((item, index) => (
+                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                    <div
+                      onClick={() => toggleDropdown("pay", index)}
+                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+                    >
+                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
+                      <FaChevronDown
+                        className={`transition-transform ${openIndex === `pay-${index}` ? "rotate-180" : ""
+                          }`}
+                      />
+                    </div>
+                    {openIndex === `pay-${index}` && (
+                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
+                    )}
                   </div>
-                  {openIndex === `pay-${index}` && (
-                    <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-0 md:flex md:justify-start md:items-end">
-            <video className="rounded-lg w-full md:h-[420px] object-contain" autoPlay muted loop>
-              <source src="videos/account-payables.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </section>
+            {/* Right Side */}
+            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
+                <source src="videos/account-payables.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
 
 
-        {/* ================= Smart Expense Management ================= */}
-        <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
-  md:flex md:px-10 md:mx-20 md:mt-[6%]">
-
-          {/* Left Side */}
-          <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[38px] font-normal leading-snug">
-              Smart <span className="font-semibold">Expense Management</span>
-            </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
-              Control spending, eliminate manual errors, and boost accountability. Modernize every step of
-              expense processing with automation, policy enforcement, and real-time tracking.
-            </p>
-
-            <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
-              {expenseDropdowns.map((item, index) => (
-                <div key={index} className="max-w-[250px] md:max-w-[400px]">
-                  <div
-                    onClick={() => toggleDropdown("exp", index)}
-                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                  >
-                    <span className="font-normal text-[16px] md:font-medium">{item.title}</span>
-                    <FaChevronDown
-                      className={`transition-transform ${openIndex === `exp-${index}` ? "rotate-180" : ""
-                        }`}
-                    />
+          {/* ================= Smart Expense Management ================= */}
+          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
+                Smart <span className="font-semibold">Expense Management</span>
+              </h2>
+              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
+                Control spending, eliminate manual errors, and boost accountability. Modernize every step of
+                expense processing with automation, policy enforcement, and real-time tracking.
+              </p>
+              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                {expenseDropdowns.map((item, index) => (
+                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                    <div
+                      onClick={() => toggleDropdown("exp", index)}
+                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+                    >
+                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
+                      <FaChevronDown
+                        className={`transition-transform ${openIndex === `exp-${index}` ? "rotate-180" : ""
+                          }`}
+                      />
+                    </div>
+                    {openIndex === `exp-${index}` && (
+                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
+                    )}
                   </div>
-                  {openIndex === `exp-${index}` && (
-                    <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-0 md:flex md:justify-start md:items-end">
-            <video className="rounded-lg w-full md:h-[420px] object-contain" autoPlay muted loop>
-              <source src="videos/smart-expense.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </section>
+            {/* Right Side */}
+            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
+                <source src="videos/smart-expense.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+        </div>
       </div>
 
 
       {/* ================= Financial Statements ================= */}
-      <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
-  md:flex md:px-10 md:mx-20 md:mt-[6%]">
+      <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
 
         {/* Left Side */}
-        <div className="flex-1 md:max-w-[520px]">
-          <h2 className="text-[#1976D2] text-[24px] md:text-[38px] font-semibold leading-snug">
-            Financial Statements -
-            <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+        <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+          <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
+            Financial Statements –
+            <span className="tracking-tight md:text-[30px] lg:text-[42px] block text-[#1976D2] font-semibold">
               Audit-Ready, Always-On
             </span>
           </h2>
-          <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+          <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
             Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
           </p>
-
-          <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
+          <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
             {financialDropdowns.map((item, index) => (
-              <div key={index} className="max-w-[250px] md:max-w-[400px]">
+              <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
                 <div
                   onClick={() => toggleDropdown("fin", index)}
                   className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
                 >
-                  <span className="font-normal text-[16px] md:font-medium">{item.title}</span>
+                  <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
+                    {item.title}
+                  </span>
                   <FaChevronDown
-                    className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""
-                      }`}
+                    className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""}`}
                   />
                 </div>
                 {openIndex === `fin-${index}` && (
-                  <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
+                  <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
                 )}
               </div>
             ))}
@@ -238,12 +231,16 @@ export default function AccountSections() {
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 mt-10 md:mt-0 md:flex md:justify-start md:items-end">
-          <video className="rounded-lg w-full md:h-[420px] object-contain" autoPlay muted loop>
+        <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+          <video
+            className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+            autoPlay muted loop
+          >
             <source src="videos/financial-statements.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
+
 
     </div>
   );
