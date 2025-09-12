@@ -97,7 +97,6 @@ const countries = [
   { name: "Jordan", code: "JO", flag: "/images/flag-jordan.svg" },
 ];
 
-
 const LangCountryDropdown = ({
   selectedLanguage,
   setSelectedLanguage,
@@ -115,7 +114,8 @@ const LangCountryDropdown = ({
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, [setShow]);
 
   return (
@@ -130,14 +130,17 @@ const LangCountryDropdown = ({
           className="w-5 h-5"
         />
         <span className="text-black truncate text-sm lg:text-base">
-          {languages.find((l) => l.name === selectedLanguage)?.display} / {countries.find((c) => c.name === selectedCountry)?.code}
+          {
+            languages.find((l) => l.name === selectedLanguage)?.display
+          } / {countries.find((c) => c.name === selectedCountry)?.code}
         </span>
         <i className="fa-solid fa-angle-down ml-1"></i>
       </button>
 
       {show && (
         <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 -full max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
+          className={`absolute ${align === "right" ? "right-0" : "left-0"
+            } top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
         >
           {/* Languages */}
           <div className="mb-2 font-semibold text-black">Select Language</div>
@@ -146,8 +149,8 @@ const LangCountryDropdown = ({
               <button
                 key={lang.code}
                 className={`px-3 py-1 rounded-full transition ${selectedLanguage === lang.name
-                    ? "bg-gray-100 text-black font-semibold"
-                    : "text-black"
+                  ? "bg-gray-100 text-black font-semibold"
+                  : "text-black"
                   }`}
                 onClick={() => {
                   setSelectedLanguage(lang.name);
@@ -172,7 +175,11 @@ const LangCountryDropdown = ({
                   setShow(false);
                 }}
               >
-                <img src={country.flag} alt={country.name} className="w-5 h-5 mr-2" />
+                <img
+                  src={country.flag}
+                  alt={country.name}
+                  className="w-5 h-5 mr-2"
+                />
                 <span className="text-black">{country.name}</span>
               </div>
             ))}
@@ -204,12 +211,13 @@ const Header = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1280) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -248,10 +256,10 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav (≥1280px) */}
           <nav
             ref={navRef}
-            className="hidden lg:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
+            className="hidden xl:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
           >
             {menus.map(({ title, href, id, items }) => (
               <div
@@ -263,8 +271,8 @@ const Header = () => {
                 <Link
                   href={href}
                   className={`pb-1 border-b-2 ${activeDropdown === id
-                      ? "border-pink-600 text-black"
-                      : "border-transparent hover:border-pink-600 hover:text-pink-600 transition"
+                    ? "border-pink-600 text-black"
+                    : "border-transparent hover:border-pink-600 hover:text-pink-600 transition"
                     }`}
                 >
                   {title}
@@ -275,8 +283,8 @@ const Header = () => {
                       <li
                         key={idx}
                         className={`px-4 py-2 cursor-pointer whitespace-nowrap ${activeSubmenu === item
-                            ? "text-pink-600 font-semibold"
-                            : "text-gray-700"
+                          ? "text-pink-600 font-semibold"
+                          : "text-gray-700"
                           }`}
                         onMouseEnter={() => setActiveSubmenu(item)}
                         onMouseLeave={() => setActiveSubmenu(null)}
@@ -290,8 +298,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Section (only ≥1024px) */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          {/* Right Section (≥1280px) */}
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}
@@ -303,15 +311,15 @@ const Header = () => {
             />
             <Link
               href="/request-demo"
-              className="hidden lg:inline-block text-white py-2 px-4 rounded-full text-sm font-bold"
+              className="hidden xl:inline-block text-white py-2 px-4 rounded-full text-sm font-bold"
               style={{ backgroundColor: "#C2185C" }}
             >
               REQUEST DEMO
             </Link>
           </div>
 
-          {/* Mobile/Tablet Section (<1024px) */}
-          <div className="flex md:flex lg:hidden items-center gap-3">
+          {/* Mobile/Tablet (<1280px) */}
+          <div className="flex md:flex xl:hidden items-center gap-3">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}
@@ -326,16 +334,18 @@ const Header = () => {
               aria-label="Toggle mobile menu"
               onClick={() => setIsMobileMenuOpen((p) => !p)}
             >
-              <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+              <i
+                className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"
+                  }`}
+              ></i>
             </button>
           </div>
-
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (<1280px) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed top-[60px] left-0 w-full h-screen overflow-y-auto bg-white border-t border-gray-200 px-6 py-4 z-[999]">
+        <div className="xl:hidden fixed top-[60px] left-0 w-full h-screen overflow-y-auto bg-white border-t border-gray-200 px-6 py-4 z-[999]">
           {menus.map(({ id, title, items }) => (
             <div key={id} className="mb-4">
               <button
@@ -378,6 +388,6 @@ const Header = () => {
       )}
     </header>
   );
-}
+};
 
 export default Header;
