@@ -286,33 +286,39 @@ export default function AutomationSection() {
         </div>
       </div>
 
-
-
-
-
-
-
       {/* Why Choose Section */}
-      <div className="mt-20 bg-[#F2F2F2] p-6  -mx-4 font-inter  text-center">
-        <h2 className="text-[24px] md:text-[38px] font-bold mb-4">
-          Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
-        </h2>
+      <div className="mt-20 bg-[#F2F2F2] py-12">
+        <div className="max-w-7xl mx-auto px-6 font-inter">
+          <h2 className="text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-12 text-center leading-snug">
+            Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
+          </h2>
 
-        <img
-          src="/images/why-choose.svg"
-          alt="Why Choose Accqrate Books"
-          className="mx-auto mb-6 w-[300px] md:w-[400px] h-auto"
-        />
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12">
+            {/* Image */}
+            <div className="flex justify-center items-center">
+              <img
+                src="/images/why-choose.svg"
+                alt="Why Choose Accqrate Books"
+                className="w-[320px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto"
+              />
+            </div>
 
-        <ul className="text-left md:text-[18px] md:space-y-6 md:mt-10 space-y-4 px-4 text-[14px] list-disc list-inside">
-          <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
-          <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
-          <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
-          <li>Future-Proof Scaling: Move from startup to multi-entity enterprise—no reimplementation, no data loss.</li>
-          <li>Total Business Control: Real-time insights, automation, and bulletproof security.</li>
-          <li>Flexible price: Flexible plans for every business, from startups to enterprises. Your data stays secure on our Saudi e-invoicing platform with cloud accounting software benefits.</li>
-        </ul>
+            {/* Text List */}
+            <ul className="text-left text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
+              <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
+              <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
+              <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
+              <li>Future-Proof Scaling: Move from startup to multi-entity enterprise—no reimplementation, no data loss.</li>
+              <li>Total Business Control: Real-time insights, automation, and bulletproof security.</li>
+              <li>Flexible price: Flexible plans for every business, from startups to enterprises. Your data stays secure on our Saudi e-invoicing platform with cloud accounting software benefits.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+
+
+
     </div >
   );
 }
