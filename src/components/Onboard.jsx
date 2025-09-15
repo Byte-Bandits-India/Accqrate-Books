@@ -2,7 +2,7 @@
 
 export default function FeatureSection() {
   return (
-    <div className="px-4 max-w-[1440px] mx-auto">
+    <div className="px-4  mx-auto">
       {/* Heading */}
       <h2 className="text-fluid-h2 font-inter font-medium text-center mb-3">
         Effortless <span className="text-[#1976D2]">Onboarding</span> &
@@ -148,7 +148,7 @@ export default function FeatureSection() {
         </p>
       </div>
 
-      <div className="hidden md:block bg-[#F2F2F2] py-12 md:py-20 px-6 md:px-16 mt-24">
+      <div className="hidden md:block bg-[#F2F2F2]  py-12 md:py-20 px-6 md:px-16 mt-24">
         <div className="max-w-5xl mx-auto">
           <p className="text-lg md:text-2xl lg:text-[30px] font-normal leading-relaxed text-gray-900">
             “We transitioned our entire accounting system in one afternoon—no external consultants needed.”
@@ -161,7 +161,7 @@ export default function FeatureSection() {
 
 
       {/* -------- New Section: ZATCA Compliance -------- */}
-      <div className="mt-12 font-inter text-center px-4">
+      <div className="mt-12 max-w-[1440px] mx-auto font-inter text-center px-4">
 
         <h2 className="lg:hidden text-[24px] md:text-[24px] font-semibold mb-2">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
