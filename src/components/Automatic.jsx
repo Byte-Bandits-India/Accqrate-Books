@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 
 export default function AutomationSection() {
   const dropdowns = [
@@ -44,29 +46,21 @@ export default function AutomationSection() {
           </p>
 
           <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-            {dropdowns.map((dropdown, idx) => (
-              <div key={idx} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                <div
-                  onClick={() => toggleDropdown(idx)}
-                  className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                >
-                  <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
+            <Accordion type="single" collapsible className="w-full max-w-[400px]">
+              {dropdowns.map((dropdown, idx) => (
+                <AccordionItem key={idx} value={`rec-${idx}`}>
+                  <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
                     {dropdown.label}
-                  </span>
-                  {openIndex === idx ? (
-                    <FaChevronUp className="transition-transform rotate-180" />
-                  ) : (
-                    <FaChevronDown className="transition-transform" />
-                  )}
-                </div>
-                {openIndex === idx && (
-                  <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
                     {dropdown.content}
-                  </p>
-                )}
-              </div>
-            ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
+
+
         </div>
 
         {/* Right Side */}
@@ -80,20 +74,20 @@ export default function AutomationSection() {
             <source src="videos/ai-driven-automation.mp4" type="video/mp4" />
           </video>
         </div>
-      </section>
+      </section >
 
 
       {/* Bottom Section */}
-      <div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl ">
+      < div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl " >
         {/* Heading */}
-        <div className="text-center mb-10 md:mb-4 md:flex md:justify-center">
+        < div className="text-center mb-10 md:mb-4 md:flex md:justify-center" >
           <h2 className="text-[24px] md:text-[38px] font-semibold">
             Support, Training, &
           </h2>
           <h2 className="text-[24px] md:text-[38px] font-semibold text-[#1976D2] mb-6 md:ml-2">
             Onboarding
           </h2>
-        </div>
+        </div >
 
         <div>
           <p className="text-fluid-small lg:text-[20px] mb-8 md:mb-16 text-center text-base leading-relaxed">
@@ -284,10 +278,10 @@ export default function AutomationSection() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Why Choose Section */}
-      <div className="mt-20 bg-[#F2F2F2] py-12">
+      < div className="mt-20 bg-[#F2F2F2] py-12" >
         <div className="max-w-7xl mx-auto px-6 font-inter">
           <h2 className="text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-12 text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
@@ -314,7 +308,7 @@ export default function AutomationSection() {
             </ul>
           </div>
         </div>
-      </div>
+      </div >
 
 
 
