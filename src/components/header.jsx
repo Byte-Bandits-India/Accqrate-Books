@@ -246,7 +246,7 @@ const Header = () => {
       <div className="w-full py-2 md:py-3 px-3 md:px-6">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <div className="logo-container">
+          <div className="logo-container flex items-center justify-around gap-6">
             <Link href="/" className="shrink-0">
               <img
                 src="/images/logo.svg"
@@ -254,49 +254,51 @@ const Header = () => {
                 className="h-8 md:h-9 lg:h-10 w-auto cursor-pointer max-w-[80px] sm:max-w-[100px] md:max-w-[140px]"
               />
             </Link>
+
+            {/* Desktop Nav (≥1280px) */}
+            <nav
+              ref={navRef}
+              className="hidden xl:flex items-center justify-around gap-8 max-w-[1100px] text-[14px] text-gray-600 flex-1"
+            >
+              {menus.map(({ title, href, id, items }) => (
+                <div
+                  key={id}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Link
+                    href={href}
+                    className={`pb-1 border-b-2 ${activeDropdown === id
+                      ? "border-pink-600 text-black"
+                      : "border-transparent hover:border-pink-600 hover:text-pink-600 transition"
+                      }`}
+                  >
+                    {title}
+                  </Link>
+                  {activeDropdown === id && (
+                    <ul className="absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                      {items.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className={`px-4 py-2 cursor-pointer whitespace-nowrap ${activeSubmenu === item
+                            ? "text-pink-600 font-semibold"
+                            : "text-gray-700"
+                            }`}
+                          onMouseEnter={() => setActiveSubmenu(item)}
+                          onMouseLeave={() => setActiveSubmenu(null)}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </nav>
           </div>
 
-          {/* Desktop Nav (≥1280px) */}
-          <nav
-            ref={navRef}
-            className="hidden xl:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
-          >
-            {menus.map(({ title, href, id, items }) => (
-              <div
-                key={id}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(id)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <Link
-                  href={href}
-                  className={`pb-1 border-b-2 ${activeDropdown === id
-                    ? "border-pink-600 text-black"
-                    : "border-transparent hover:border-pink-600 hover:text-pink-600 transition"
-                    }`}
-                >
-                  {title}
-                </Link>
-                {activeDropdown === id && (
-                  <ul className="absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                    {items.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className={`px-4 py-2 cursor-pointer whitespace-nowrap ${activeSubmenu === item
-                          ? "text-pink-600 font-semibold"
-                          : "text-gray-700"
-                          }`}
-                        onMouseEnter={() => setActiveSubmenu(item)}
-                        onMouseLeave={() => setActiveSubmenu(null)}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </nav>
+
 
           {/* Right Section (≥1280px) */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">

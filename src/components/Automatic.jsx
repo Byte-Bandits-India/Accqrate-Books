@@ -29,7 +29,7 @@ export default function AutomationSection() {
   };
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
       {/* ================= AI-Driven Automation ================= */}
       <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
   md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">

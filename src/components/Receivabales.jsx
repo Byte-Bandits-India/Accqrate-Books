@@ -41,10 +41,10 @@ export default function AccountSections() {
   ];
 
   return (
-    <div className="space-y-10 px-4 md:px-2 mb-10 mt-[6%]">
-      <div className="bg-[#1976D2] w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] py-[4%] space-y-4 rounded-xl">
+    <div className="space-y-10 mb-10 mt-[6%] max-w-[1440px] mx-auto">
+      <div className="bg-[#1976D2] py-[4%] space-y-4 rounded-[40px]">
         {/* Bottom Two Rows */}
-        <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] mx-auto">
+        <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] py-4 mx-auto">
           <div className="bg-[#F3F3F3] p-4 lg:p-6 rounded-md text-left lg:flex-1 lg:w-auto md:w-[340px] h-auto md:h-[217px]">
             <h4 className="lg:text-[36px] md:text-[26px] text-fluid-body font-semibold text-[#1976D2] leading-tight break-words">
               Custom Invoice Templates
@@ -241,8 +241,6 @@ export default function AccountSections() {
           </div>
         </section>
       </div>
-
-
     </div>
   );
 }

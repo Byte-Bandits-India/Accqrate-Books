@@ -2,7 +2,7 @@
 
 export default function FeatureSection() {
   return (
-    <div className="px-4">
+    <div className="px-4 max-w-[1440px] mx-auto">
       {/* Heading */}
       <h2 className="text-fluid-h2 font-inter font-medium text-center mb-3">
         Effortless <span className="text-[#1976D2]">Onboarding</span> &
