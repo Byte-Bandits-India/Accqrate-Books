@@ -31,10 +31,10 @@ export default function AutomationSection() {
   };
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+    <div className="bg-white py-12 px-4 sm:px-6 lg:px-0 ">
       {/* ================= AI-Driven Automation ================= */}
-      <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+      <section className="max-w-[1440px] mx-auto font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20  
+  md:flex md:items-center md:px-6 lg:px-10  md:mt-[6%]">
 
         {/* Left Side */}
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -282,7 +282,7 @@ export default function AutomationSection() {
 
       {/* Why Choose Section */}
       < div className="mt-20 bg-[#F2F2F2] py-12" >
-        <div className="max-w-7xl mx-auto px-6 font-inter">
+        <div className="max-w-[1440px] mx-auto px-6 font-inter">
           <h2 className="text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-12 text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
           </h2>
