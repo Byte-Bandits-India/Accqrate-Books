@@ -258,7 +258,7 @@ const Header = () => {
             {/* Desktop Nav (≥1280px) */}
             <nav
               ref={navRef}
-              className="hidden xl:flex items-center justify-around gap-8 max-w-[1100px] text-[14px] text-gray-600 flex-1"
+              className="hidden xl:flex items-center justify-around xl:gap-5  2xl:gap-10 text-[14px] text-gray-600 flex-1"
             >
               {menus.map(({ title, href, id, items }) => (
                 <div
