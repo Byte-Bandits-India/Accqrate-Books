@@ -134,26 +134,26 @@ export default function Hero() {
     <section
       id="heroSection"
       ref={heroRef}
-      className="w-full font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
+      className="w-full font-inter flex flex-col items-center justify-center text-center py-8 mt-10 px-4"
     >
       {/* Headings */}
-      <h1 className="text-fluid-h1 font-semibold">
+      <h1 className="text-fluid-h1 font-semibold text-[#333333]">
         Accqrate <span className="text-[#1976D2]">Books</span>
       </h1>
-      <h2 className="text-fluid-h2 mt-6 font-medium tracking-wide max-w-[800px]">
+      <h2 className="text-fluid-h2 mt-5 font-medium text-[#333333] tracking-wide max-w-[800px]">
         <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
         Accounting Software for Saudi Arabia
       </h2>
-      <p className="text-fluid-body tracking-tight md:font-semibold md:leading-10 mt-6 max-w-[800px]">
+      <p className="text-fluid-body tracking-tight md:font-semibold md:leading-10 mt-4 max-w-[800px] text-[#333333]">
         Run your entire business accounting—faster, smarter, always ZATCA Phase-2 ready.
       </p>
 
       {/* Supporting text */}
-      <p className="text-[#000000B2] text-fluid-small mt-4 max-w-[800px] md:hidden">
+      <p className="text-[#737373] text-fluid-small mt-4 max-w-[800px] md:hidden">
         Launch your store in minutes, manage everything in one place—from sales to stock,
         from any device.
       </p>
-      <p className="text-[#000000B2] hidden md:block text-fluid-body mt-4 max-w-[800px]">
+      <p className="text-[#737373] hidden md:block text-fluid-body mt-4 max-w-[800px]">
         Manage accounts, automate ZATCA compliance, and unlock actionable insights
         from anywhere, on any device.
       </p>
@@ -169,15 +169,15 @@ export default function Hero() {
       </div>
 
       {/* Dashboard Video */}
-      <div className="mt-12 w-full max-w-7xl rounded-xl overflow-hidden">
+      <div className="mt-4 md:mt-6 w-full max-w-7xl rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
 
       {/* Trusted text */}
-      <div className="py-6 mt-16">
-        <h3 className="text-fluid-body px-2 lg:hidden md:text-fluid-body lg:text-fluid-h2 font-medium text-center mx-auto">
+      <div className="py-6 mt-6">
+        <h3 className="text-fluid-body px-2 lg:hidden md:text-fluid-body lg:text-fluid-h2 font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
         </h3>
