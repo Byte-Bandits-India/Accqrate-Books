@@ -6,6 +6,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { LoadingContext } from "../utils/LoadingContext";
 import Skeleton from "../components/skeleton";
 import useInView from "../utils/useInView";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 
 export default function AutomationSection() {
   const dropdowns = [
@@ -121,41 +123,32 @@ export default function AutomationSection() {
             Let AI handle the repetitive—free your team for what matters.
           </p>
 
-          <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-            {dropdowns.map((dropdown, idx) => (
-              <div key={idx} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                <div
-                  onClick={() => toggleDropdown(idx)}
-                  className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                >
-                  <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
-                    {dropdown.label}
-                  </span>
-                  {openIndex === idx ? (
-                    <FaChevronUp className="transition-transform rotate-180" />
-                  ) : (
-                    <FaChevronDown className="transition-transform" />
-                  )}
-                </div>
-                {openIndex === idx && (
-                  <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">
-                    {dropdown.content}
-                  </p>
-                )}
-              </div>
-            ))}
+          {/* Accordion */}
+          <div className="mt-4 md:mt-6 lg:mt-10">
+            <Accordion type="single" collapsible className="w-full max-w-[400px]">
+              {dropdowns.map((item, index) => (
+                <AccordionItem key={index} value={`rec-${index}`}>
+                  <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                    {item.label}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                    {item.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-center">
+        <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
           <video
             className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
             autoPlay
             muted
             loop
           >
-            <source src="videos/ai-driven-automation.mp4" type="video/mp4" />
+            <source src="videos/account-receivables.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

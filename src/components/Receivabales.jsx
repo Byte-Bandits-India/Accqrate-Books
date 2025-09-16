@@ -4,6 +4,8 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { LoadingContext } from "../utils/LoadingContext";
 import Skeleton from "../components/skeleton";
 import useInView from "../utils/useInView";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 
 export default function AccountSections() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -206,30 +208,32 @@ export default function AccountSections() {
               <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
                 Stay on top of collections and improve working capital - without chasing payments manually.
               </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {receivableDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("rec", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `rec-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `rec-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
+
+              {/* Accordion */}
+              <div className="mt-4 md:mt-6 lg:mt-10">
+                <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                  {receivableDropdowns.map((item, index) => (
+                    <AccordionItem key={index} value={`rec-${index}`}>
+                      <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                        {item.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                        {item.content}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             </div>
 
             {/* Right Side */}
             <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
+              <video
+                className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
                 <source src="videos/account-receivables.mp4" type="video/mp4" />
               </video>
             </div>
@@ -248,31 +252,32 @@ export default function AccountSections() {
               <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
                 Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out.
               </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {payableDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("pay", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `pay-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `pay-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
+              {/* Accordion */}
+              <div className="mt-4 md:mt-6 lg:mt-10">
+                <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                  {payableDropdowns.map((item, index) => (
+                    <AccordionItem key={index} value={`rec-${index}`}>
+                      <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                        {item.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                        {item.content}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             </div>
 
             {/* Right Side */}
             <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
-                <source src="videos/account-payables.mp4" type="video/mp4" />
+              <video
+                className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
+                <source src="videos/account-receivables.mp4" type="video/mp4" />
               </video>
             </div>
           </section>
@@ -281,39 +286,40 @@ export default function AccountSections() {
           <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
   md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
             {/* Left Side */}
-            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px] xl:max-w-[580px]">
               <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
                 Smart <span className="font-semibold">Expense Management</span>
               </h2>
-              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
+              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[18px] lg:max-w-[520px] xl:max-w-[580px] lg:leading-relaxed md:tracking-wide break-words">
                 Control spending, eliminate manual errors, and boost accountability. Modernize every step of
                 expense processing with automation, policy enforcement, and real-time tracking.
               </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {expenseDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("exp", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `exp-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `exp-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
+              {/* Accordion */}
+              <div className="mt-4 md:mt-6 lg:mt-10">
+                <Accordion type="single" collapsible className="w-full max-w-[400px] lg:max-w-[520px] xl:max-w-[580px]">
+                  {expenseDropdowns.map((item, index) => (
+                    <AccordionItem key={index} value={`rec-${index}`}>
+                      <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium text-left">
+                        {item.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                        {item.content}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             </div>
 
             {/* Right Side */}
-            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
-                <source src="videos/smart-expense.mp4" type="video/mp4" />
+            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-center md:items-center">
+              <video
+                className="rounded-lg w-full max-w-[500px] md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
+                <source src="videos/account-receivables.mp4" type="video/mp4" />
               </video>
             </div>
           </section>
@@ -336,25 +342,20 @@ export default function AccountSections() {
             <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
               Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
             </p>
-            <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-              {financialDropdowns.map((item, index) => (
-                <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                  <div
-                    onClick={() => toggleDropdown("fin", index)}
-                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                  >
-                    <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
+            {/* Accordion */}
+            <div className="mt-4 md:mt-6 lg:mt-10">
+              <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                {financialDropdowns.map((item, index) => (
+                  <AccordionItem key={index} value={`rec-${index}`}>
+                    <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
                       {item.title}
-                    </span>
-                    <FaChevronDown
-                      className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""}`}
-                    />
-                  </div>
-                  {openIndex === `fin-${index}` && (
-                    <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                  )}
-                </div>
-              ))}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
 
@@ -362,9 +363,11 @@ export default function AccountSections() {
           <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
             <video
               className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
-              autoPlay muted loop
+              autoPlay
+              muted
+              loop
             >
-              <source src="videos/financial-statements.mp4" type="video/mp4" />
+              <source src="videos/account-receivables.mp4" type="video/mp4" />
             </video>
           </div>
         </section>
