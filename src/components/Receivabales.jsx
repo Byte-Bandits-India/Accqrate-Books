@@ -1,9 +1,17 @@
 "use client";
-import { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { useState, useContext, useRef } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { LoadingContext } from "../utils/LoadingContext";
+import Skeleton from "../components/skeleton";
+import useInView from "../utils/useInView";
 
 export default function AccountSections() {
   const [openIndex, setOpenIndex] = useState(null);
+  const { loading } = useContext(LoadingContext);
+  const receivableRef = useRef(null);
+
+  // <-- lowered threshold so mobile triggers when any part becomes visible
+  const isVisible = useInView(receivableRef, { threshold: 0 });
 
   const toggleDropdown = (key, index) => {
     setOpenIndex(openIndex === `${key}-${index}` ? null : `${key}-${index}`);
@@ -40,8 +48,129 @@ export default function AccountSections() {
     { title: "Export & Share", content: "Sample content for Export & Share." },
   ];
 
+  // Skeleton: ref lives here (observer watches the skeleton wrapper)
+  if (loading || !isVisible) {
+    return (
+      <section
+        ref={receivableRef}
+        className="space-y-10 mb-10 mt-[6%] max-w-[1440px] mx-auto"
+      >
+        <div className="bg-[#1976D2] py-[4%] space-y-4 rounded-[40px]">
+          {/* Bottom Two Rows Skeleton */}
+          <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] py-4 mx-auto">
+            {[1, 2].map((item) => (
+              <div key={item} className="bg-[#F3F3F3] p-4 lg:p-6 rounded-md text-left lg:flex-1 lg:w-auto md:w-[340px] h-auto md:h-[217px]">
+                <Skeleton height="36px" width="80%" className="mb-4" />
+                <Skeleton height="18px" width="100%" className="mb-2" />
+                <Skeleton height="18px" width="90%" />
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-10 px-4 md:px-2 mb-10">
+            {/* Account Receivables Skeleton */}
+            <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+              <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+                <Skeleton height="40px" width="70%" className="mb-4" />
+                <Skeleton height="20px" width="90%" className="mb-6" />
+
+                <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                  {[1, 2, 3, 4].map((item) => (
+                    <div key={item} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                      <div className="flex justify-between items-center border-b border-gray-300 pb-1">
+                        <Skeleton height="16px" width="80%" />
+                        <Skeleton height="16px" width="16px" className="rounded-full" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+                <Skeleton height="420px" className="rounded-lg w-full" />
+              </div>
+            </section>
+
+            {/* Account Payables Skeleton */}
+            <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+              <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+                <Skeleton height="42px" width="70%" className="mb-4" />
+                <Skeleton height="20px" width="90%" className="mb-6" />
+
+                <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                  {[1, 2, 3, 4, 5].map((item) => (
+                    <div key={item} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                      <div className="flex justify-between items-center border-b border-gray-300 pb-1">
+                        <Skeleton height="16px" width="80%" />
+                        <Skeleton height="16px" width="16px" className="rounded-full" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+                <Skeleton height="420px" className="rounded-lg w-full" />
+              </div>
+            </section>
+
+            {/* Smart Expense Management Skeleton */}
+            <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+              <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+                <Skeleton height="42px" width="70%" className="mb-4" />
+                <Skeleton height="20px" width="100%" className="mb-2" />
+                <Skeleton height="20px" width="95%" className="mb-6" />
+
+                <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                  {[1, 2, 3, 4, 5].map((item) => (
+                    <div key={item} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                      <div className="flex justify-between items-center border-b border-gray-300 pb-1">
+                        <Skeleton height="16px" width="80%" />
+                        <Skeleton height="16px" width="16px" className="rounded-full" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+                <Skeleton height="420px" className="rounded-lg w-full" />
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div className="px-4 md:px-2 mb-10">
+          {/* Financial Statements Skeleton */}
+          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:my-[4%] space-x-4">
+            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+              <Skeleton height="42px" width="70%" className="mb-4" />
+              <Skeleton height="20px" width="90%" className="mb-6" />
+
+              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+                {[1, 2, 3, 4, 5].map((item) => (
+                  <div key={item} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                    <div className="flex justify-between items-center border-b border-gray-300 pb-1">
+                      <Skeleton height="16px" width="80%" />
+                      <Skeleton height="16px" width="16px" className="rounded-full" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <Skeleton height="420px" className="rounded-lg w-full" />
+            </div>
+          </section>
+        </div>
+      </section>
+    );
+  }
+
+  // Main content: no ref here (matches Onboard.jsx pattern)
   return (
-    <div className="space-y-10 mb-10 mt-[6%] max-w-[1440px] mx-auto">
+    <section className="space-y-10 mb-10 mt-[6%] max-w-[1440px] mx-auto">
       <div className="bg-[#1976D2] py-[4%] space-y-4 rounded-[40px]">
         {/* Bottom Two Rows */}
         <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] py-4 mx-auto">
@@ -148,7 +277,6 @@ export default function AccountSections() {
             </div>
           </section>
 
-
           {/* ================= Smart Expense Management ================= */}
           <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
   md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
@@ -241,6 +369,6 @@ export default function AccountSections() {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 }

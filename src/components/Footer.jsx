@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useContext, useState, useEffect } from "react";
-import styles from "../styles/footer.module.css";
 import { LoadingContext } from "../utils/LoadingContext";
 import Skeleton from "../components/skeleton";
 
@@ -12,12 +11,10 @@ export default function Footer() {
 
   useEffect(() => {
     const handleResize = () => {
-      setShowSections(window.innerWidth >= 1024); // Show sections only on desktop
+      setShowSections(window.innerWidth >= 1024); // show only on desktop
     };
-
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -26,10 +23,7 @@ export default function Footer() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      {
-        rootMargin: "0px",
-        threshold: 0.5,
-      }
+      { threshold: 0.5 }
     );
 
     const element = document.getElementById("footerSection");
@@ -124,64 +118,91 @@ export default function Footer() {
 
   if (loading || !isVisible) {
     return (
-      <footer className={styles.footer} id="footerSection">
-        <div className={styles.container}>
+      <footer
+        id="footerSection"
+        className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]"
+      >
+        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {[...Array(6)].map((_, idx) => (
             <div key={idx}>
-              <Skeleton height="24px" width="60%" className={styles.sectionTitle} />
+              <Skeleton height="24px" width="60%" className="mb-4" />
               {[...Array(6)].map((_, i) => (
                 <Skeleton
                   key={i}
                   height="18px"
                   width="80%"
-                  className={styles.sectionItem}
-                  style={{ marginBottom: "8px" }}
+                  className="mb-2"
                 />
               ))}
             </div>
           ))}
         </div>
-        <div className={styles.social}>
+        <div className="flex flex-wrap justify-center gap-3 mt-5 mx-auto">
           {[...Array(8)].map((_, i) => (
-            <Skeleton key={i} height="20px" width="20px" style={{ marginLeft: "8px" }} />
+            <Skeleton key={i} height="20px" width="20px" className="ml-2" />
           ))}
         </div>
-        <Skeleton height="20px" width="40%" className={styles.copyright} />
+        <Skeleton
+          height="20px"
+          width="40%"
+          className="mx-auto mt-6 text-center"
+        />
       </footer>
     );
   }
 
   return (
-    <footer className={styles.footer} id="footerSection">
+    <footer
+      id="footerSection"
+      className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]"
+    >
       {showSections && (
-        <div className={styles.container}>
+        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {sections.map((section, idx) => (
-            <div key={idx} className={styles.column}>
-              <h3 className={styles.sectionTitle}>{section.title}</h3>
+            <div key={idx} className="flex flex-col">
+              <h3 className="font-bold mb-4 text-[16px] leading-6 whitespace-normal break-words">
+                {section.title}
+              </h3>
               {section.items.map((item, i) => (
-                <p key={i} className={styles.sectionItem}>{item}</p>
+                <p
+                  key={i}
+                  className="mb-4 text-sm leading-5 text-gray-600 whitespace-normal break-words"
+                >
+                  {item}
+                </p>
               ))}
             </div>
           ))}
         </div>
       )}
 
-    <div className={styles.bottomBar}>
-  <div className={styles.social}>
-    {socialLinks.map(({ href, src }, idx) => (
-      <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
-        <img src={src} alt="social icon" className={styles.icon} />
-      </a>
-    ))}
-  </div>
+      <div>
+        <div className="flex flex-wrap justify-center gap-3 my-4 mt-5 mx-auto">
+          {socialLinks.map(({ href, src }, idx) => (
+            <a
+              key={idx}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform duration-300 hover:scale-110"
+            >
+              <img
+                src={src}
+                alt="social icon"
+                className="w-6 h-6 sm:w-5 sm:h-5"
+              />
+            </a>
+          ))}
+        </div>
 
-  <div className={styles.copyright}>
-    © Copyright 2021 - 2025 <span className={styles.primary}>Accqrate</span>, All rights reserved.
-  </div>
-</div>
-
-   
+        <div className="border-t border-black/25 w-full my-2 mx-auto py-8 text-center text-xs text-gray-600">
+          © Copyright 2021 - 2025{" "}
+          <span className="text-[#194BED] text-sm leading-6 font-medium">
+            Accqrate
+          </span>
+          , All rights reserved.
+        </div>
+      </div>
     </footer>
   );
 }
-

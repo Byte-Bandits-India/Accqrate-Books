@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext, useRef } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { LoadingContext } from "../utils/LoadingContext";
+import Skeleton from "../components/skeleton";
+import useInView from "../utils/useInView";
 
 export default function AutomationSection() {
   const dropdowns = [
@@ -24,9 +27,84 @@ export default function AutomationSection() {
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
+  const { loading } = useContext(LoadingContext);
+  const automationRef = useRef(null);
+  const isVisible = useInView(automationRef, { threshold: 0 });
+
   const toggleDropdown = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
+
+  if (loading || !isVisible) {
+    return (
+      <div ref={automationRef} className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+        {/* AI-Driven Automation Skeleton */}
+        <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+          <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+            <Skeleton height="42px" width="60%" className="mb-4" />
+            <Skeleton height="20px" width="90%" className="mb-6" />
+
+            <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
+              {[1, 2, 3].map((item) => (
+                <div key={item} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
+                  <div className="flex justify-between items-center border-b border-gray-300 pb-1">
+                    <Skeleton height="16px" width="80%" />
+                    <Skeleton height="16px" width="16px" className="rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-center">
+            <Skeleton height="420px" className="rounded-lg w-full" />
+          </div>
+        </section>
+
+        {/* Bottom Section Skeleton */}
+        <div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl">
+          <div className="text-center mb-10 md:mb-4 md:flex md:justify-center">
+            <Skeleton height="38px" width="40%" className="mb-2 md:mr-2" />
+            <Skeleton height="38px" width="30%" className="mb-6" />
+          </div>
+
+          <div>
+            <Skeleton height="20px" width="80%" className="mb-8 mx-auto" />
+          </div>
+
+          {/* Unified Grid Skeleton */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+                <Skeleton height="100%" className="rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Choose Section Skeleton */}
+        <div className="mt-20 bg-[#F2F2F2] py-12">
+          <div className="max-w-7xl mx-auto px-6 font-inter">
+            <Skeleton height="38px" width="50%" className="mb-12 mx-auto" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12">
+              <div className="flex justify-center items-center">
+                <Skeleton height="320px" width="100%" className="max-w-[480px]" />
+              </div>
+
+              <ul className="text-left space-y-4 md:space-y-6">
+                {[1, 2, 3, 4, 5, 6].map((item) => (
+                  <li key={item}>
+                    <Skeleton height="20px" width="100%" className="mb-1" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
@@ -315,10 +393,6 @@ export default function AutomationSection() {
           </div>
         </div>
       </div>
-
-
-
-
     </div >
   );
 }

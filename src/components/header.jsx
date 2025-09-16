@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import styles from "../styles/header.module.css";
 
 const menus = [
   {
@@ -242,7 +241,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header}  w-full bg-white shadow`}>
+    <header className="z-50 m-0 p-0 w-full bg-white shadow">
       <div className="w-full py-2 md:py-3 px-3 md:px-6">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -298,8 +297,6 @@ const Header = () => {
             </nav>
           </div>
 
-
-
           {/* Right Section (≥1280px) */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">
             <LangCountryDropdown
@@ -313,8 +310,7 @@ const Header = () => {
             />
             <Link
               href="/request-demo"
-              className="hidden xl:inline-block text-white py-2 px-4 rounded-full text-sm font-bold"
-              style={{ backgroundColor: "#C2185C" }}
+              className="hidden xl:inline-block text-white py-2 px-4 rounded-full text-sm font-bold bg-[#C2185C]"
             >
               REQUEST DEMO
             </Link>
@@ -332,7 +328,7 @@ const Header = () => {
               align="right"
             />
             <button
-              className={`${styles.hamburger} shrink-0 text-gray-700 text-xl`}
+              className="block bg-transparent border-none text-gray-700 text-2xl cursor-pointer shrink-0"
               aria-label="Toggle mobile menu"
               onClick={() => setIsMobileMenuOpen((p) => !p)}
             >
@@ -379,8 +375,7 @@ const Header = () => {
           <div className="mt-6">
             <Link
               href="/request-demo"
-              className="block w-full text-center text-white py-2 rounded-full text-sm font-bold"
-              style={{ backgroundColor: "#C2185C" }}
+              className="block w-full text-center text-white py-2 rounded-full text-sm font-bold bg-[#C2185C]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               REQUEST DEMO
@@ -389,6 +384,7 @@ const Header = () => {
         </div>
       )}
     </header>
+
   );
 };
 

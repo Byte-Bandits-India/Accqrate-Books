@@ -27,6 +27,7 @@ module.exports = {
       animation: {
         scrollLeft: "scrollLeft 50s linear infinite",
         scrollRight: "scrollRight 50s linear infinite",
+        skeleton: "skeleton 1.2s ease-in-out infinite",
       },
     },
   },
