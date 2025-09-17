@@ -110,10 +110,10 @@ export default function AutomationSection() {
 
   return (
     <>
-      <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+      <div className="bg-white py-12 px-4 sm:px-6  max-w-[1440px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
-        <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+        <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 mx-auto md:mt-[4%]">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -365,9 +365,9 @@ export default function AutomationSection() {
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12">
             {/* Image */}
-            <div className="flex justify-center items-center">
+            <div className="flex  items-center justify-center">
               <img
                 src="/images/why-choose.svg"
                 alt="Why Choose Accqrate Books"
@@ -376,7 +376,7 @@ export default function AutomationSection() {
             </div>
 
             {/* Text List */}
-            <ul className="text-left text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
+            <ul className="text-left list-disc list-inside text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
               <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
               <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
               <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
