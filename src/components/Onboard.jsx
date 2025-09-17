@@ -233,8 +233,8 @@ export default function FeatureSection() {
           <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-12 md:gap-8 lg:gap-12 md:mt-16 ">
 
             {/* Seamless Integration */}
-            <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
-                  md:h-[360px] lg:h-[320px] xl:h-[300px] 
+            <div className="border border-[#737373] bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
+                w-full  md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center">
 
               {/* Circle hover background */}
@@ -244,7 +244,7 @@ export default function FeatureSection() {
 
               {/* Default content */}
               <div className="transition-opacity duration-500 
-                    w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
+                    w-full max-w-[300px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center">
                 <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body 
@@ -271,8 +271,8 @@ export default function FeatureSection() {
             </div>
 
             {/* Digital Archive */}
-            <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
-                  md:h-[360px] lg:h-[320px] xl:h-[300px] 
+            <div className="border border-[#737373] bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
+                w-full  md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center">
 
               <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
@@ -280,7 +280,7 @@ export default function FeatureSection() {
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
               <div className="transition-opacity duration-500 
-                    w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
+                    w-full max-w-[300px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center">
                 <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight">
@@ -306,8 +306,8 @@ export default function FeatureSection() {
             </div>
 
             {/* Regulation Ready */}
-            <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
-                  md:h-[360px] lg:h-[320px] xl:h-[300px] 
+            <div className="bg-[#E4E4E4] border border-[#737373] relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
+                 w-full md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center">
 
               <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
@@ -315,7 +315,7 @@ export default function FeatureSection() {
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
               <div className="transition-opacity duration-500 
-                    w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
+                    w-full max-w-[300px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center">
                 <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body 
