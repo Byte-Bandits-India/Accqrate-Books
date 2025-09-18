@@ -44,10 +44,10 @@ export default function AccountSections() {
 
   if (loading || !isVisible) {
     return (
-      <div ref={financialRef} className=" py-[4%] rounded-[40px] max-w-[1440px] mx-auto">
-        <div className="space-y-10 px-4 md:px-2 mb-10">
+      <div ref={financialRef} className=" py-6 rounded-[40px] max-w-[1440px] mx-auto">
+        <div className="px-4 mb-10">
           {/* Finance Operations Skeleton */}
-          <section className="bg-[#E8F1FB] my-4 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+          <section className="bg-[#E8F1FB] my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
             <div className="flex-1 md:max-w-[520px]">
               <Skeleton height="38px" width="70%" className="mb-4" />
               <Skeleton height="24px" width="90%" className="mb-6" />
@@ -55,7 +55,7 @@ export default function AccountSections() {
 
               <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
                 {[1, 2, 3, 4, 5].map((item) => (
-                  <div key={item} className="max-w-[250px] md:max-w-[400px]">
+                  <div key={item} className="max-w-[250px] md:max-w-[400px] my-6">
                     <div className="flex justify-between items-center border-b border-gray-300 pb-1">
                       <Skeleton height="16px" width="80%" />
                       <Skeleton height="16px" width="16px" className="rounded-full" />
@@ -71,7 +71,8 @@ export default function AccountSections() {
           </section>
 
           {/* Seamless Integration Skeleton */}
-          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+          <section className="bg-[#E8F1FB] my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+
             <div className="flex-1 md:max-w-[520px]">
               <Skeleton height="38px" width="70%" className="mb-4" />
               <Skeleton height="24px" width="90%" className="mb-6" />
@@ -95,7 +96,7 @@ export default function AccountSections() {
           </section>
 
           {/* Robust Control Skeleton */}
-          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+          <section className="bg-[#E8F1FB] my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
             <div className="flex-1 md:max-w-[520px]">
               <Skeleton height="38px" width="70%" className="mb-4" />
               <Skeleton height="24px" width="90%" className="mb-6" />
@@ -125,10 +126,10 @@ export default function AccountSections() {
 
 
   return (
-    <div className=" py-[4%] rounded-[40px] max-w-[1440px] mx-auto">
-      <div className="space-y-10 px-4 md:px-2 mb-10">
+    <div className=" py-[24px] bg-[#F2F2F2]">
+      <div className="px-6 max-w-[1440px] mx-auto">
         {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-4 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
@@ -175,7 +176,7 @@ export default function AccountSections() {
 
 
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
@@ -221,7 +222,7 @@ export default function AccountSections() {
 
 
         {/* ================= Robust Control ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
