@@ -201,7 +201,7 @@ export default function FeatureSection() {
             <div
               className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
       w-full max-w-full sm:max-w-[320px] md:max-w-[354px] h-[110px] sm:h-[120px] md:h-[137px]
-      rounded-lg px-3 sm:px-4 px-4 py-2"
+      rounded-lg sm:px-4 px-4 py-2"
             >
               <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3 p-2">
                 <img
