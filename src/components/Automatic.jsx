@@ -41,7 +41,7 @@ export default function AutomationSection() {
     return (
       <div ref={automationRef} className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
         {/* AI-Driven Automation Skeleton */}
-        <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
+        <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 my-6">
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
             <Skeleton height="42px" width="60%" className="mb-4" />
             <Skeleton height="20px" width="90%" className="mb-6" />
@@ -64,7 +64,7 @@ export default function AutomationSection() {
         </section>
 
         {/* Bottom Section Skeleton */}
-        <div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl">
+        <div className="my-6 mx-auto px-2 font-inter md:max-w-5xl">
           <div className="text-center mb-10 md:mb-4 md:flex md:justify-center">
             <Skeleton height="38px" width="40%" className="mb-2 md:mr-2" />
             <Skeleton height="38px" width="30%" className="mb-6" />
@@ -85,7 +85,7 @@ export default function AutomationSection() {
         </div>
 
         {/* Why Choose Section Skeleton */}
-        <div className="mt-20 bg-[#F2F2F2] py-12">
+        <div className="my-6 bg-[#F2F2F2] py-12">
           <div className="max-w-7xl mx-auto px-6 font-inter">
             <Skeleton height="38px" width="50%" className="mb-12 mx-auto" />
 
@@ -110,10 +110,10 @@ export default function AutomationSection() {
 
   return (
     <>
-      <div className="bg-white py-12 px-4 sm:px-6  max-w-[1440px] mx-auto">
+      <div className="bg-white mt-6 px-6 sm:px-6  max-w-[1440px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
-        <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 mx-auto md:mt-[4%]">
+        <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto my-6
+  md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -156,9 +156,9 @@ export default function AutomationSection() {
 
 
         {/* Bottom Section */}
-        <div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl ">
+        <div className="my-6 mx-auto px-2 font-inter md:max-w-5xl ">
           {/* Heading */}
-          <div className="text-center mb-10 md:mb-4 md:flex md:justify-center">
+          <div className="text-center mb-6 md:mb-4 md:flex md:justify-center">
             <h2 className="text-[24px] md:text-[38px] font-semibold">
               Support, Training, &
             </h2>
@@ -168,7 +168,7 @@ export default function AutomationSection() {
           </div>
 
           <div>
-            <p className="text-fluid-small lg:text-[20px] mb-8 md:mb-16 text-center text-base leading-relaxed">
+            <p className="text-fluid-small lg:text-[20px] mb-6 md:mb-16 text-center text-base leading-relaxed">
               Expert onboarding for ZATCA compliance software— get your team ready for
               e-invoicing in KSA, fast.
             </p>
@@ -359,9 +359,9 @@ export default function AutomationSection() {
         </div>
       </div >
       {/* Why Choose Section */}
-      <div className="mt-20 bg-[#F2F2F2] w-full py-12">
+      <div className="my-6 bg-[#F2F2F2] w-full py-6">
         <div className="max-w-7xl mx-auto px-6 font-inter">
-          <h2 className="text-[22px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-12 text-center leading-snug">
+          <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
           </h2>
 
@@ -376,7 +376,7 @@ export default function AutomationSection() {
             </div>
 
             {/* Text List */}
-            <ul className="text-left list-disc list-inside text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
+            <ul className="text-left list-disc list-inside text-[14px] leading-6 sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
               <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
               <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
               <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
