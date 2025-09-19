@@ -74,59 +74,56 @@ export default function AccountSections() {
             {/* Card 1 */}
             <AccordionItem
               value="card-1"
-              className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
-              }}
+              className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
-                <div className="flex-col">
+              <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
+                {/* Left: Icon + Title */}
+                <div className="flex flex-col items-start gap-2">
                   <img
                     src="/images/invoice.png"
                     alt="Custom Invoice Templates"
-                    className="w-[30px] h-[30px]"
+                    className="w-[40px] h-[40px]"
                   />
-                  <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
+                  <span className="text-black text-[18px] font-normal">
                     Custom Invoice Templates
-                  </h4>
+                  </span>
                 </div>
+                {/* Arrow auto-renders */}
               </AccordionTrigger>
-              <AccordionContent className="px-4 pb-4 text-gray-700">
-                <p className="text-sm">
-                  This is where extra details about custom invoice templates go.
-                </p>
+
+              <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
+                This is where extra details about custom invoice templates go.
               </AccordionContent>
             </AccordionItem>
 
             {/* Card 2 */}
             <AccordionItem
               value="card-2"
-              className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
-              }}
+              className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
-                <div className="flex-col">
+              <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
+                {/* Left: Icon + Title */}
+                <div className="flex flex-col items-start gap-2">
                   <img
                     src="/images/audit.png"
                     alt="Comprehensive Audit Trails"
-                    className="w-[30px] h-[30px]"
+                    className="w-[40px] h-[40px]"
                   />
-                  <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
+                  <span className="text-black text-[18px] font-normal">
                     Comprehensive Audit Trails
-                  </h4>
+                  </span>
                 </div>
+                {/* Arrow auto-renders */}
               </AccordionTrigger>
-              <AccordionContent className="px-4 pb-4 text-gray-700">
-                <p className="text-sm">
-                  Extra details about comprehensive audit trails will be shown here.
-                </p>
+
+              <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
+                Extra details about comprehensive audit trails will be shown here.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
 
         </div>
 
