@@ -122,7 +122,7 @@ export default function Footer() {
         id="footerSection"
         className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]"
       >
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
+        <div className="flex justify-between flex-nowrap max-w-[1280px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {[...Array(6)].map((_, idx) => (
             <div key={idx}>
               <Skeleton height="24px" width="60%" className="mb-4" />
@@ -157,7 +157,7 @@ export default function Footer() {
       className="bg-white border-gray-200 font-inter min-h-full mt-[5%]"
     >
       {showSections && (
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
+        <div className="flex justify-between flex-nowrap max-w-[1280px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {sections.map((section, idx) => (
             <div key={idx} className="flex flex-col">
               <h3 className="font-bold mb-4 text-[16px] leading-6 whitespace-normal break-words">
