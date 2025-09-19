@@ -171,7 +171,7 @@ export default function Hero() {
       {/* Dashboard Video */}
       <div className="mt-4 md:mt-6 w-full max-w-7xl rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/Hero.mp4" type="video/mp4" />
         </video>
       </div>
 

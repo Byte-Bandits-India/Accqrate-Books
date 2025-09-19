@@ -137,6 +137,7 @@ export default function AccountSections() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
         </div>
 
         {/* Bottom Sections */}
