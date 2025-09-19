@@ -80,266 +80,333 @@ export default function FeatureSection() {
           Accqrate Books is fully cloud-native – no complex installations, no
           specialized IT needed. Set up your accounting in minutes, not weeks.
         </p>
-
-        <div
-          className="flex flex-col gap-3
-          sm:grid sm:grid-cols-2 sm:gap-6
-          md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
-        >
+        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 ">
           {/* Card 1 */}
-          <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
-          >
-            <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
-              <img
-                src="/images/Mask group.png"
-                alt="Instant Access Icon"
-                className="w-[40px] h-[40px]"
-              />
-              <span className="text-black text-[18px] font-normal mt-1 text-left">
-                Instant Access
-              </span>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px]  rounded-xl shadow-md p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-            </svg>
+              <source src="videos/cloud-first.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] text-fluid-body mt-2 lg:mb-6 font-medium">Cloud-first or On-Prem</h3>
+            <p className="lg:text-[20px] text-fluid-small text-[#808080] max-w-xl">
+              Choose cloud for instant launch, or on-premises for full  data control.
+            </p>
           </div>
 
           {/* Card 2 */}
-          <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
-          >
-            <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
-              <img
-                src="/images/Mask group (1).png"
-                alt="Automated Data Migration Icon"
-                className="w-[40px] h-[40px]"
-              />
-              <span className="text-[#000000] text-[18px] font-normal mt-1 text-left">
-                Automated Data Migration
-              </span>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-            </svg>
+              <source src="videos/all-devices.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] text-fluid-body mt-2 lg:mb-6  font-medium">Works on all devices</h3>
+            <p className="lg:text-[20px] text-fluid-small text-[#808080] ">
+              Manage accounts from  desktop, laptop, tablet, or mobile.
+            </p>
           </div>
 
           {/* Card 3 */}
-          <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
-          >
-            <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
-              <img
-                src="/images/Mask group (2).png"
-                alt="Role based access Icon"
-                className="w-[40px] h-[40px]"
-              />
-              <span className="text-black text-[18px] font-normal mt-1 text-left">
-                Role-Based User Setup
-              </span>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-            </svg>
+              <source src="videos/no-special-hardware.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] mt-2 lg:mb-6 font-medium">No special hardware</h3>
+            <p className="lg:text-[20px] text-fluid-small text-[#808080]">
+              Access your books anywhere – your data is always secure, always available.
+            </p>
           </div>
         </div>
 
-        {/* --- Testimonial Section --- */}
-        <div className="mt-4">
+        {/* -------- New Section: Zero-Friction Setup -------- */}
+        <div className="mt-[62px] max-w-[1440px] mx-auto font-inter text-center">          {/* Heading */}
+          <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4">
+            <span className="text-[#1976D2]">Zero-Friction</span> Setup
+          </h2>
+          <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-8">
+            As your business grows, Accqrate Retail grows with you. Flip the
+            switch to add procurement, finance, HR and supply-chain modules—no
+            data migration, no downtime.
+          </p>
+
           <div
-            className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
+            className="flex flex-col gap-3
+          sm:grid sm:grid-cols-2 sm:gap-6
+          md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
+          >
+            {/* Card 1 */}
+            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            >
+              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+                <img
+                  src="/images/Mask group.png"
+                  alt="Instant Access Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <span className="text-black text-[18px] font-normal mt-1 text-left">
+                  Instant Access
+                </span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            >
+              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+                <img
+                  src="/images/Mask group (1).png"
+                  alt="Automated Data Migration Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <span className="text-[#000000] text-[18px] font-normal mt-1 text-left">
+                  Automated Data Migration
+                </span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            >
+              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+                <img
+                  src="/images/Mask group (2).png"
+                  alt="Role based access Icon"
+                  className="w-[40px] h-[40px]"
+                />
+                <span className="text-black text-[18px] font-normal mt-1 text-left">
+                  Role-Based User Setup
+                </span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+
+          {/* --- Testimonial Section --- */}
+          <div className="mt-4">
+            <div
+              className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:p-10
               w-full max-w-full lg:w-[1440px]
               h-auto sm:h-[110px] md:h-[129px] lg:h-[182px]
               grid grid-rows-[auto_1fr_auto]"
-          >
-            <div className="lg:max-w-[1440px] mx-auto ">
-              {/* Quote */}
-              <p className="text-fluid-body font-normal text[#333333] md:leading-10 text-left">
-                “We set up 5 new outlets in under an hour—no IT team needed.”
-              </p>
-              <div></div>
-              {/* Attribution */}
-              <p className="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] text-right self-end justify-self-end">
-                — Retail Owner, Jeddah
-              </p>
+            >
+              <div className="lg:max-w-[1440px] mx-auto ">
+                {/* Quote */}
+                <p className="text-fluid-body font-normal text[#333333] md:leading-10 text-left">
+                  “We set up 5 new outlets in under an hour—no IT team needed.”
+                </p>
+                <div></div>
+                {/* Attribution */}
+                <p className="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] text-right self-end justify-self-end">
+                  — Retail Owner, Jeddah
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* -------- New Section: ZATCA Compliance -------- */}
-      <div className="mt-[62px] max-w-[1440px] mx-auto font-inter text-center px-6">
-        <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
-          100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
-          E-Invoicing Compliance
-        </h2>
-        <h2 className="hidden lg:block text-fluid-h2 mt-[24px] text-[#333333] font-medium mb-[24px] ">
-          100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
-          Compliance
-        </h2>
+        {/* -------- New Section: ZATCA Compliance -------- */}
+        <div className="mt-[62px] max-w-[1440px] mx-auto font-inter text-center px-6">
+          <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
+            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
+            E-Invoicing Compliance
+          </h2>
+          <h2 className="hidden lg:block text-fluid-h2 mt-[24px] text-[#333333] font-medium mb-[24px] ">
+            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
+            Compliance
+          </h2>
 
-        <p className=" text-center mb-8 text-fluid-body lg:text-[20px] mt-[24px] text-[#737373] leading-relaxed">
-          Compliance is non-negotiable. With Accqrate Books, you’re always
-          audit-ready.
-        </p>
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[24px] md:gap-8 lg:gap-12 md:mt-[40px] ">
-          {/* Seamless Integration */}
-          <div
-            className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
+          <p className=" text-center mb-8 text-fluid-body lg:text-[20px] mt-[24px] text-[#737373] leading-relaxed">
+            Compliance is non-negotiable. With Accqrate Books, you’re always
+            audit-ready.
+          </p>
+          <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[24px] md:gap-8 lg:gap-12 md:mt-[40px] ">
+            {/* Seamless Integration */}
+            <div
+              className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
                   md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center"
-          >
-            {/* Circle hover background */}
-            <div
-              className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
+            >
+              {/* Circle hover background */}
+              <div
+                className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
+              ></div>
 
-            {/* Default content */}
-            <div
-              className="transition-opacity duration-500 
+              {/* Default content */}
+              <div
+                className="transition-opacity duration-500 
                     w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center"
-            >
-              <h4
-                className="lg:text-[28px] xl:text-[24px] text-fluid-body 
+              >
+                <h4
+                  className="lg:text-[28px] xl:text-[24px] text-fluid-body 
                      font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
-              >
-                Seamless Integration
-              </h4>
-              <img
-                src="images/seamless.webp"
-                alt="Seamless Integration"
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+                >
+                  Seamless Integration
+                </h4>
+                <img
+                  src="images/seamless.webp"
+                  alt="Seamless Integration"
+                  className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
                mx-auto rounded-lg object-cover"
-              />
-            </div>
+                />
+              </div>
 
-            {/* Hover content */}
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center px-4 
+              {/* Hover content */}
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center px-4 
                     text-white opacity-0 transition-opacity duration-500 
                     group-hover:opacity-100 text-center"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Seamless Integration
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Phase 2 E-invoicing Integration – Generate, validate and
-                transmit XML e-invoices directly to ZATCA.
-              </p>
+              >
+                <h4 className="text-fluid-body font-bold mb-2">
+                  Seamless Integration
+                </h4>
+                <p className="text-fluid-small leading-relaxed">
+                  Phase 2 E-invoicing Integration – Generate, validate and
+                  transmit XML e-invoices directly to ZATCA.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Digital Archive */}
-          <div
-            className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
+            {/* Digital Archive */}
+            <div
+              className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
                   md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center"
-          >
-            <div
-              className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
+            >
+              <div
+                className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
+              ></div>
 
-            <div
-              className="transition-opacity duration-500 
+              <div
+                className="transition-opacity duration-500 
                     w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center"
-            >
-              <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight">
-                Digital Archive
-              </h4>
-              <video
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
-               mx-auto rounded-lg object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
               >
-                <source src="videos/digital-archive.mp4" type="video/mp4" />
-              </video>
-            </div>
+                <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight">
+                  Digital Archive
+                </h4>
+                <video
+                  className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+               mx-auto rounded-lg object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                >
+                  <source src="videos/digital-archive.mp4" type="video/mp4" />
+                </video>
+              </div>
 
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center px-4 
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center px-4 
                     text-white opacity-0 transition-opacity duration-500 
                     group-hover:opacity-100 text-center"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Digital Archive
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Securely store all e-invoices with audit trails and QR code
-                integration.
-              </p>
+              >
+                <h4 className="text-fluid-body font-bold mb-2">
+                  Digital Archive
+                </h4>
+                <p className="text-fluid-small leading-relaxed">
+                  Securely store all e-invoices with audit trails and QR code
+                  integration.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Regulation Ready */}
-          <div
-            className="bg-[#E4E4E4] relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
+            {/* Regulation Ready */}
+            <div
+              className="bg-[#E4E4E4] relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
                   md:h-[360px] lg:h-[320px] xl:h-[300px] 
                   flex flex-col items-center justify-center text-center"
-          >
-            <div
-              className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
+            >
+              <div
+                className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
+              ></div>
 
-            <div
-              className="transition-opacity duration-500 
+              <div
+                className="transition-opacity duration-500 
                     w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
                     mx-auto flex flex-col items-center justify-center 
                     group-hover:opacity-0 text-center"
-            >
-              <h4
-                className="lg:text-[28px] xl:text-[24px] text-fluid-body 
+              >
+                <h4
+                  className="lg:text-[28px] xl:text-[24px] text-fluid-body 
                      font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
-              >
-                Regulation-Ready
-              </h4>
-              <video
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+                >
+                  Regulation-Ready
+                </h4>
+                <video
+                  className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
                mx-auto rounded-lg object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-              >
-                <source src="videos/regulation-ready.mp4" type="video/mp4" />
-              </video>
-            </div>
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                >
+                  <source src="videos/regulation-ready.mp4" type="video/mp4" />
+                </video>
+              </div>
 
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center px-4 
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center px-4 
                     text-white opacity-0 transition-opacity duration-500 
                     group-hover:opacity-100 text-center"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Regulation-Ready
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Real-time updates keep you in sync with KSA rules.
-              </p>
+              >
+                <h4 className="text-fluid-body font-bold mb-2">
+                  Regulation-Ready
+                </h4>
+                <p className="text-fluid-small leading-relaxed">
+                  Real-time updates keep you in sync with KSA rules.
+                </p>
+              </div>
             </div>
           </div>
         </div>
