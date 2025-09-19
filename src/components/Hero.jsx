@@ -140,12 +140,12 @@ export default function Hero() {
       <h1 className="text-fluid-h1 font-semibold text-[#333333]">
         Accqrate <span className="text-[#1976D2]">Books</span>
       </h1>
-      <h2 className="text-fluid-h2 mt-5 font-medium text-[#333333] tracking-wide max-w-[800px]">
+      <h2 className="text-[20px] md:text-[24px] lg:text-[30px] mt-5 font-medium text-[#333333] tracking-wide max-w-[800px]">
         <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
         Accounting Software for Saudi Arabia
       </h2>
-      <p className="text-fluid-body tracking-tight md:font-semibold md:leading-10 mt-4 max-w-[800px] text-[#333333]">
-        Run your entire business accounting—faster, smarter, always ZATCA Phase-2 ready.
+      <p className="text-[14px] md:text-[16px] lg:text-[20px] tracking-tight md:font-semibold md:leading-10 mt-4 max-w-[800px] text-[#333333]">
+        Run your entire business accounting—faster,<br className="hidden md:block" /> smarter, always ZATCA Phase-2 ready.
       </p>
 
       {/* Supporting text */}
@@ -177,7 +177,7 @@ export default function Hero() {
 
       {/* Trusted text */}
       <div className="py-6 mt-6">
-        <h3 className="text-fluid-body px-2 lg:hidden md:text-fluid-body lg:text-fluid-h2 font-medium text-[#333333] text-center mx-auto">
+        <h3 className="text-[14px] md:text-[16px] lg:text-[20px] px-2 lg:hidden font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
         </h3>

@@ -13,7 +13,7 @@ module.exports = {
   			]
   		},
   		fontSize: {
-  			'fluid-h1': 'clamp(2.25rem, 6vw, 4rem)',
+  			'fluid-h1': 'clamp(2.25rem, 6vw, 3.375rem)',
   			'fluid-h2': 'clamp(1.25rem, 4vw, 2.35rem)',
   			'fluid-body': 'clamp(0.875rem, 2.5vw, 1.25rem)',
   			'fluid-small': 'clamp(0.875rem, 2vw, 1rem)'

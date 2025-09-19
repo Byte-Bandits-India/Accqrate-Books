@@ -62,7 +62,7 @@ export default function AccountSections() {
 
   // --- Main Content ---
   return (
-    <section className="space-y-6 my-6 mx-auto font-inter">
+    <section className="my-6 mx-auto font-inter">
       {/* Hero Video */}
       <video
         className="w-full h-auto rounded-[40px] max-w-[1440px] mx-auto"
@@ -73,100 +73,102 @@ export default function AccountSections() {
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Top Feature Cards */}
-      <div className="max-w-[1000px] mx-auto pt-[24px] pb-[24px] md:pb-[40px] space-y-4 rounded-[40px]">
-        <Accordion
-          type="single"
-          collapsible
-          className="flex flex-col md:flex-row gap-4 md:gap-8 w-[90%] mx-auto"
-        >
-          {/* Card 1 */}
-          <AccordionItem
-            value="card-1"
-            className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
-            style={{
-              background:
-                "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
-            }}
+      <div className="bg-[#F2F2F2] py-[24px] md:py-8 lg:py-10">
+        {/* Top Feature Cards */}
+        <div className="max-w-[1000px] mx-auto pt-[24px] pb-[24px] md:pb-[40px] space-y-4 rounded-[40px]">
+          <Accordion
+            type="single"
+            collapsible
+            className="flex flex-col md:flex-row gap-4 md:gap-8 w-[90%] mx-auto"
           >
-            <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
-              <div className="flex-col">
-                <img
-                  src="/images/invoice.png"
-                  alt="Custom Invoice Templates"
-                  className="w-[30px] h-[30px]"
-                />
-                <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
-                  Custom Invoice Templates
-                </h4>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-4 pb-4 text-gray-700">
-              <p className="text-sm">
-                This is where extra details about custom invoice templates go.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+            {/* Card 1 */}
+            <AccordionItem
+              value="card-1"
+              className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
+              }}
+            >
+              <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
+                <div className="flex-col">
+                  <img
+                    src="/images/invoice.png"
+                    alt="Custom Invoice Templates"
+                    className="w-[30px] h-[30px]"
+                  />
+                  <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
+                    Custom Invoice Templates
+                  </h4>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 text-gray-700">
+                <p className="text-sm">
+                  This is where extra details about custom invoice templates go.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
 
-          {/* Card 2 */}
-          <AccordionItem
-            value="card-2"
-            className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
-            style={{
-              background:
-                "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
-            }}
-          >
-            <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
-              <div className="flex-col">
-                <img
-                  src="/images/audit.png"
-                  alt="Comprehensive Audit Trails"
-                  className="w-[30px] h-[30px]"
-                />
-                <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
-                  Comprehensive Audit Trails
-                </h4>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-4 pb-4 text-gray-700">
-              <p className="text-sm">
-                Extra details about comprehensive audit trails will be shown here.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
+            {/* Card 2 */}
+            <AccordionItem
+              value="card-2"
+              className="rounded-xl shadow-sm w-full md:w-1/2 overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(291.97deg, #C8C8C8 20.01%, #E6E6E6 78.75%)",
+              }}
+            >
+              <AccordionTrigger className="flex items-center justify-between w-full p-4 hover:no-underline">
+                <div className="flex-col">
+                  <img
+                    src="/images/audit.png"
+                    alt="Comprehensive Audit Trails"
+                    className="w-[30px] h-[30px]"
+                  />
+                  <h4 className="text-[20px] lg:text-[24px] mt-2 font-medium text-gray-800">
+                    Comprehensive Audit Trails
+                  </h4>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 text-gray-700">
+                <p className="text-sm">
+                  Extra details about comprehensive audit trails will be shown here.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
 
-      {/* Bottom Sections */}
-      <div className="bg-[#F2F2F2] py-[24px]">
-        <div className="space-y-[24px] px-6 md:px-2 max-w-[1440px] mx-auto">
-          {/* ================= Account Receivables ================= */}
-          <SectionWithAccordion
-            title="Account Receivables"
-            subtitle="Accelerate your cash flow"
-            description="Stay on top of collections and improve working capital - without chasing payments manually."
-            items={receivableDropdowns}
-            video="videos/account-receivables.mp4"
-          />
+        {/* Bottom Sections */}
+        <div>
+          <div className="space-y-[24px] px-6 md:px-2 max-w-[1440px] mx-auto">
+            {/* ================= Account Receivables ================= */}
+            <SectionWithAccordion
+              title="Account Receivables"
+              subtitle="Accelerate your cash flow"
+              description="Stay on top of collections and improve working capital - without chasing payments manually."
+              items={receivableDropdowns}
+              video="videos/account-receivables.mp4"
+            />
 
-          {/* ================= Account Payables ================= */}
-          <SectionWithAccordion
-            title="Accounts Payables"
-            subtitle="Control of Vendor Spend"
-            description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
-            items={payableDropdowns}
-            video="videos/account-payables.mp4"
-          />
+            {/* ================= Account Payables ================= */}
+            <SectionWithAccordion
+              title="Accounts Payables"
+              subtitle="Control of Vendor Spend"
+              description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
+              items={payableDropdowns}
+              video="videos/account-payables.mp4"
+            />
 
-          {/* ================= Smart Expense Management ================= */}
-          <SectionWithAccordion
-            title="Smart Expense Management"
-            subtitle=""
-            description="Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking."
-            items={expenseDropdowns}
-            video="videos/smart-expense.mp4"
-          />
+            {/* ================= Smart Expense Management ================= */}
+            <SectionWithAccordion
+              title="Smart Expense Management"
+              subtitle=""
+              description="Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking."
+              items={expenseDropdowns}
+              video="videos/smart-expense.mp4"
+            />
+          </div>
         </div>
       </div>
 
@@ -187,7 +189,7 @@ export default function AccountSections() {
 /* --- Reusable Subcomponent --- */
 function SectionWithAccordion({ title, subtitle, description, items, video }) {
   return (
-    <section className="bg-[#E8F1FB] border border-[#CECECE] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 my-6">
+    <section className="bg-[#E8F1FB] border border-[#CECECE] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 my-6 md:my-8">
       {/* Left Side */}
       <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
         <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight">
