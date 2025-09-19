@@ -8,14 +8,13 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from "./ui/navigation-menu";
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "@/components/ui/accordion"
+} from "./ui/accordion"
 
 const menus = [
   {
@@ -354,7 +353,7 @@ const Header = () => {
   const activeMenuData = menus.find(menu => menu.id === activeMenu);
 
   return (
-    <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white xl:border">
+    <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white border">
       <div className="w-full py-2 md:py-3 px-3 md:px-6">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -389,7 +388,7 @@ const Header = () => {
                         {title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent
-                        className="!fixed left-0 right-0 top-0 !w-screen !max-w-none !translate-x-0 bg-white"
+                        className="!fixed left-0 right-0 top-0 !w-screen !max-w-none bg-white"
                         style={{ top: headerHeight }}
                       >
                         <div className="w-[1044px] mx-auto px-8 py-10 shadow-lg rounded-xl flex flex-col">
@@ -604,7 +603,7 @@ const Header = () => {
 
       {/* Mobile Menu (<1280px) */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden fixed top-[60px] left-0 w-full h-screen overflow-y-auto bg-white border-gray-200 px-6 py-4 z-[999]">
+        <div className="xl:hidden fixed top-[60px] left-0 w-full h-screen overflow-y-auto bg-white border-t border-gray-200 px-6 py-4 z-[999]">
           <Accordion type="single" collapsible className="w-full">
             {menus.map(({ id, title, sections }) => (
               <AccordionItem key={id} value={id}>
