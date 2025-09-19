@@ -70,13 +70,13 @@ export default function FeatureSection() {
     <>
       <div className="px-[24px]  mx-auto">
         {/* Heading */}
-        <h2 className="text-[24px] font-inter text-[000000] text-center mb-3">
+        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[000000] text-center mb-3">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
           Flexible Deployment
         </h2>
 
         {/* --- Shared description --- */}
-        <p className="mt-4 mb-12 text-[#000000B2] lg:text-fluid-body text-[14px] text-center max-w-3xl mx-auto">
+        <p className="mt-4 mb-12 text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
           Accqrate Books is fully cloud-native – no complex installations, no
           specialized IT needed. Set up your accounting in minutes, not weeks.
         </p>
@@ -138,10 +138,10 @@ export default function FeatureSection() {
 
         {/* -------- New Section: Zero-Friction Setup -------- */}
         <div className="mt-[62px] max-w-[1440px] mx-auto font-inter text-center">          {/* Heading */}
-          <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4">
+          <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-medium text-center mb-4">
             <span className="text-[#1976D2]">Zero-Friction</span> Setup
           </h2>
-          <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-8">
+          <p className="text-center text-gray-700 text-fluid-body max-w-5xl mx-auto mb-8">
             As your business grows, Accqrate Retail grows with you. Flip the
             switch to add procurement, finance, HR and supply-chain modules—no
             data migration, no downtime.
@@ -149,25 +149,25 @@ export default function FeatureSection() {
 
           <div
             className="flex flex-col gap-3
-          sm:grid sm:grid-cols-2 sm:gap-6
-          md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
+    sm:grid sm:grid-cols-2 sm:gap-6
+    md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
           >
             {/* Card 1 */}
-            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            <div className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+              <div className="flex flex-col items-start justify-center text-left gap-2">
                 <img
                   src="/images/Mask group.png"
                   alt="Instant Access Icon"
                   className="w-[40px] h-[40px]"
                 />
-                <span className="text-black text-[18px] font-normal mt-1 text-left">
+                <span className="text-black text-[18px] font-normal">
                   Instant Access
                 </span>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                className="h-4 w-4 text-gray-400 mt-2 self-center"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -175,21 +175,21 @@ export default function FeatureSection() {
             </div>
 
             {/* Card 2 */}
-            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            <div className="flex flex-col justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+              <div className="flex flex-col items-start text-left gap-2">
                 <img
                   src="/images/Mask group (1).png"
                   alt="Automated Data Migration Icon"
                   className="w-[40px] h-[40px]"
                 />
-                <span className="text-[#000000] text-[18px] font-normal mt-1 text-left">
+                <span className="text-black text-[18px] font-normal">
                   Automated Data Migration
                 </span>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                className="h-4 w-4 text-gray-400 mt-2 self-center"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -197,27 +197,28 @@ export default function FeatureSection() {
             </div>
 
             {/* Card 3 */}
-            <div className="flex items-start md:items-center justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-            w-full h-[110px] sm:h-[120px] md:h-[137px] rounded-lg px-4 py-3"
+            <div className="flex flex-col justify-between bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <div className="flex flex-col items-start gap-1 sm:gap-2 md:flex-row md:items-center md:gap-3">
+              <div className="flex flex-col items-start text-left gap-2">
                 <img
                   src="/images/Mask group (2).png"
                   alt="Role based access Icon"
                   className="w-[40px] h-[40px]"
                 />
-                <span className="text-black text-[18px] font-normal mt-1 text-left">
+                <span className="text-black text-[18px] font-normal">
                   Role-Based User Setup
                 </span>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400 self-start mt-1 md:self-auto md:mt-0"
+                className="h-4 w-4 text-gray-400 mt-2 self-center"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
           </div>
+
 
           {/* --- Testimonial Section --- */}
           <div className="mt-4">
@@ -228,7 +229,7 @@ export default function FeatureSection() {
               h-auto sm:h-[110px] md:h-[129px] lg:h-[182px]
               grid grid-rows-[auto_1fr_auto]"
             >
-              <div className="lg:max-w-[1440px] mx-auto ">
+              <div className="mx-auto ">
                 {/* Quote */}
                 <p className="text-fluid-body font-normal text[#333333] md:leading-10 text-left">
                   “We set up 5 new outlets in under an hour—no IT team needed.”
@@ -244,7 +245,7 @@ export default function FeatureSection() {
         </div>
 
         {/* -------- New Section: ZATCA Compliance -------- */}
-        <div className="mt-[62px] max-w-[1440px] mx-auto font-inter text-center px-6">
+        <div className="mt-[46px] max-w-[1440px] mx-auto font-inter text-center px-6">
           <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
             100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
             E-Invoicing Compliance

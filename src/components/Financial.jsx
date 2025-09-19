@@ -44,10 +44,10 @@ export default function AccountSections() {
 
   if (loading || !isVisible) {
     return (
-      <div ref={financialRef} className=" py-6 rounded-[40px] max-w-[1440px] mx-auto">
-        <div className="px-4 mb-10">
+      <div ref={financialRef} className="rounded-[40px] max-w-[1440px] mx-auto">
+        <div className="px-4">
           {/* Finance Operations Skeleton */}
-          <section className="bg-[#E8F1FB] my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
             <div className="flex-1 md:max-w-[520px]">
               <Skeleton height="38px" width="70%" className="mb-4" />
               <Skeleton height="24px" width="90%" className="mb-6" />
@@ -127,7 +127,7 @@ export default function AccountSections() {
 
   return (
     <div className=" py-[24px] bg-[#F2F2F2]">
-      <div className="px-6 max-w-[1440px] mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         {/* ================= Finance Operations ================= */}
         <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
