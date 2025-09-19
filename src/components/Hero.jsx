@@ -68,7 +68,7 @@ export default function Hero() {
         <Skeleton
           height="400px"
           width="100%"
-          className="mt-12 max-w-7xl rounded-xl"
+          className="mt-12 max-w-[1128px] rounded-xl"
         />
 
         {/* Trusted text skeleton */}
@@ -169,7 +169,7 @@ export default function Hero() {
       </div>
 
       {/* Dashboard Video */}
-      <div className="mt-4 md:mt-6 w-full max-w-7xl rounded-xl overflow-hidden">
+      <div className="mt-4 md:mt-6 w-full max-w-[1128px] rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
           <source src="/videos/Hero.mp4" type="video/mp4" />
         </video>
@@ -184,7 +184,7 @@ export default function Hero() {
       </div>
 
       <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
-        <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-7xl font-bold text-center mx-auto">
+        <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-[1280px] font-bold text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
         </h3>

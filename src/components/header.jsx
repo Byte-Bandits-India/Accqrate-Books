@@ -369,7 +369,7 @@ const Header = () => {
             {/* Desktop Nav (≥1280px) with shadcn Navigation Menu */}
             <nav
               ref={navRef}
-              className="hidden xl:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
+              className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
             >
               <NavigationMenu className="w-full">
                 <NavigationMenuList className='py-4'>
@@ -391,7 +391,7 @@ const Header = () => {
                         className="!fixed left-0 right-0 top-0 !w-screen !max-w-none bg-white"
                         style={{ top: headerHeight }}
                       >
-                        <div className="w-[1044px] mx-auto px-8 py-10 shadow-lg rounded-xl flex flex-col">
+                        <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 shadow-lg rounded-xl flex flex-col">
                           {activeMenuData.type === "mega" ? (
                             // Products Mega Menu Layout
                             <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
@@ -545,7 +545,7 @@ const Header = () => {
           </div>
 
           {/* Right Section (≥1280px) */}
-          <div className="hidden xl:flex items-center gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}
@@ -577,7 +577,7 @@ const Header = () => {
           </div>
 
           {/* Mobile/Tablet (<1280px) */}
-          <div className="flex md:flex xl:hidden items-center gap-3">
+          <div className="flex md:flex lg:hidden items-center gap-3">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}

@@ -127,7 +127,7 @@ export default function AccountSections() {
 
   return (
     <div className="px-6 py-[24px] bg-[#F2F2F2]">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         {/* ================= Finance Operations ================= */}
         <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
