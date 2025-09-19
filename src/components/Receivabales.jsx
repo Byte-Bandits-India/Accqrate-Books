@@ -79,7 +79,7 @@ export default function AccountSections() {
             >
               <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
                 {/* Left: Icon + Title */}
-                <div className="flex flex-col items-start gap-2">
+                <div className="flex flex-col items-start gap-[20px]">
                   <img
                     src="/images/invoice.png"
                     alt="Custom Invoice Templates"
@@ -105,7 +105,7 @@ export default function AccountSections() {
             >
               <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
                 {/* Left: Icon + Title */}
-                <div className="flex flex-col items-start gap-2">
+                <div className="flex flex-col items-start gap-[20px] px-2">
                   <img
                     src="/images/audit.png"
                     alt="Comprehensive Audit Trails"
