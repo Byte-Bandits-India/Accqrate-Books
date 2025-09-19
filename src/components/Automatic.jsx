@@ -39,7 +39,7 @@ export default function AutomationSection() {
 
   if (loading || !isVisible) {
     return (
-      <div ref={automationRef} className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+      <div ref={automationRef} className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto">
         {/* AI-Driven Automation Skeleton */}
         <section className="font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 my-6">
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -110,7 +110,7 @@ export default function AutomationSection() {
 
   return (
     <>
-      <div className="bg-white mt-6 md:mt-8 lg:mt-10 px-6 sm:px-6  max-w-[1440px] mx-auto">
+      <div className="bg-white mt-6 md:mt-8 lg:mt-10 px-6 sm:px-6  max-w-[1280px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
         <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto my-6
   md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20">
@@ -360,7 +360,7 @@ export default function AutomationSection() {
       </div >
       {/* Why Choose Section */}
       <div className="my-6 md:my-8 lg:my-10 bg-[#F2F2F2] w-full py-6">
-        <div className="max-w-7xl mx-auto px-6 font-inter">
+        <div className="max-w-[1280px] mx-auto px-6 font-inter">
           <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
           </h2>

@@ -63,7 +63,7 @@ export default function AccountSections() {
   // --- Main Content ---
   return (
     <section className="my-6 mx-auto font-inter">
-      <div className="bg-[#F2F2F2] py-[24px] md:py-8 lg:py-10">
+      <div className="bg-[#F2F2F2]  py-[24px] md:py-8 lg:py-10">
         {/* Top Feature Cards */}
         <div className="max-w-[1000px] mx-auto pt-[24px] pb-[24px] md:pb-[40px] space-y-4 rounded-[40px]">
           <Accordion
@@ -123,13 +123,11 @@ export default function AccountSections() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-
         </div>
 
         {/* Bottom Sections */}
         <div>
-          <div className="space-y-[24px] px-6 md:px-2 max-w-[1440px] mx-auto">
+          <div className="space-y-[24px] px-6 md:px-2 max-w-[1280px] mx-auto">
             {/* ================= Account Receivables ================= */}
             <SectionWithAccordion
               title="Account Receivables"
@@ -161,7 +159,7 @@ export default function AccountSections() {
       </div>
 
       {/* ================= Financial Statements ================= */}
-      <div className="px-6 max-w-[1440px] mx-auto my-6">
+      <div className="px-6 md:px-2 max-w-[1280px] mx-auto my-6">
         <SectionWithAccordion
           title="Financial Statements"
           subtitle="Audit-Ready, Always-On"
