@@ -169,7 +169,7 @@ export default function AccountSections() {
               muted
               loop
             >
-              <source src="videos/account-receivables.mp4" type="video/mp4" />
+              <source src="videos/Transform_your_finance_operations.mp4" type="video/mp4" />
             </video>
           </div>
         </section>
@@ -215,7 +215,7 @@ export default function AccountSections() {
               muted
               loop
             >
-              <source src="videos/account-receivables.mp4" type="video/mp4" />
+              <source src="videos/Seamless_integration.mp4" type="video/mp4" />
             </video>
           </div>
         </section>
@@ -261,7 +261,7 @@ export default function AccountSections() {
               muted
               loop
             >
-              <source src="videos/account-receivables.mp4" type="video/mp4" />
+              <source src="videos/robust-control.mp4" type="video/mp4" />
             </video>
           </div>
         </section>
