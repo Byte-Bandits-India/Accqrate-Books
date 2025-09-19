@@ -250,7 +250,7 @@ export default function FeatureSection() {
       </div>
 
       {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[46px] max-w-[1280px] mx-auto font-inter text-center px-6 font-inter">
+      <div className="mt-[46px] max-w-[1280px] mx-auto font-inter text-center px-6">
         <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
