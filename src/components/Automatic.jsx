@@ -149,7 +149,7 @@ export default function AutomationSection() {
               muted
               loop
             >
-              <source src="videos/account-receivables.mp4" type="video/mp4" />
+              <source src="videos/Ai-driven_automation.mp4" type="video/mp4" />
             </video>
           </div>
         </section>

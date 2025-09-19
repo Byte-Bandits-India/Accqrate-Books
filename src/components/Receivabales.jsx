@@ -63,16 +63,6 @@ export default function AccountSections() {
   // --- Main Content ---
   return (
     <section className="my-6 mx-auto font-inter">
-      {/* Hero Video */}
-      <video
-        className="w-full h-auto rounded-[40px] max-w-[1440px] mx-auto"
-        autoPlay
-        muted
-        loop
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
-
       <div className="bg-[#F2F2F2] py-[24px] md:py-8 lg:py-10">
         {/* Top Feature Cards */}
         <div className="max-w-[1000px] mx-auto pt-[24px] pb-[24px] md:pb-[40px] space-y-4 rounded-[40px]">
@@ -158,7 +148,7 @@ export default function AccountSections() {
               subtitle="Control of Vendor Spend"
               description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
               items={payableDropdowns}
-              video="videos/account-payables.mp4"
+              video="videos/Accounts_payables.mp4"
             />
 
             {/* ================= Smart Expense Management ================= */}
@@ -167,7 +157,7 @@ export default function AccountSections() {
               subtitle=""
               description="Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking."
               items={expenseDropdowns}
-              video="videos/smart-expense.mp4"
+              video="videos/Smart_expense_management.mp4"
             />
           </div>
         </div>
@@ -180,7 +170,7 @@ export default function AccountSections() {
           subtitle="Audit-Ready, Always-On"
           description="Move beyond monthly closings—generate real-time, regulation-ready financials anytime."
           items={financialDropdowns}
-          video="videos/financial-statements.mp4"
+          video="videos/Financial_statements.mp4"
         />
       </div>
     </section>

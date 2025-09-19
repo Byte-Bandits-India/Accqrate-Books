@@ -335,6 +335,16 @@ export default function FeatureSection() {
             </div>
           </div>
         </div>
+
+        {/* 100_zatcha_e-invoicing-complaince Video */}
+        <video
+          className="w-full h-auto max-w-[1440px] mx-auto"
+          autoPlay
+          muted
+          loop
+        >
+          <source src="/videos/100_zatcha_e-invoicing-complaince.mp4" type="video/mp4" />
+        </video>
       </div>
     </>
   );
