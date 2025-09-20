@@ -177,7 +177,7 @@ export default function AutomationSection() {
           {/* Unified Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Box 1 - On Demand Training */}
-            <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -217,15 +217,15 @@ export default function AutomationSection() {
                   </video>
 
                   {/* Content */}
-                  <div className="p-2 flex-1">
+                  <div className="p-4 flex-1">
                     <h3 className="font-semibold text-fluid-body text-center">
                       On Demand Training
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       Learn Accqrate Books in under 60 minutes; video modules for every type.
                     </p>
-                    <p className="absolute bottom-1 left-2 md:text-[16px] lg:text-fluid-body text-[#1976D2] font-bold leading-tight text-[12px] inline-block">
-                      Book An <br /> Appointment
+                    <p className="absolute bottom-2 left-4 text-fluid-body text-[#1976D2] font-bold leading-tight inline-block">
+                      Book An Appointment
                     </p>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ export default function AutomationSection() {
 
 
             {/* Box 2 - Local Support */}
-            <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -277,14 +277,14 @@ export default function AutomationSection() {
                     <source src="/videos/local-support.mp4" type="video/mp4" />
                   </video>
 
-                  <div className="p-2 flex-1">
+                  <div className="p-4 flex-1">
                     <h3 className="font-bold text-fluid-body text-center">
                       24/7 Local Support
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       In English & Arabic—phone, WhatsApp, email, or chat.
                     </p>
-                    <p className="absolute bottom-4 left-2 text-[#1976D2] md:text-[16px] lg:text-fluid-body text-left font-bold text-[12px] inline-block">
+                    <p className="absolute bottom-2 left-4 text-[#1976D2] text-fluid-body text-left font-bold inline-block">
                       +971505515388
                     </p>
                   </div>
@@ -305,7 +305,7 @@ export default function AutomationSection() {
             </div>
 
             {/* Box 3 - Knowledge Center */}
-            <div className="relative w-full max-w-[300px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -329,15 +329,15 @@ export default function AutomationSection() {
                     <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                   </video>
 
-                  <div className="p-2 flex-1">
+                  <div className="p-4 flex-1">
                     <h3 className="font-bold text-fluid-body text-center">
                       Knowledge Center
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       Step-by-step Guides for every process.
                     </p>
-                    <p className="absolute bottom-1 left-2 text-[#1976D2] md:text-[16px] lg:text-fluid-body font-bold leading-tight text-[12px] inline-block">
-                      Knowledge <br /> Center
+                    <p className="absolute bottom-2 left-4 text-[#1976D2] text-fluid-body font-bold leading-tight inline-block">
+                      Knowledge Center
                     </p>
                   </div>
                 </div>
