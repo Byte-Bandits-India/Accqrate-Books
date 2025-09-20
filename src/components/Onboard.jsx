@@ -208,7 +208,7 @@ export default function FeatureSection() {
               <img
                 src="images/seamless.webp"
                 alt="Seamless Integration"
-                className="h-[142px] md:h-[149px] lg:h-[149px]
+                className="h-[92px] md:h-[149px] lg:h-[149px]
                   mx-auto rounded-lg object-cover"
               />
             </div>
@@ -248,7 +248,7 @@ export default function FeatureSection() {
               </h4>
               <video
                 className="h-[142px] md:h-[149px] lg:h-[149px]
-                  mx-auto rounded-lg object-cover"
+                  mx-auto rounded-lg object-contain"
                 autoPlay
                 muted
                 loop
@@ -295,7 +295,7 @@ export default function FeatureSection() {
               </h4>
               <video
                 className="h-[142px] md:h-[149px] lg:h-[149px]
-                  mx-auto rounded-lg object-cover"
+                  mx-auto rounded-lg object-contain"
                 autoPlay
                 muted
                 loop

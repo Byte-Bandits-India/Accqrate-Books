@@ -153,7 +153,7 @@ export default function Hero() {
 
 
           {/* Supporting text */}
-          <p className="text-[#737373] text-fluid-small md:hidden mb-[16px]">
+          <p className="text-[#737373] text-fluid-small md:hidden">
             Launch your store in minutes, manage everything in one place—from sales to stock,
             from any device.
           </p>
