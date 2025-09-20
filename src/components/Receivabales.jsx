@@ -93,7 +93,7 @@ export default function AccountSections() {
         </div>
 
         {/* Bottom Sections */}
-        <div className="bg-[#F2F2F2]">
+        <div className="bg-[#F2F2F2] py-6">
           <div className="px-6 md:px-2 max-w-[1280px] mx-auto my-6">
             {/* ================= Account Receivables ================= */}
             <SectionWithAccordion
@@ -144,14 +144,14 @@ export default function AccountSections() {
 function SectionWithAccordion({ title, subtitle, description, items, video, className }) {
   return (
     <>
-      <div>
+      <div className="my-6">
         <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight pb-6">
+            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight pb-6 tracking-[-2%] ">
               {title}{" "}
               {subtitle && (
-                <span className="tracking-tight block text-[#1976D2] font-normal text-[20px] md:text-[28px] lg:text-[32px] mt-1">
+                <span className="tracking-tight block text-[#1976D2] font-normal text-[20px] md:text-[28px] lg:text-[32px]">
                   {subtitle}
                 </span>
               )}
@@ -178,7 +178,7 @@ function SectionWithAccordion({ title, subtitle, description, items, video, clas
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 md:mt-6 lg:mt-0 flex justify-center items-center">
+          <div className="flex-1 mt-6 lg:mt-0 flex justify-center items-center">
             <video
               className="rounded-lg w-full max-w-[500px] md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
               autoPlay

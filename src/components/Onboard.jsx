@@ -198,7 +198,7 @@ export default function FeatureSection() {
             <div className="transition-opacity duration-500 
               w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
               mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center p-2"
+              group-hover:opacity-0 text-center"
             >
               <h4 className="lg:text-[28px] xl:text-[24px] text-[20px] 
                 font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
@@ -206,16 +206,16 @@ export default function FeatureSection() {
                 Seamless Integration
               </h4>
               <img
-                src="images/seamless.webp"
+                src="images/zatcha.svg"
                 alt="Seamless Integration"
-                className="h-[92px] md:h-[149px] lg:h-[149px]
+                className="h-[142px] md:h-[149px] lg:h-[149px]
                   mx-auto rounded-lg object-cover"
               />
             </div>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
+            <div className="absolute inset-0 flex flex-col items-center justify-center 
               text-white opacity-0 transition-opacity duration-500 
-              group-hover:opacity-100 text-center"
+              group-hover:opacity-100 text-center px-[70px] py-[27px]"
             >
               <h4 className="text-fluid-body font-bold mb-2">
                 Seamless Integration
@@ -259,9 +259,9 @@ export default function FeatureSection() {
               </video>
             </div>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
+            <div className="absolute inset-0 flex flex-col items-center justify-center 
               text-white opacity-0 transition-opacity duration-500 
-              group-hover:opacity-100 text-center"
+              group-hover:opacity-100 text-center px-[70px] py-[27px]"
             >
               <h4 className="text-fluid-body font-bold mb-2">
                 Digital Archive
@@ -306,7 +306,7 @@ export default function FeatureSection() {
               </video>
             </div>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-[70px] py-[27px] 
               text-white opacity-0 transition-opacity duration-500 
               group-hover:opacity-100 text-center"
             >
