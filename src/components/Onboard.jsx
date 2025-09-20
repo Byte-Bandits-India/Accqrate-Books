@@ -4,8 +4,9 @@ import React, { useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
 import Skeleton from "../components/skeleton";
 import useInView from "../utils/useInView";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"; // ✅ import Accordion components
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, AccordionCard } from "@/components/ui/accordion"; // ✅ import Accordion components
 import { FaChevronDown } from "react-icons/fa";
+import FeatureCard from "./ui/FeatureCard";
 
 export default function FeatureSection() {
   const { loading } = useContext(LoadingContext);
@@ -69,77 +70,44 @@ export default function FeatureSection() {
     <>
       <div className="px-[24px] max-w-[1280px] mx-auto font-inter">
         {/* Heading */}
-        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-3">
+        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-4">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
           Flexible Deployment
         </h2>
 
         {/* Shared description */}
-        <p className="mt-4 mb-12 text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
+        <p className="mb-6 text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
           Accqrate Books is fully cloud-native – no complex installations, no
           specialized IT needed. Set up your accounting in minutes, not weeks.
         </p>
-        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-6 md:mb-8 lg:mb-10">
+        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px]">
           {/* Card 1 */}
-          <div className="bg-white text-center h-[347px] w-full lg:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
-            <video
-              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src="videos/cloud-first.mp4" type="video/mp4" />
-            </video>
-            <h3 className="lg:text-[24px] mt-2 lg:mb-4 tracking-[-5%] font-medium">Cloud-first or On-Prem</h3>
-            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
-              Choose cloud for instant launch, or on-premises for full  data control.
-            </p>
-          </div>
+          <FeatureCard
+            videoSrc="videos/cloud-first.mp4"
+            title="Cloud-first or On-Prem"
+            description="Choose cloud for instant launch, or on-premises for full data control."
+          />
 
           {/* Card 2 */}
-          <div className="bg-white text-center w-full h-[350px] lg:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
-            <video
-              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src="videos/all-devices.mp4" type="video/mp4" />
-            </video>
-            <h3 className="lg:text-[24px] mt-2 lg:mb-4 tracking-[-5%] font-medium">Works on all devices</h3>
-            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
-              Manage accounts from  desktop, laptop, tablet, or mobile.
-            </p>
-          </div>
+          <FeatureCard
+            videoSrc="videos/all-devices.mp4"
+            title="Works on all devices"
+            description="Manage accounts from  desktop, laptop, tablet, or mobile."
+          />
 
           {/* Card 3 */}
-          <div className="bg-white text-center w-full h-[350px] md:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
-            <video
-              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src="videos/no-special-hardware.mp4" type="video/mp4" />
-            </video>
-            <h3 className="lg:text-[24px] mt-2 lg:mb-4 font-medium tracking-[-5%]">No special hardware</h3>
-            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
-              Access your books anywhere – your data is always secure, always available.
-            </p>
-          </div>
+          <FeatureCard
+            videoSrc="videos/no-special-hardware.mp4"
+            title="No special hardware"
+            description="Access your books anywhere – your data is always secure, always available."
+          />
         </div>
 
         {/* Heading */}
         <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4">
           <span className="text-[#1976D2]">Zero-Friction</span> Setup
         </h2>
-        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-8">
+        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-6">
           As your business grows, Accqrate Retail grows with you. Flip the
           switch to add procurement, finance, HR and supply-chain modules—no
           data migration, no downtime.
@@ -148,86 +116,37 @@ export default function FeatureSection() {
         <Accordion
           type="single"
           collapsible
-          className="flex flex-col gap-3
-    sm:grid sm:grid-cols-2 sm:gap-6
-    md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
+          className="flex flex-col gap-4
+        sm:grid sm:grid-cols-2 sm:gap-6
+        md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
         >
-          {/* Card 1 */}
-          <AccordionItem
+          <AccordionCard
             value="card-1"
-            className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-      w-full h-auto rounded-lg px-4 py-4"
-          >
-            <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
-              {/* Left: Icon + Title */}
-              <div className="flex flex-col items-start gap-[20px] px-2">
-                <img
-                  src="/images/Mask group.png"
-                  alt="Instant Access Icon"
-                  className="w-[40px] h-[40px]"
-                />
-                <span className="text-black text-[18px] font-normal">
-                  Instant Access
-                </span>
-              </div>
-              {/* The arrow will render automatically here */}
-            </AccordionTrigger>
+            icon="/images/Mask group.png"
+            title="Instant Access"
+            content={
+              <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+            }
+          />
 
-            <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
-              Extra details about <b>Instant Access</b> will appear here when expanded.
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* Card 2 */}
-          <AccordionItem
+          <AccordionCard
             value="card-2"
-            className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-      w-full h-auto rounded-lg px-4 py-4"
-          >
-            <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
-              <div className="flex flex-col items-start gap-[20px] px-2">
-                <img
-                  src="/images/Mask group (1).png"
-                  alt="Automated Data Migration Icon"
-                  className="w-[40px] h-[40px]"
-                />
-                <span className="text-black text-[18px] text-left font-normal">
-                  Automated Data Migration
-                </span>
-              </div>
-            </AccordionTrigger>
+            icon="/images/Mask group (1).png"
+            title="Automated Data Migration"
+            content={
+              <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+            }
+          />
 
-            <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
-              Extra details about <b>Automated Data Migration</b> will be shown here.
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* Card 3 */}
-          <AccordionItem
+          <AccordionCard
             value="card-3"
-            className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
-      w-full h-auto rounded-lg px-4 py-4"
-          >
-            <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
-              <div className="flex flex-col items-start gap-[20px] px-2">
-                <img
-                  src="/images/Mask group (2).png"
-                  alt="Role based access Icon"
-                  className="w-[40px] h-[40px]"
-                />
-                <span className="text-black text-left text-[18px] font-normal">
-                  Role-Based User Setup
-                </span>
-              </div>
-            </AccordionTrigger>
-
-            <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
-              Extra details about <b>Role-Based User Setup</b> will go here.
-            </AccordionContent>
-          </AccordionItem>
+            icon="/images/Mask group (2).png"
+            title="Role-Based User Setup"
+            content={
+              <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
+            }
+          />
         </Accordion>
-
-
 
         {/* Testimonial Section */}
         <div className="mt-6">
@@ -250,8 +169,8 @@ export default function FeatureSection() {
       </div>
 
       {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[46px] max-w-[1280px] mx-auto font-inter text-center px-6">
-        <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
+      <div className="mt-[48px] max-w-[1280px] mx-auto font-inter text-center px-6">
+        <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
         </h2>
@@ -260,12 +179,12 @@ export default function FeatureSection() {
           Compliance
         </h2>
 
-        <p className="text-center mb-8 text-fluid-body lg:text-[20px] mt-[24px] text-[#737373] leading-relaxed">
+        <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] text-[#737373] leading-relaxed">
           Compliance is non-negotiable. With Accqrate Books, you’re always
           audit-ready.
         </p>
 
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[24px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 md:mt-[40px] mb-6 md:mb-8 lg:mb-10">
+        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 md:mt-[40px] mb-6 md:mb-8 lg:mb-10">
           {/* Seamless Integration */}
           <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6
             md:h-[251px] lg:h-[292px] w-full h-[190px]
@@ -403,7 +322,7 @@ export default function FeatureSection() {
 
         {/* 100_zatcha_e-invoicing-complaince Video */}
         <video
-          className="w-full h-auto max-w-[1128px] mx-auto"
+          className="w-full h-[201px] max-w-[1128px] mx-auto"
           autoPlay
           muted
           loop
