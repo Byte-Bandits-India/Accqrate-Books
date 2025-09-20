@@ -117,15 +117,15 @@ export default function AutomationSection() {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
+            <h2 className="text-[#1976D2] text-[24px] pb-6 md:text-[30px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
               AI-Driven Automation
             </h2>
-            <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
+            <p className="pb-6 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
               Let AI handle the repetitive—free your team for what matters.
             </p>
 
             {/* Accordion */}
-            <div className="mt-4 md:mt-6 lg:mt-10">
+            <div className="">
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {dropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
@@ -142,7 +142,7 @@ export default function AutomationSection() {
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
             <video
               className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
               autoPlay
@@ -156,7 +156,7 @@ export default function AutomationSection() {
 
 
         {/* Bottom Section */}
-        <div className="my-6 mx-auto px-2 font-inter md:max-w-5xl ">
+        <div className="my-12 mx-auto font-inter md:max-w-5xl ">
           {/* Heading */}
           <div className="text-center mb-6 md:mb-4 md:flex md:justify-center">
             <h2 className="text-[24px] md:text-[38px] font-semibold">
@@ -359,7 +359,7 @@ export default function AutomationSection() {
         </div>
       </div >
       {/* Why Choose Section */}
-      <div className="my-6 md:my-8 lg:my-10 bg-[#F2F2F2] w-full py-6">
+      <div className="my-12 md:my-8 lg:my-10 bg-[#F2F2F2] w-full py-6">
         <div className="max-w-[1280px] mx-auto px-6 font-inter">
           <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?

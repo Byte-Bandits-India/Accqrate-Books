@@ -129,23 +129,23 @@ export default function AccountSections() {
     <div className="px-6 py-[24px] bg-[#F2F2F2]">
       <div className="max-w-[1280px] mx-auto">
         {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] pb-6 text-[22px] md:text-[38px] font-semibold leading-snug">
               Transform Your{" "}
               <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
                 Finance Operations
               </span>
             </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
               Modern accounting isn’t about debits and credits—it’s about business
               control, speed, and insight.
             </p>
 
             {/* Accordion */}
-            <div className="mt-4 md:mt-6 lg:mt-10">
+            <div className="">
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {operationsDropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
@@ -162,7 +162,7 @@ export default function AccountSections() {
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
             <video
               className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
               autoPlay
@@ -176,22 +176,22 @@ export default function AccountSections() {
 
 
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] text-[22px] pb-6 md:text-[38px] font-semibold leading-snug">
               Seamless Integration{" "}
               <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
                 Enterprise Scalability
               </span>
             </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
               Grow with confidence - Accqrate Books is built for business evolution, not just accounting.
             </p>
 
             {/* Accordion */}
-            <div className="mt-4 md:mt-6 lg:mt-10">
+            <div className="">
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {integrationDropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
@@ -208,7 +208,7 @@ export default function AccountSections() {
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
             <video
               className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
               autoPlay
@@ -222,22 +222,22 @@ export default function AccountSections() {
 
 
         {/* ================= Robust Control ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border mt-6 font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] mb-6 text-[22px] md:text-[38px] font-semibold leading-snug">
               Robust Control,{" "}
               <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
                 Total Compliance
               </span>
             </h2>
-            <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
               Mitigate risk, enforce policy, and maintain visibility.
             </p>
 
             {/* Accordion */}
-            <div className="mt-4 md:mt-6 lg:mt-10">
+            <div className="">
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {controlDropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
@@ -254,7 +254,7 @@ export default function AccountSections() {
           </div>
 
           {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
             <video
               className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
               autoPlay
