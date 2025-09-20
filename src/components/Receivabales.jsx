@@ -94,7 +94,7 @@ export default function AccountSections() {
 
         {/* Bottom Sections */}
         <div className="bg-[#F2F2F2]">
-          <div className="px-6 md:px-2 max-w-[1280px] mx-auto">
+          <div className="px-6 md:px-2 max-w-[1280px] mx-auto my-6">
             {/* ================= Account Receivables ================= */}
             <SectionWithAccordion
               title="Account Receivables"
@@ -144,7 +144,7 @@ export default function AccountSections() {
 function SectionWithAccordion({ title, subtitle, description, items, video, className }) {
   return (
     <>
-      <div className="py-6">
+      <div>
         <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
