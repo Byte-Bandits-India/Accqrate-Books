@@ -64,9 +64,9 @@ export default function AccountSections() {
   // --- Main Content ---
   return (
     <section className="mx-auto font-inter">
-      <div className="md:py-8 lg:py-10 mt-[32px]">
+      <div className="mt-[32px]">
         {/* Top Feature Cards */}
-        <div className="max-w-[1000px] mx-auto md:pb-[40px] space-y-4 rounded-[40px] mb-[48px]">
+        <div className="max-w-[1000px] mx-auto px-[40px] rounded-[40px] mb-[48px] md:mb-[56px]">
           <Accordion
             type="single"
             collapsible
@@ -93,8 +93,8 @@ export default function AccountSections() {
         </div>
 
         {/* Bottom Sections */}
-        <div className="bg-[#F2F2F2] py-6">
-          <div className="px-6 md:px-2 max-w-[1280px] mx-auto my-6">
+        <div className="bg-[#F2F2F2] py-6 md:py-[32px]">
+          <div className="px-6 md:px-[40px] max-w-[1280px] mx-auto my-6">
             {/* ================= Account Receivables ================= */}
             <SectionWithAccordion
               title="Account Receivables"
@@ -126,7 +126,7 @@ export default function AccountSections() {
       </div>
 
       {/* ================= Financial Statements ================= */}
-      <div className="px-6 md:px-2 max-w-[1280px] mx-auto bg-white">
+      <div className="px-6 md:px-2 md:py-[32px] max-w-[1280px] mx-auto bg-white">
         <SectionWithAccordion
           title="Financial Statements"
           subtitle="Audit-Ready, Always-On"
@@ -144,7 +144,7 @@ export default function AccountSections() {
 function SectionWithAccordion({ title, subtitle, description, items, video, className }) {
   return (
     <>
-      <div className="my-6">
+      <div className="my-6 md:my-[32px]">
         <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">

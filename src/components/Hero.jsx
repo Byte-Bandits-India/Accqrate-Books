@@ -135,19 +135,19 @@ export default function Hero() {
     <section
       id="heroSection"
       ref={heroRef}
-      className="w-full font-inter flex flex-col items-center justify-center text-center px-6"
+      className="w-full font-inter flex flex-col items-center justify-center text-center px-6 md:px-[40px]"
     >
-      <div className="w-full max-w-[1280px] mx-auto mt-[82px]">
+      <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
         {/* Headings */}
-        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[32px]">
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[40px]">
           Accqrate <span className="text-[#1976D2]">Books</span>
         </h1>
         <div className="max-w-[800px] mx-auto">
-          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[32px]">
+          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[32px] md:mb-[40px]">
             <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
             Accounting Software for Saudi Arabia
           </h2>
-          <p className="text-[14px] md:text-[16px] lg:text-[20px] tracking-tight md:font-semibold md:leading-10 mb-[16px] text-[#333333]">
+          <p className="text-[14px] md:text-[18px] lg:text-[20px] tracking-tight md:font-semibold md:leading-10 mb-[16px] md:mb-[24px] text-[#333333]">
             Run your entire business accounting—faster,<br className="hidden md:block" /> smarter, always ZATCA Phase-2 ready.
           </p>
 
@@ -157,7 +157,7 @@ export default function Hero() {
             Launch your store in minutes, manage everything in one place—from sales to stock,
             from any device.
           </p>
-          <p className="text-[#737373] hidden md:block text-fluid-body">
+          <p className="text-[#737373] md:text-[16px] hidden md:block text-fluid-body">
             Manage accounts, automate ZATCA compliance, and unlock actionable insights
             from anywhere, on any device.
           </p>
@@ -186,7 +186,7 @@ export default function Hero() {
       </div>
 
       {/* Dashboard Video */}
-      <div className="mb-[32px] w-full max-w-[1128px] mx-auto rounded-xl overflow-hidden">
+      <div className="mb-[32px] md:mb-[40px] w-full max-w-[1128px] mx-auto rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
           <source src="/videos/Hero.mp4" type="video/mp4" />
         </video>
@@ -194,7 +194,7 @@ export default function Hero() {
 
 
       {/* Trusted text */}
-      <div className="mb-8">
+      <div className="mb-8 md:mb-[40px]">
         <h3 className="text-[14px] md:text-[16px] lg:text-[20px] lg:hidden font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
@@ -209,7 +209,7 @@ export default function Hero() {
       </div>
 
       {/* Logo Marquee */}
-      <div className="w-screen bg-[#E6F4FF] relative mb-[48px]">
+      <div className="w-screen bg-[#E6F4FF] relative mb-[48px] md:mb-[56px]">
         <div className="max-w-5xl overflow-hidden py-6 mx-auto">
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#E6F4FF] to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#E6F4FF] to-transparent" />

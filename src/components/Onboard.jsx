@@ -68,19 +68,19 @@ export default function FeatureSection() {
 
   return (
     <>
-      <div className="px-[24px] max-w-[1280px] mx-auto font-inter">
+      <div className="px-[24px] md:px-[40px] max-w-[1280px] mx-auto font-inter">
         {/* Heading */}
-        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-4">
+        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-4 md:mb-[32px]">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
           Flexible Deployment
         </h2>
 
         {/* Shared description */}
-        <p className="mb-6 text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
+        <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
           Accqrate Books is fully cloud-native – no complex installations, no
           specialized IT needed. Set up your accounting in minutes, not weeks.
         </p>
-        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px]">
+        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px] md:mb-[56px]">
           {/* Card 1 */}
           <FeatureCard
             videoSrc="videos/cloud-first.mp4"
@@ -104,10 +104,10 @@ export default function FeatureSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4">
+        <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4 md:mb-[32px]">
           <span className="text-[#1976D2]">Zero-Friction</span> Setup
         </h2>
-        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-6">
+        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6 md:pb-[32px]">
           As your business grows, Accqrate Retail grows with you. Flip the
           switch to add procurement, finance, HR and supply-chain modules—no
           data migration, no downtime.
@@ -169,22 +169,22 @@ export default function FeatureSection() {
       </div>
 
       {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[48px] max-w-[1280px] mx-auto font-inter text-center px-6">
-        <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4">
+      <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6">
+        <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
         </h2>
-        <h2 className="hidden lg:block text-fluid-h2 mt-[24px] text-[#333333] font-medium mb-[24px] ">
+        <h2 className="hidden lg:block text-fluid-h2 mt-[24px] text-[#333333] font-medium mb-[24px]">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
           Compliance
         </h2>
 
-        <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] text-[#737373] leading-relaxed">
+        <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
           Compliance is non-negotiable. With Accqrate Books, you’re always
           audit-ready.
         </p>
 
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 md:mt-[40px] mb-6 md:mb-8 lg:mb-10">
+        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 mb-6 md:mb-8 lg:mb-10">
           {/* Seamless Integration */}
           <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6
             md:h-[251px] lg:h-[292px] w-full h-[190px]
