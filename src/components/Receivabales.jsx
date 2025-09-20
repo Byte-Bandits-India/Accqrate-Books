@@ -126,7 +126,7 @@ export default function AccountSections() {
       </div>
 
       {/* ================= Financial Statements ================= */}
-      <div className="px-6 md:px-2 md:py-[32px] max-w-[1280px] mx-auto bg-white">
+      <div className="px-6 md:px-[40px] md:py-[32px] max-w-[1280px] mx-auto bg-white">
         <SectionWithAccordion
           title="Financial Statements"
           subtitle="Audit-Ready, Always-On"
@@ -145,7 +145,7 @@ function SectionWithAccordion({ title, subtitle, description, items, video, clas
   return (
     <>
       <div className="my-6 md:my-[32px]">
-        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20`}>
+        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 lg:mx-20`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
             <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight pb-6 tracking-[-2%] ">
