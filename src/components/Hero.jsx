@@ -135,7 +135,7 @@ export default function Hero() {
     <section
       id="heroSection"
       ref={heroRef}
-      className="w-full font-inter flex flex-col items-center justify-center text-center px-6 md:px-[40px]"
+      className="w-full font-inter flex flex-col items-center justify-center text-center px-6 md:px-[32px]"
     >
       <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
         {/* Headings */}

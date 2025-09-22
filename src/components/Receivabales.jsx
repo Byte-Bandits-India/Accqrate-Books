@@ -66,11 +66,11 @@ export default function AccountSections() {
     <section className="mx-auto font-inter">
       <div className="mt-[32px]">
         {/* Top Feature Cards */}
-        <div className="max-w-[1000px] mx-auto px-[40px] rounded-[40px] mb-[48px] md:mb-[56px]">
+        <div className="max-w-[1000px] mx-auto px-[24px] md:px-[32px] rounded-[40px] mb-[48px] md:mb-[56px]">
           <Accordion
             type="single"
             collapsible
-            className="flex flex-col md:flex-row gap-4 md:gap-8 w-[90%] mx-auto"
+            className="flex flex-col md:flex-row gap-4 w-[100%] mx-auto"
           >
             <AccordionCard
               value="card-4"
@@ -94,7 +94,7 @@ export default function AccountSections() {
 
         {/* Bottom Sections */}
         <div className="bg-[#F2F2F2] py-6 md:py-[32px]">
-          <div className="px-6 md:px-[40px] max-w-[1280px] mx-auto my-6">
+          <div className="px-6 md:px-[32px] max-w-[1280px] mx-auto">
             {/* ================= Account Receivables ================= */}
             <SectionWithAccordion
               title="Account Receivables"
@@ -126,7 +126,7 @@ export default function AccountSections() {
       </div>
 
       {/* ================= Financial Statements ================= */}
-      <div className="px-6 md:px-[40px] md:py-[32px] max-w-[1280px] mx-auto bg-white">
+      <div className="px-6 md:px-[32px] md:py-[32px] max-w-[1280px] mx-auto bg-white">
         <SectionWithAccordion
           title="Financial Statements"
           subtitle="Audit-Ready, Always-On"
@@ -145,10 +145,10 @@ function SectionWithAccordion({ title, subtitle, description, items, video, clas
   return (
     <>
       <div className="my-6 md:my-[32px]">
-        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 lg:mx-20`}>
+        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 lg:mx-20`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight pb-6 tracking-[-2%] ">
+            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] leading-snug lg:leading-tight pb-6 md:pb-[32px] tracking-[-2%] ">
               {title}{" "}
               {subtitle && (
                 <span className="tracking-tight block text-[#1976D2] font-normal text-[20px] md:text-[28px] lg:text-[32px]">
@@ -156,7 +156,7 @@ function SectionWithAccordion({ title, subtitle, description, items, video, clas
                 </span>
               )}
             </h2>
-            <p className="text-[14px] md:text-[16px] pb-6 lg:text-[20px] lg:leading-relaxed break-words">
+            <p className="text-[14px] md:text-[18px] pb-6 md:pb-[32px] lg:text-[20px] lg:leading-relaxed break-words">
               {description}
             </p>
 

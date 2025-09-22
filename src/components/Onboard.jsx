@@ -68,7 +68,7 @@ export default function FeatureSection() {
 
   return (
     <>
-      <div className="px-[24px] md:px-[40px] max-w-[1280px] mx-auto font-inter">
+      <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
         {/* Heading */}
         <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-4 md:mb-[32px]">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
@@ -117,8 +117,8 @@ export default function FeatureSection() {
           type="single"
           collapsible
           className="flex flex-col gap-4
-        sm:grid sm:grid-cols-2 sm:gap-6
-        md:grid md:grid-cols-3 md:max-w-5xl md:mt-14 mx-auto md:gap-12 md:mb-12"
+        sm:grid sm:grid-cols-2 md:gap-6
+        md:grid md:grid-cols-3 md:max-w-5xl md:mb-[32px] mx-auto"
         >
           <AccordionCard
             value="card-1"
@@ -169,7 +169,7 @@ export default function FeatureSection() {
       </div>
 
       {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6">
+      <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
         <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
@@ -184,7 +184,7 @@ export default function FeatureSection() {
           audit-ready.
         </p>
 
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 mb-6 md:mb-8 lg:mb-10">
+        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto lg:gap-12 mb-6 md:mb-8 lg:mb-10">
           {/* Seamless Integration */}
           <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6
             md:h-[251px] lg:h-[292px] w-full h-[190px]
@@ -322,7 +322,7 @@ export default function FeatureSection() {
 
         {/* 100_zatcha_e-invoicing-complaince Video */}
         <video
-          className="w-full h-[201px] max-w-[1128px] mx-auto"
+          className="w-full h-[201px] md:h-full max-w-[1128px] mx-auto"
           autoPlay
           muted
           loop

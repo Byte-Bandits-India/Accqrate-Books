@@ -154,7 +154,7 @@ export default function Footer() {
   return (
     <footer
       id="footerSection"
-      className="bg-white border-gray-200 font-inter min-h-full px-6"
+      className="bg-white border-gray-200 font-inter min-h-full px-6 md:px-[32px]"
     >
       {showSections && (
         <div className="flex justify-between flex-nowrap max-w-[1280px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
