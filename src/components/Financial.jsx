@@ -129,13 +129,12 @@ export default function AccountSections() {
     <div className="px-6 md:px-[40px] py-[24px] md:py-[32px] bg-[#F2F2F2]">
       <div className="max-w-[1280px] mx-auto">
         {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex lg:mx-20">
-
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
             <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] font-semibold leading-snug">
               Transform Your{" "}
-              <span className="tracking-tight md:text-[24px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
                 Finance Operations
               </span>
             </h2>
@@ -145,7 +144,7 @@ export default function AccountSections() {
             </p>
 
             {/* Accordion */}
-            <div className="">
+            <div>
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {operationsDropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
@@ -173,6 +172,7 @@ export default function AccountSections() {
             </video>
           </div>
         </section>
+
 
 
         {/* ================= Seamless Integration ================= */}
@@ -266,7 +266,6 @@ export default function AccountSections() {
           </div>
         </section>
       </div>
-
     </div>
   );
 }
