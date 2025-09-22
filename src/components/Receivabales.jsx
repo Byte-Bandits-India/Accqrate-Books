@@ -145,7 +145,7 @@ function SectionWithAccordion({ title, subtitle, description, items, video, clas
   return (
     <>
       <div className="my-6 md:my-[32px]">
-        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 lg:mx-20`}>
+        <section className={`${className ? className : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}>
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
             <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] leading-snug lg:leading-tight pb-6 md:pb-[32px] tracking-[-2%] ">
