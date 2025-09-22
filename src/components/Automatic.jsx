@@ -110,14 +110,14 @@ export default function AutomationSection() {
 
   return (
     <>
-      <div className="bg-white mt-6 md:mt-8 lg:mt-10 px-6 md:px-[40px] max-w-[1280px] mx-auto">
+      <div className="bg-white mt-6 md:mt-8 lg:mt-10 px-6 md:px-[32px] max-w-[1280px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
         <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto my-6 md:my-[56px]
   md:flex md:items-center">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] pb-6 md:text-[30px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
+            <h2 className="text-[#1976D2] text-[20px] pb-6 md:text-[24px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
               AI-Driven Automation
             </h2>
             <p className="pb-6 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
@@ -159,23 +159,23 @@ export default function AutomationSection() {
         <div className="my-12 mx-auto font-inter md:max-w-5xl ">
           {/* Heading */}
           <div className="text-center mb-6 md:mb-4 md:flex md:justify-center">
-            <h2 className="text-[24px] md:text-[38px] font-semibold">
+            <h2 className="text-[20px] md:text-[24px] font-semibold">
               Support, Training, &
             </h2>
-            <h2 className="text-[24px] md:text-[38px] font-semibold text-[#1976D2] mb-6 md:mb-[32px]">
+            <h2 className="text-[20px] md:text-[24px] font-semibold text-[#1976D2] mb-6 md:mb-[32px]">
               Onboarding
             </h2>
           </div>
 
           <div>
-            <p className="text-fluid-small lg:text-[20px] mb-6 md:mb-[32px] text-center text-base leading-relaxed">
+            <p className="text-[14px] md:text-[18px] lg:text-[20px] mb-6 md:mb-[32px] text-center text-base leading-relaxed">
               Expert onboarding for ZATCA compliance software— get your team ready for
               e-invoicing in KSA, fast.
             </p>
           </div>
 
           {/* Unified Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
             {/* Box 1 - On Demand Training */}
             <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
@@ -211,21 +211,21 @@ export default function AutomationSection() {
                     loop
                     muted
                     playsInline
-                    className="hidden md:block w-full h-[200px] object-cover rounded-t-lg"
+                    className="hidden md:block w-full h-[135px] object-cover rounded-t-lg"
                   >
                     <source src="/videos/on-demand-training.mp4" type="video/mp4" />
                   </video>
 
                   {/* Content */}
-                  <div className="p-4 flex-1">
-                    <h3 className="font-semibold text-fluid-body text-center">
+                  <div className="p-4 flex-1 space-y-[24px]">
+                    <h3 className="font-semibold text-[14px] md:text-[18px] text-center">
                       On Demand Training
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       Learn Accqrate Books in under 60 minutes; video modules for every type.
                     </p>
-                    <p className="absolute bottom-2 left-4 text-fluid-body text-[#1976D2] font-bold leading-tight inline-block">
-                      Book An Appointment
+                    <p className="absolute bottom-2 left-4 text-[14px] md:text-[16px] text-[#1976D2] font-bold leading-tight inline-block">
+                      Book An <br className="hidden md:block" /> Appointment
                     </p>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function AutomationSection() {
                       <source src="/videos/local-support.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
+                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[135px] object-cover rounded-t-lg">
                     <source src="/videos/local-support.mp4" type="video/mp4" />
                   </video>
 
@@ -284,7 +284,7 @@ export default function AutomationSection() {
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       In English & Arabic—phone, WhatsApp, email, or chat.
                     </p>
-                    <p className="absolute bottom-2 left-4 text-[#1976D2] text-fluid-body text-left font-bold inline-block">
+                    <p className="absolute bottom-2 left-1 text-[#1976D2] text-[14px] md:text-[15px] text-left font-bold inline-block">
                       +971505515388
                     </p>
                   </div>
@@ -325,7 +325,7 @@ export default function AutomationSection() {
                       <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
+                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[135px] object-cover rounded-t-lg">
                     <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                   </video>
 
@@ -336,8 +336,8 @@ export default function AutomationSection() {
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
                       Step-by-step Guides for every process.
                     </p>
-                    <p className="absolute bottom-2 left-4 text-[#1976D2] text-fluid-body font-bold leading-tight inline-block">
-                      Knowledge Center
+                    <p className="absolute bottom-2 left-4 text-[#1976D2] text-[14px] md:text-[16px] font-bold leading-tight inline-block">
+                      Knowledge <br className="hidden md:block" /> Center
                     </p>
                   </div>
                 </div>
@@ -360,8 +360,8 @@ export default function AutomationSection() {
       </div >
       {/* Why Choose Section */}
       <div className="my-12 md:my-[56px] lg:my-10 bg-[#F2F2F2] w-full py-6">
-        <div className="max-w-[1280px] mx-auto px-6 font-inter">
-          <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 text-center leading-snug">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-[32px] font-inter">
+          <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 md:mb-[32px] text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
           </h2>
 

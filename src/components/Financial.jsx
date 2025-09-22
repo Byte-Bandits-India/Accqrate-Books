@@ -129,17 +129,17 @@ export default function AccountSections() {
     <div className="px-6 md:px-[40px] py-[24px] md:py-[32px] bg-[#F2F2F2]">
       <div className="max-w-[1280px] mx-auto">
         {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl mx-auto md:flex lg:mx-20">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex lg:mx-20">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] pb-6 text-[22px] md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] font-semibold leading-snug">
               Transform Your{" "}
-              <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+              <span className="tracking-tight md:text-[24px] block text-[#1976D2] font-normal">
                 Finance Operations
               </span>
             </h2>
-            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
               Modern accounting isn’t about debits and credits—it’s about business
               control, speed, and insight.
             </p>
@@ -176,17 +176,17 @@ export default function AccountSections() {
 
 
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[22px] pb-6 md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] pb-6 md:pb-[32px] font-semibold leading-snug">
               Seamless Integration{" "}
-              <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
                 Enterprise Scalability
               </span>
             </h2>
-            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
               Grow with confidence - Accqrate Books is built for business evolution, not just accounting.
             </p>
 
@@ -222,17 +222,17 @@ export default function AccountSections() {
 
 
         {/* ================= Robust Control ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-6 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] border-[#CECECE] border mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] mb-6 text-[22px] md:text-[38px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] mb-6 text-[20px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
               Robust Control,{" "}
-              <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+              <span className="tracking-tight block text-[#1976D2] font-normal">
                 Total Compliance
               </span>
             </h2>
-            <p className="pb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
               Mitigate risk, enforce policy, and maintain visibility.
             </p>
 

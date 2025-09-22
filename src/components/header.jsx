@@ -354,7 +354,7 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white lg:border">
-      <div className="w-full py-2 md:py-3 px-6 mt-[30px] md:px-[40px]">
+      <div className="w-full py-2 md:py-3 px-6 mt-[30px] md:px-[32px]">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="logo-container flex items-center justify-around gap-6">
@@ -603,7 +603,7 @@ const Header = () => {
 
       {/* Mobile Menu (<1280px) */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[40px] py-4 z-[999]">
+        <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
           <Accordion type="single" collapsible className="w-full">
             {menus.map(({ id, title, sections }) => (
               <AccordionItem key={id} value={id}>
