@@ -48,6 +48,14 @@ export default function AccountSections() {
     { title: "Export & Share", content: "Sample content for Export & Share." },
   ];
 
+  const operationsDropdowns = [
+    { title: "Live Financial Dashboards", content: "Sample content for Live Financial Dashboards." },
+    { title: "Automated Bank Reconciliation", content: "Sample content for Automated Bank Reconciliation." },
+    { title: "Advanced Reporting", content: "Sample content for Advanced Reporting." },
+    { title: "Multi-Entity, Multi-Currency", content: "Sample content for Multi-Entity, Multi-Currency." },
+    { title: "Customizable Chart of Accounts", content: "Sample content for Chart of Accounts." },
+  ];
+
   // --- Skeleton ---
   if (loading || !isVisible) {
     return (
@@ -63,80 +71,223 @@ export default function AccountSections() {
 
   // --- Main Content ---
   return (
-    <section className="mx-auto font-inter">
-      <div className="mt-[32px]">
-        {/* Top Feature Cards */}
-        <div className="max-w-[1000px] mx-auto px-[24px] md:px-[32px] rounded-[40px] mb-[48px] md:mb-[56px]">
-          <Accordion
-            type="single"
-            collapsible
-            className="flex flex-col md:flex-row gap-4 w-[100%] mx-auto"
-          >
-            <AccordionCard
-              value="card-4"
-              icon="/images/Mask group.png"
-              title="Custom Invoice Templates"
-              content={
-                <>This is where extra details about custom invoice templates go.</>
-              }
-            />
+    <div className="w-full">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+        {/* ================= Account Receivables ================= */}
+        <section className="bg-[#E8F1FB]  mb-6 mb:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+          {/* Left Side */}
+          <div className="flex-1 md:max-w-[520px]">
+            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] font-semibold leading-snug">
+              Account Receivables{" "}
+              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+                Accelerate your cash flow
+              </span>
+            </h2>
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
+              Stay on top of collections and improve working capital - without chasing payments manually.
+            </p>
 
-            <AccordionCard
-              value="card-5"
-              icon="/images/Mask group.png"
-              title="Comprehensive Audit Trails"
-              content={
-                <>Extra details about comprehensive audit trails will be shown here.</>
-              }
-            />
-          </Accordion>
-        </div>
-
-        {/* Bottom Sections */}
-        <div className="bg-[#F2F2F2] py-6 md:py-[32px]">
-          <div className="px-6 md:px-[32px] max-w-[1280px] mx-auto">
-            {/* ================= Account Receivables ================= */}
-            <SectionWithAccordion
-              title="Account Receivables"
-              subtitle="Accelerate your cash flow"
-              description="Stay on top of collections and improve working capital - without chasing payments manually."
-              items={receivableDropdowns}
-              video="videos/account-receivables.mp4"
-            />
-
-            {/* ================= Account Payables ================= */}
-            <SectionWithAccordion
-              title="Accounts Payables"
-              subtitle="Control of Vendor Spend"
-              description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
-              items={payableDropdowns}
-              video="videos/Accounts_payables.mp4"
-            />
-
-            {/* ================= Smart Expense Management ================= */}
-            <SectionWithAccordion
-              title="Smart Expense Management"
-              subtitle=""
-              description="Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking."
-              items={expenseDropdowns}
-              video="videos/Smart_expense_management.mp4"
-            />
+            {/* Accordion */}
+            <Accordion type="single" collapsible className="w-full max-w-[400px]">
+              {receivableDropdowns.map((item, index) => (
+                <AccordionItem key={index} value={`rec-${index}`}>
+                  <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                    {item.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-        </div>
+
+          {/* Right Side */}
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+            <video
+              className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+              autoPlay
+              muted
+              loop
+            >
+              <source src="videos/account-receivables.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+
+        {/* ================= Accounts Payables ================= */}
+        <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+          {/* Left Side */}
+          <div className="flex-1 md:max-w-[520px]">
+            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] pb-6 md:pb-[32px] font-semibold leading-snug">
+              Accounts Payables{" "}
+              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+                Control of Vendor Spend
+              </span>
+            </h2>
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
+              Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out.
+            </p>
+
+            {/* Accordion */}
+            <Accordion type="single" collapsible className="w-full max-w-[400px]">
+              {payableDropdowns.map((item, index) => (
+                <AccordionItem key={index} value={`pay-${index}`}>
+                  <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                    {item.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Right Side */}
+          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+            <video
+              className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+              autoPlay
+              muted
+              loop
+            >
+              <source src="videos/Accounts_payables.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
       </div>
 
-      {/* ================= Financial Statements ================= */}
-      <div className="px-6 md:px-[32px] md:py-[32px] max-w-[1280px] mx-auto bg-white">
-        <SectionWithAccordion
-          title="Financial Statements"
-          subtitle="Audit-Ready, Always-On"
-          description="Move beyond monthly closings—generate real-time, regulation-ready financials anytime."
-          items={financialDropdowns}
-          video="videos/Financial_statements.mp4"
-          className="bg-white"
-        />
+      <div className="bg-[#E8F1FB]">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+          {/* ================= Smart Expense Management ================= */}
+          <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[520px]">
+              <h2 className="text-[#1976D2] mb-6 text-[20px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
+                Smart Expense Management
+              </h2>
+              <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
+                Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking.
+              </p>
+
+              {/* Accordion */}
+              <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                {expenseDropdowns.map((item, index) => (
+                  <AccordionItem key={index} value={`exp-${index}`}>
+                    <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            {/* Right Side */}
+            <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video
+                className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
+                <source src="videos/Smart_expense_management.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+
+          {/* ================= Financial Statements ================= */}
+          <section className="bg-white mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[520px]">
+              <h2 className="text-[#1976D2] mb-6 text-[20px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
+                Financial Statements{" "}
+                <span className="tracking-tight block text-[#1976D2] font-normal">
+                  Audit-Ready, Always-On
+                </span>
+              </h2>
+              <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
+                Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
+              </p>
+
+              {/* Accordion */}
+              <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                {financialDropdowns.map((item, index) => (
+                  <AccordionItem key={index} value={`fin-${index}`}>
+                    <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            {/* Right Side */}
+            <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video
+                className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
+                <source src="videos/Financial_statements.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+
+          {/* ================= Finance Operations ================= */}
+          <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+            {/* Left Side */}
+            <div className="flex-1 md:max-w-[520px]">
+              <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
+                Transform Your{" "}
+                <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
+                  Finance Operations
+                </span>
+              </h2>
+              <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
+                Modern accounting isn’t about debits and credits—it’s about business
+                control, speed, and insight.
+              </p>
+
+              {/* Accordion */}
+              <div>
+                <Accordion type="single" collapsible className="w-full max-w-[400px]">
+                  {operationsDropdowns.map((item, index) => (
+                    <AccordionItem key={index} value={`rec-${index}`}>
+                      <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                        {item.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                        {item.content}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
+
+            {/* Right Side */}
+            <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
+              <video
+                className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+                autoPlay
+                muted
+                loop
+              >
+                <source src="videos/Transform_your_finance_operations.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 

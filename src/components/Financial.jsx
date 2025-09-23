@@ -17,17 +17,6 @@ export default function AccountSections() {
     setOpenIndex(openIndex === `${key}-${index}` ? null : `${key}-${index}`);
   };
 
-
-
-  // Finance Operations
-  const operationsDropdowns = [
-    { title: "Live Financial Dashboards", content: "Sample content for Live Financial Dashboards." },
-    { title: "Automated Bank Reconciliation", content: "Sample content for Automated Bank Reconciliation." },
-    { title: "Advanced Reporting", content: "Sample content for Advanced Reporting." },
-    { title: "Multi-Entity, Multi-Currency", content: "Sample content for Multi-Entity, Multi-Currency." },
-    { title: "Customizable Chart of Accounts", content: "Sample content for Chart of Accounts." },
-  ];
-
   // Seamless Integration
   const integrationDropdowns = [
     { title: "Instant ERP Integration", content: "Sample content for ERP Integration." },
@@ -126,57 +115,10 @@ export default function AccountSections() {
 
 
   return (
-    <div className=" w-full bg-[#F2F2F2]">
+    <div className=" w-full">
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
-        {/* ================= Finance Operations ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
-          {/* Left Side */}
-          <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
-              Transform Your{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
-                Finance Operations
-              </span>
-            </h2>
-            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
-              Modern accounting isn’t about debits and credits—it’s about business
-              control, speed, and insight.
-            </p>
-
-            {/* Accordion */}
-            <div>
-              <Accordion type="single" collapsible className="w-full max-w-[400px]">
-                {operationsDropdowns.map((item, index) => (
-                  <AccordionItem key={index} value={`rec-${index}`}>
-                    <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
-                      {item.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
-                      {item.content}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="flex-1 mt-6 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-            <video
-              className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
-              autoPlay
-              muted
-              loop
-            >
-              <source src="videos/Transform_your_finance_operations.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </section>
-
-
-
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
@@ -222,7 +164,7 @@ export default function AccountSections() {
 
 
         {/* ================= Robust Control ================= */}
-        <section className="bg-[#E8F1FB] border-[#CECECE] border mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
