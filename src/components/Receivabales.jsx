@@ -74,7 +74,7 @@ export default function AccountSections() {
     <div className="w-full">
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
         {/* ================= Account Receivables ================= */}
-        <section className="bg-[#E8F1FB]  mb-6 mb:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB]  mb-6 md:mb-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
             <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] font-semibold leading-snug">
@@ -116,7 +116,7 @@ export default function AccountSections() {
         </section>
 
         {/* ================= Accounts Payables ================= */}
-        <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
             <h2 className="text-[#1976D2] text-[20px] md:text-[24px] pb-6 md:pb-[32px] font-semibold leading-snug">
@@ -242,7 +242,7 @@ export default function AccountSections() {
           </section>
 
           {/* ================= Finance Operations ================= */}
-          <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+          <section className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
             {/* Left Side */}
             <div className="flex-1 md:max-w-[520px]">
               <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">

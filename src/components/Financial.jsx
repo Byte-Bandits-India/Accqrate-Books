@@ -118,7 +118,7 @@ export default function AccountSections() {
     <div className=" w-full">
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
+        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
