@@ -211,7 +211,7 @@ export default function AutomationSection() {
                     loop
                     muted
                     playsInline
-                    className="hidden md:block w-full h-[135px] object-cover rounded-t-lg"
+                    className="hidden md:block w-full h-[170px] object-cover rounded-t-lg"
                   >
                     <source src="/videos/on-demand-training.mp4" type="video/mp4" />
                   </video>
@@ -273,7 +273,7 @@ export default function AutomationSection() {
                       <source src="/videos/local-support.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[135px] object-cover rounded-t-lg">
+                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[170px] object-cover rounded-t-lg">
                     <source src="/videos/local-support.mp4" type="video/mp4" />
                   </video>
 
@@ -325,7 +325,7 @@ export default function AutomationSection() {
                       <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[135px] object-cover rounded-t-lg">
+                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[170px] object-cover rounded-t-lg">
                     <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                   </video>
 

@@ -126,15 +126,15 @@ export default function AccountSections() {
 
 
   return (
-    <div className="px-6 md:px-[40px] py-[24px] md:py-[32px] bg-[#F2F2F2]">
-      <div className="max-w-[1280px] mx-auto">
+    <div className=" w-full bg-[#F2F2F2]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
         {/* ================= Finance Operations ================= */}
         <section className="bg-[#E8F1FB] border-[#CECECE] border my-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
               Transform Your{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
                 Finance Operations
               </span>
             </h2>
@@ -180,9 +180,9 @@ export default function AccountSections() {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] pb-6 md:pb-[32px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] pb-6 md:pb-[32px] font-semibold leading-snug">
               Seamless Integration{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
                 Enterprise Scalability
               </span>
             </h2>
@@ -226,9 +226,9 @@ export default function AccountSections() {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] mb-6 text-[20px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] mb-6 text-[20px] lg:text-[40px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
               Robust Control,{" "}
-              <span className="tracking-tight block text-[#1976D2] font-normal">
+              <span className="tracking-tight block text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] font-normal">
                 Total Compliance
               </span>
             </h2>
