@@ -354,7 +354,7 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white lg:border">
-      <div className="w-full py-2 md:py-3 px-6 mt-[30px] md:px-[32px]">
+      <div className="w-full px-6 mt-[30px] md:px-[32px]">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="logo-container flex items-center justify-around gap-6">
