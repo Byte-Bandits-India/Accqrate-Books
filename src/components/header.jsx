@@ -551,7 +551,7 @@ const Header = () => {
                               href="/book-demo"
                               className="inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
                             >
-                              Book Demo →
+                              Book a Demo →
                             </Link>
                             <span
                               role="separator"
@@ -597,7 +597,7 @@ const Header = () => {
               href="/request-demo"
               className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-[#F05A28]"
             >
-              REQUEST DEMO
+              Book a Demo
               <Arrow45 />
             </Link>
           </div>
