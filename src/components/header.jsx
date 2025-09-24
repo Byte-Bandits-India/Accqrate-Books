@@ -307,7 +307,11 @@ const Arrow45 = () => (
     stroke="currentColor"
     strokeWidth={2}
   >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5 12h14M12 5l7 7-7 7"
+    />
   </svg>
 );
 
@@ -360,7 +364,7 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white lg:border">
-      <div className="w-full px-6 pt-6 lg:pt-0 md:px-[32px]">
+      <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px]">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="logo-container flex items-center justify-around gap-6">
@@ -375,7 +379,7 @@ const Header = () => {
             {/* Desktop Nav (≥1280px) with shadcn Navigation Menu */}
             <nav
               ref={navRef}
-              className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
+              className="hidden xl:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
             >
               <NavigationMenu className="w-full">
                 <NavigationMenuList className="py-4">
@@ -618,7 +622,10 @@ const Header = () => {
               aria-label="Toggle mobile menu"
               onClick={() => setIsMobileMenuOpen((p) => !p)}
             >
-              <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+              <i
+                className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"
+                  }`}
+              ></i>
             </button>
           </div>
         </div>
@@ -636,9 +643,18 @@ const Header = () => {
                 <AccordionContent>
                   <Accordion type="single" collapsible className="pl-4">
                     {sections.map((section, sectionIndex) => (
-                      <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
+                      <AccordionItem
+                        key={sectionIndex}
+                        value={`${id}-${section.heading}`}
+                      >
                         <AccordionTrigger className="fflex items-center justify-start gap-2 text-gray-700 font-medium">
-                          {section.images && <img src={section.images} alt={section.heading} className="w-4 h-4" />}
+                          {section.images && (
+                            <img
+                              src={section.images}
+                              alt={section.heading}
+                              className="w-4 h-4"
+                            />
+                          )}
                           <span>{section.heading}</span>
                         </AccordionTrigger>
                         <AccordionContent>
@@ -648,7 +664,13 @@ const Header = () => {
                                 key={i}
                                 className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
                               >
-                                {item.img && <img src={item.img} alt={item.title} className="w-5 h-5" />}
+                                {item.img && (
+                                  <img
+                                    src={item.img}
+                                    alt={item.title}
+                                    className="w-5 h-5"
+                                  />
+                                )}
                                 <Link href={item.href} className="flex-1">
                                   {item.title}
                                 </Link>
