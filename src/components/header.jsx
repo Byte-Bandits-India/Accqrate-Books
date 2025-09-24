@@ -372,7 +372,7 @@ const Header = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Nav (≥1280px) with shadcn Navigation Menu */}
             <nav
               ref={navRef}
               className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
@@ -384,7 +384,10 @@ const Header = () => {
                       key={id}
                       onMouseEnter={() => {
                         setActiveMenu(id);
-                        if (id === "products") setActiveSection("Business Solution");
+                        // For products menu, set the first section as active
+                        if (id === "products") {
+                          setActiveSection("Business Solution");
+                        }
                       }}
                     >
                       <NavigationMenuTrigger className="text-[0.875rem] text-gray-600 data-[state=open]:text-[#534ED3] data-[state=open]:bg-transparent hover:bg-transparent hover:text-[#534ED3] focus:bg-transparent">
@@ -395,28 +398,173 @@ const Header = () => {
                         style={{ top: headerHeight }}
                       >
                         <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 shadow-lg rounded-xl flex flex-col">
+                          {activeMenuData.type === "mega" ? (
+                            // Products Mega Menu Layout
+                            <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
+                              {/* LEFT COLUMN – Categories */}
+                              <div className="col-span-1 border-r pr-6 mb-2">
+                                <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500">
+                                  Products
+                                </h6>
+                                <ul className="mt-3 space-y-6">
+                                  {activeMenuData.sections.map((section) => (
+                                    <li
+                                      key={section.heading}
+                                      className={`cursor-pointer px-2 py-1 ${activeSection === section.heading
+                                        ? "font-semibold"
+                                        : "text-gray-700"
+                                        }`}
+                                      onMouseEnter={() =>
+                                        setActiveSection(section.heading)
+                                      }
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <img
+                                          src={section.images.replace(
+                                            /^\.\//,
+                                            "/"
+                                          )}
+                                          alt={section.heading}
+                                          className="w-4 h-4"
+                                        />
+                                        <span>{section.heading}</span>
+                                      </div>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
 
-                          {/* CTA Buttons */}
-                          <Link
-                            href="/book-demo"
-                            className="inline-flex items-center justify-center gap-2 h-[41px] w-[155px] rounded-[80px] text-[14px] hover:text-black"
-                          >
-                            Book Demo
-                          </Link>
+                              {/* MIDDLE COLUMN – Subitems */}
+                              <div className="col-span-2 mb-2">
+                                <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-3">
+                                  {activeSection}
+                                </h6>
+                                {activeSection === "E-Invoicing Solution" ? (
+                                  <ul className="grid grid-cols-2 gap-3">
+                                    {activeMenuData.sections
+                                      .find(
+                                        (sec) => sec.heading === activeSection
+                                      )
+                                      ?.subItems.map((item) => (
+                                        <ListItem
+                                          key={item.title}
+                                          title={item.title}
+                                          href={item.href}
+                                          img={item.img}
+                                        >
+                                          {item.description}
+                                        </ListItem>
+                                      ))}
+                                  </ul>
+                                ) : (
+                                  <ul className="grid grid-cols-2 gap-3 mb-2">
+                                    {activeMenuData.sections
+                                      .find(
+                                        (sec) => sec.heading === activeSection
+                                      )
+                                      ?.subItems.map((item) => (
+                                        <ListItem
+                                          key={item.title}
+                                          title={item.title}
+                                          href={item.href}
+                                          img={item.img}
+                                        >
+                                          {item.description}
+                                        </ListItem>
+                                      ))}
+                                  </ul>
+                                )}
+                              </div>
+                            </div>
+                          ) : activeMenuData.type === "simple" ? (
+                            // Resources Simple Menu Layout
+                            <div className="w-full max-w-7xl mx-auto mb-2">
+                              <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
+                                Resources
+                              </h6>
+                              <div className="grid grid-cols-3 gap-8">
+                                {activeMenuData.sections.map(
+                                  (section, index) => (
+                                    <div
+                                      key={index}
+                                      className="border-r last:border-r-0 pr-6 last:pr-0"
+                                    >
+                                      <h3 className="font-semibold text-lg mb-2">
+                                        {section.heading}
+                                      </h3>
+                                      <ul className="space-y-4">
+                                        {section.subItems.map((item, i) => (
+                                          <ResourcesListItem
+                                            key={i}
+                                            title={item.title}
+                                            href={item.href}
+                                            img={item.icon}
+                                          ></ResourcesListItem>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          ) : (
+                            // Success Stories Menu Layout
+                            <div className="w-full max-w-7xl mx-auto mb-4">
+                              <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
+                                Success Stories
+                              </h6>
+                              <div className="grid grid-cols-3 gap-8">
+                                {activeMenuData.sections.map(
+                                  (section, index) => (
+                                    <div
+                                      key={index}
+                                      className="border-r last:border-r-0 pr-6 last:pr-0"
+                                    >
+                                      <h3 className="font-semibold text-lg mb-2">
+                                        {section.heading}
+                                      </h3>
+                                      <p className="text-sm text-gray-500 mb-4">
+                                        {section.description}
+                                      </p>
+                                      <ul className="space-y-4">
+                                        {section.subItems.map((item, i) => (
+                                          <SuccessStoriesListItem
+                                            key={i}
+                                            title={item.title}
+                                            href={item.href}
+                                            stats={item.stats}
+                                          >
+                                            {item.description}
+                                          </SuccessStoriesListItem>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          )}
 
-                          <span
-                            role="separator"
-                            aria-orientation="vertical"
-                            className="self-center h-8 w-px bg-gray-300"
-                          ></span>
-
-                          <Link
-                            href="/contact-sales"
-                            className="inline-flex items-center justify-center gap-2 h-[41px] w-[155px] rounded-[80px] text-[14px] hover:text-black"
-                          >
-                            Contact Sales
-                            <Arrow45 />
-                          </Link>
+                          {/* Call to Action buttons at the bottom */}
+                          <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4">
+                            <Link
+                              href="/book-demo"
+                              className="inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
+                            >
+                              Book Demo →
+                            </Link>
+                            <span
+                              role="separator"
+                              aria-orientation="vertical"
+                              className="self-center h-8 w-px bg-gray-300"
+                            ></span>
+                            <Link
+                              href="/contact-sales"
+                              className="inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
+                            >
+                              Contact Sales →
+                            </Link>
+                          </div>
                         </div>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
@@ -538,5 +686,108 @@ const Header = () => {
     </header>
   );
 };
+
+const ListItem = React.forwardRef(
+  ({ className, title, children, img, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            {...props}
+          >
+            {img && (
+              <img src={img} alt={title} className="w-[45px] h-[45px] mr-3" />
+            )}
+            <div>
+              <div className="text-sm font-semibold leading-none">{title}</div>
+              <p className="line-clamp-2 text-[12px] text-slate-500 leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
+ListItem.displayName = "ListItem";
+
+const ResourcesListItem = React.forwardRef(
+  ({ className, title, children, icon, img, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
+            {...props}
+          >
+            <div className="w-8 h-8 flex items-center justify-center rounded-full mr-3">
+              {(() => {
+                const source = img || icon;
+                if (!source) return null;
+                // Treat as image if it starts with './' or '/' or has a common image extension
+                const isImagePath =
+                  /^\.|^\//.test(source) ||
+                  /\.(png|jpe?g|svg|webp|gif)$/i.test(source);
+                if (isImagePath) {
+                  const normalized = source.replace(/^\.\//, "/");
+                  return (
+                    <img
+                      src={normalized}
+                      alt={title}
+                      className="w-6 h-6 object-contain"
+                    />
+                  );
+                }
+                // Otherwise treat as a font-awesome class name
+                return (
+                  <i
+                    className={`fa-solid ${source} text-gray-600`}
+                    aria-hidden="true"
+                  ></i>
+                );
+              })()}
+            </div>
+            <div>
+              <div className="text-sm font-medium leading-none">{title}</div>
+              <p className="text-sm leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
+ResourcesListItem.displayName = "ResourcesListItem";
+
+const SuccessStoriesListItem = React.forwardRef(
+  ({ className, title, children, stats, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border border-gray-200"
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none mb-1">{title}</div>
+            <p className="text-sm leading-snug text-muted-foreground mb-2">
+              {children}
+            </p>
+            <div className="text-xs font-semibold text-[#F05A28] bg-orange-50 px-2 py-1 rounded-full inline-block">
+              {stats}
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
+SuccessStoriesListItem.displayName = "SuccessStoriesListItem";
 
 export default Header;
