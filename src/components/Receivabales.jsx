@@ -77,9 +77,9 @@ export default function AccountSections() {
         <section className="bg-[#E8F1FB]  mb-6 md:mb-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] pb-6 text-[20px] font-medium md:text-[30px] leading-snug">
               Account Receivables{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] md:text-[30px] font-medium block text-[#1976D2]">
                 Accelerate your cash flow
               </span>
             </h2>
@@ -119,9 +119,9 @@ export default function AccountSections() {
         <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] pb-6 md:pb-[32px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[30px] pb-6 leading-snug">
               Accounts Payables{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] font-medium md:text-[30px] block text-[#1976D2]">
                 Control of Vendor Spend
               </span>
             </h2>
@@ -164,7 +164,7 @@ export default function AccountSections() {
           <section className="bg-[#E8F1FB] mb-6 md:mb-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
             {/* Left Side */}
             <div className="flex-1 md:max-w-[520px]">
-              <h2 className="text-[#1976D2] mb-6 text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
+              <h2 className="text-[#1976D2] mb-6 text-[20px] font-medium md:text-[30px] leading-snug">
                 Smart Expense Management
               </h2>
               <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] md:leading-relaxed md:tracking-wide">
@@ -203,9 +203,9 @@ export default function AccountSections() {
           <section className="bg-white mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
             {/* Left Side */}
             <div className="flex-1 md:max-w-[520px]">
-              <h2 className="text-[#1976D2] mb-6 text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
+              <h2 className="text-[#1976D2] mb-6 text-[20px] font-medium md:text-[30px] leading-snug">
                 Financial Statements{" "}
-                <span className="tracking-tight block text-[#1976D2] font-normal">
+                <span className="tracking-tight block text-[#1976D2] text-[20px] font-medium md:text-[30px]">
                   Audit-Ready, Always-On
                 </span>
               </h2>
@@ -245,9 +245,9 @@ export default function AccountSections() {
           <section className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter md:h-auto lg:h-auto xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
             {/* Left Side */}
             <div className="flex-1 md:max-w-[520px]">
-              <h2 className="text-[#1976D2] pb-6 md:pb-[32px] text-[20px] md:text-[24px] lg:text-[40px] font-semibold leading-snug">
+              <h2 className="text-[#1976D2] pb-6 text-[20px] md:text-[30px] font-medium leading-snug">
                 Transform Your{" "}
-                <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
+                <span className="tracking-tight text-[20px] font-medium md:text-[30px] block text-[#1976D2]">
                   Finance Operations
                 </span>
               </h2>
