@@ -235,7 +235,7 @@ const LangCountryDropdown = ({
         <img
           src={countries.find((c) => c.name === selectedCountry)?.flag}
           alt={selectedCountry}
-          className="w-5 h-5"
+          className="w-[30px] h-[30px"
         />
         <span className="text-black truncate text-sm lg:text-base">
           {languages.find((l) => l.name === selectedLanguage)?.display} /{" "}
@@ -297,6 +297,20 @@ const LangCountryDropdown = ({
   );
 };
 
+// ===================== SVG Arrow Component =====================
+const Arrow45 = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-3 h-3 transform -rotate-45"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
+
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState("products");
   const [activeSection, setActiveSection] = useState("Business Solution");
@@ -326,15 +340,11 @@ const Header = () => {
       setHeaderHeight(h);
     };
     const handleResize = () => {
-      // Close mobile menu when switching to desktop
-      if (window.innerWidth >= 1280) {
-        setIsMobileMenuOpen(false);
-      }
+      if (window.innerWidth >= 1280) setIsMobileMenuOpen(false);
       computeHeaderHeight();
     };
     computeHeaderHeight();
     window.addEventListener("resize", handleResize);
-    // Recompute on font/icon load which can affect header height
     window.addEventListener("load", computeHeaderHeight);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -346,7 +356,6 @@ const Header = () => {
     setExpandedSections((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // Get the current active menu data
   const activeMenuData = menus.find((menu) => menu.id === activeMenu);
 
   return (
@@ -359,11 +368,11 @@ const Header = () => {
               <img
                 src="/images/logo.svg"
                 alt="Accqrate Logo"
-                className="h-[25px] md:h-9 lg:h-10 w-auto cursor-pointer max-w-[115px] sm:max-w-[100px] md:max-w-[140px]"
+                className="h-[1.625rem] w-auto cursor-pointer max-w-[115px] sm:max-w-[100px] md:max-w-[140px]"
               />
             </Link>
 
-            {/* Desktop Nav (≥1280px) with shadcn Navigation Menu */}
+            {/* Desktop Navigation */}
             <nav
               ref={navRef}
               className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
@@ -375,13 +384,10 @@ const Header = () => {
                       key={id}
                       onMouseEnter={() => {
                         setActiveMenu(id);
-                        // For products menu, set the first section as active
-                        if (id === "products") {
-                          setActiveSection("Business Solution");
-                        }
+                        if (id === "products") setActiveSection("Business Solution");
                       }}
                     >
-                      <NavigationMenuTrigger className="text-[14px] text-gray-600 data-[state=open]:text-[#534ED3] data-[state=open]:bg-transparent hover:bg-transparent hover:text-[#534ED3] focus:bg-transparent">
+                      <NavigationMenuTrigger className="text-[0.875rem] text-gray-600 data-[state=open]:text-[#534ED3] data-[state=open]:bg-transparent hover:bg-transparent hover:text-[#534ED3] focus:bg-transparent">
                         {title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent
@@ -389,173 +395,28 @@ const Header = () => {
                         style={{ top: headerHeight }}
                       >
                         <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 shadow-lg rounded-xl flex flex-col">
-                          {activeMenuData.type === "mega" ? (
-                            // Products Mega Menu Layout
-                            <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
-                              {/* LEFT COLUMN – Categories */}
-                              <div className="col-span-1 border-r pr-6 mb-2">
-                                <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500">
-                                  Products
-                                </h6>
-                                <ul className="mt-3 space-y-6">
-                                  {activeMenuData.sections.map((section) => (
-                                    <li
-                                      key={section.heading}
-                                      className={`cursor-pointer px-2 py-1 ${activeSection === section.heading
-                                        ? "font-semibold"
-                                        : "text-gray-700"
-                                        }`}
-                                      onMouseEnter={() =>
-                                        setActiveSection(section.heading)
-                                      }
-                                    >
-                                      <div className="flex items-center gap-2">
-                                        <img
-                                          src={section.images.replace(
-                                            /^\.\//,
-                                            "/"
-                                          )}
-                                          alt={section.heading}
-                                          className="w-4 h-4"
-                                        />
-                                        <span>{section.heading}</span>
-                                      </div>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
 
-                              {/* MIDDLE COLUMN – Subitems */}
-                              <div className="col-span-2 mb-2">
-                                <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-3">
-                                  {activeSection}
-                                </h6>
-                                {activeSection === "E-Invoicing Solution" ? (
-                                  <ul className="grid grid-cols-2 gap-3">
-                                    {activeMenuData.sections
-                                      .find(
-                                        (sec) => sec.heading === activeSection
-                                      )
-                                      ?.subItems.map((item) => (
-                                        <ListItem
-                                          key={item.title}
-                                          title={item.title}
-                                          href={item.href}
-                                          img={item.img}
-                                        >
-                                          {item.description}
-                                        </ListItem>
-                                      ))}
-                                  </ul>
-                                ) : (
-                                  <ul className="grid grid-cols-2 gap-3 mb-2">
-                                    {activeMenuData.sections
-                                      .find(
-                                        (sec) => sec.heading === activeSection
-                                      )
-                                      ?.subItems.map((item) => (
-                                        <ListItem
-                                          key={item.title}
-                                          title={item.title}
-                                          href={item.href}
-                                          img={item.img}
-                                        >
-                                          {item.description}
-                                        </ListItem>
-                                      ))}
-                                  </ul>
-                                )}
-                              </div>
-                            </div>
-                          ) : activeMenuData.type === "simple" ? (
-                            // Resources Simple Menu Layout
-                            <div className="w-full max-w-7xl mx-auto mb-2">
-                              <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
-                                Resources
-                              </h6>
-                              <div className="grid grid-cols-3 gap-8">
-                                {activeMenuData.sections.map(
-                                  (section, index) => (
-                                    <div
-                                      key={index}
-                                      className="border-r last:border-r-0 pr-6 last:pr-0"
-                                    >
-                                      <h3 className="font-semibold text-lg mb-2">
-                                        {section.heading}
-                                      </h3>
-                                      <ul className="space-y-4">
-                                        {section.subItems.map((item, i) => (
-                                          <ResourcesListItem
-                                            key={i}
-                                            title={item.title}
-                                            href={item.href}
-                                            img={item.icon}
-                                          ></ResourcesListItem>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </div>
-                          ) : (
-                            // Success Stories Menu Layout
-                            <div className="w-full max-w-7xl mx-auto mb-4">
-                              <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
-                                Success Stories
-                              </h6>
-                              <div className="grid grid-cols-3 gap-8">
-                                {activeMenuData.sections.map(
-                                  (section, index) => (
-                                    <div
-                                      key={index}
-                                      className="border-r last:border-r-0 pr-6 last:pr-0"
-                                    >
-                                      <h3 className="font-semibold text-lg mb-2">
-                                        {section.heading}
-                                      </h3>
-                                      <p className="text-sm text-gray-500 mb-4">
-                                        {section.description}
-                                      </p>
-                                      <ul className="space-y-4">
-                                        {section.subItems.map((item, i) => (
-                                          <SuccessStoriesListItem
-                                            key={i}
-                                            title={item.title}
-                                            href={item.href}
-                                            stats={item.stats}
-                                          >
-                                            {item.description}
-                                          </SuccessStoriesListItem>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </div>
-                          )}
+                          {/* CTA Buttons */}
+                          <Link
+                            href="/book-demo"
+                            className="inline-flex items-center justify-center gap-2 h-[41px] w-[155px] rounded-[80px] text-[14px] hover:text-black"
+                          >
+                            Book Demo
+                          </Link>
 
-                          {/* Call to Action buttons at the bottom */}
-                          <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4">
-                            <Link
-                              href="/book-demo"
-                              className="inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
-                            >
-                              Book Demo →
-                            </Link>
-                            <span
-                              role="separator"
-                              aria-orientation="vertical"
-                              className="self-center h-8 w-px bg-gray-300"
-                            ></span>
-                            <Link
-                              href="/contact-sales"
-                              className="inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
-                            >
-                              Contact Sales →
-                            </Link>
-                          </div>
+                          <span
+                            role="separator"
+                            aria-orientation="vertical"
+                            className="self-center h-8 w-px bg-gray-300"
+                          ></span>
+
+                          <Link
+                            href="/contact-sales"
+                            className="inline-flex items-center justify-center gap-2 h-[41px] w-[155px] rounded-[80px] text-[14px] hover:text-black"
+                          >
+                            Contact Sales
+                            <Arrow45 />
+                          </Link>
                         </div>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
@@ -565,8 +426,8 @@ const Header = () => {
             </nav>
           </div>
 
-          {/* Right Section (≥1280px) */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          {/* Right section */}
+          <div className="hidden xl:flex items-center gap-2 shrink-0">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}
@@ -579,26 +440,22 @@ const Header = () => {
 
             <Link
               href="/request-demo"
-              className="hidden xl:inline-flex items-center gap-2 text-[#F05A28] py-3 px-6 rounded-[80px] text-[14px] border border-[#F05A28]"
+              className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#F05A28]"
             >
               Contact Sales
             </Link>
 
             <Link
               href="/request-demo"
-              className="hidden xl:inline-flex items-center gap-2 text-white py-3 px-4 rounded-[80px] text-[14px] bg-[#F05A28]"
+              className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-[#F05A28]"
             >
               REQUEST DEMO
-              <img
-                src="/images/NavBar/line/Arrow3.svg"
-                alt="Accqrate Logo"
-                className="h-2"
-              />
+              <Arrow45 />
             </Link>
           </div>
 
-          {/* Mobile/Tablet (<1280px) */}
-          <div className="flex md:flex lg:hidden items-center gap-3">
+          {/* Mobile / Tablet */}
+          <div className="flex md:flex xl:hidden items-center gap-3">
             <LangCountryDropdown
               selectedLanguage={selectedLanguage}
               setSelectedLanguage={setSelectedLanguage}
@@ -613,16 +470,13 @@ const Header = () => {
               aria-label="Toggle mobile menu"
               onClick={() => setIsMobileMenuOpen((p) => !p)}
             >
-              <i
-                className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"
-                  }`}
-              ></i>
+              <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu (<1280px) */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
           <Accordion type="single" collapsible className="w-full">
@@ -634,18 +488,9 @@ const Header = () => {
                 <AccordionContent>
                   <Accordion type="single" collapsible className="pl-4">
                     {sections.map((section, sectionIndex) => (
-                      <AccordionItem
-                        key={sectionIndex}
-                        value={`${id}-${section.heading}`}
-                      >
+                      <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
                         <AccordionTrigger className="fflex items-center justify-start gap-2 text-gray-700 font-medium">
-                          {section.images && (
-                            <img
-                              src={section.images}
-                              alt={section.heading}
-                              className="w-4 h-4"
-                            />
-                          )}
+                          {section.images && <img src={section.images} alt={section.heading} className="w-4 h-4" />}
                           <span>{section.heading}</span>
                         </AccordionTrigger>
                         <AccordionContent>
@@ -653,17 +498,13 @@ const Header = () => {
                             {section.subItems.map((item, i) => (
                               <li
                                 key={i}
-                                className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-100"
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
                               >
-                                {(item.img || item.icon) && (
-                                  <img
-                                    src={item.img || item.icon}
-                                    alt={item.title}
-                                    className="w-5 h-5"
-                                  />
-                                )}
-                                <Link href={item.href}>{item.title}</Link>
+                                {item.img && <img src={item.img} alt={item.title} className="w-5 h-5" />}
+                                <Link href={item.href} className="flex-1">
+                                  {item.title}
+                                </Link>
+                                <Arrow45 />
                               </li>
                             ))}
                           </ul>
@@ -675,7 +516,6 @@ const Header = () => {
               </AccordionItem>
             ))}
           </Accordion>
-
           {/* CTA Buttons */}
           <div className="mt-10 flex gap-4">
             <Link
@@ -698,108 +538,5 @@ const Header = () => {
     </header>
   );
 };
-
-const ListItem = React.forwardRef(
-  ({ className, title, children, img, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-            {...props}
-          >
-            {img && (
-              <img src={img} alt={title} className="w-[45px] h-[45px] mr-3" />
-            )}
-            <div>
-              <div className="text-sm font-semibold leading-none">{title}</div>
-              <p className="line-clamp-2 text-[12px] text-slate-500 leading-snug text-muted-foreground">
-                {children}
-              </p>
-            </div>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
-
-const ResourcesListItem = React.forwardRef(
-  ({ className, title, children, icon, img, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
-            {...props}
-          >
-            <div className="w-8 h-8 flex items-center justify-center rounded-full mr-3">
-              {(() => {
-                const source = img || icon;
-                if (!source) return null;
-                // Treat as image if it starts with './' or '/' or has a common image extension
-                const isImagePath =
-                  /^\.|^\//.test(source) ||
-                  /\.(png|jpe?g|svg|webp|gif)$/i.test(source);
-                if (isImagePath) {
-                  const normalized = source.replace(/^\.\//, "/");
-                  return (
-                    <img
-                      src={normalized}
-                      alt={title}
-                      className="w-6 h-6 object-contain"
-                    />
-                  );
-                }
-                // Otherwise treat as a font-awesome class name
-                return (
-                  <i
-                    className={`fa-solid ${source} text-gray-600`}
-                    aria-hidden="true"
-                  ></i>
-                );
-              })()}
-            </div>
-            <div>
-              <div className="text-sm font-medium leading-none">{title}</div>
-              <p className="text-sm leading-snug text-muted-foreground">
-                {children}
-              </p>
-            </div>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ResourcesListItem.displayName = "ResourcesListItem";
-
-const SuccessStoriesListItem = React.forwardRef(
-  ({ className, title, children, stats, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border border-gray-200"
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none mb-1">{title}</div>
-            <p className="text-sm leading-snug text-muted-foreground mb-2">
-              {children}
-            </p>
-            <div className="text-xs font-semibold text-[#F05A28] bg-orange-50 px-2 py-1 rounded-full inline-block">
-              {stats}
-            </div>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-SuccessStoriesListItem.displayName = "SuccessStoriesListItem";
 
 export default Header;

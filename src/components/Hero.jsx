@@ -139,11 +139,11 @@ export default function Hero() {
     >
       <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
         {/* Headings */}
-        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[40px]">
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px]">
           Accqrate <span className="text-[#1976D2]">Books</span>
         </h1>
-        <div className="max-w-[800px] mx-auto">
-          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[32px] md:mb-[40px]">
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[24px]">
             <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
             Accounting Software for Saudi Arabia
           </h2>
@@ -158,7 +158,7 @@ export default function Hero() {
             from any device.
           </p>
           <p className="text-[#737373] md:text-[16px] hidden md:block text-fluid-body">
-            Manage accounts, automate ZATCA compliance, and unlock actionable insights
+            Manage accounts, automate ZATCA compliance, and <br /> unlock actionable insights
             from anywhere, on any device.
           </p>
         </div>
@@ -195,24 +195,24 @@ export default function Hero() {
 
       {/* Trusted text */}
       <div className="mb-8 md:mb-[40px]">
-        <h3 className="text-[14px] md:text-[16px] lg:text-[20px] lg:hidden font-medium text-[#333333] text-center mx-auto">
-          Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
+        <h3 className="text-[14px] md:text-[16px] lg:text-[20px] font-medium text-[#333333] text-center mx-auto">
+          Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing <br className="hidden md:block" /> compliance
           and business accounting.
         </h3>
       </div>
 
-      <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
+      {/* <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
         <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-[1280px] font-bold text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
         </h3>
-      </div>
+      </div> */}
 
       {/* Logo Marquee */}
-      <div className="w-screen bg-[#E6F4FF] relative mb-[48px] md:mb-[56px]">
+      <div className="w-screen bg-[#FFFFFF] relative mb-[48px]">
         <div className="max-w-5xl overflow-hidden py-6 mx-auto">
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#E6F4FF] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#E6F4FF] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#FEFEFE] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#FEFEFE] to-transparent" />
 
           <div className="flex flex-col gap-6">
             <div className="flex animate-scrollLeft w-max flex-shrink-0">
