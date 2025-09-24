@@ -122,9 +122,9 @@ export default function AccountSections() {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] pb-6 md:pb-[32px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[30px] pb-6 leading-snug">
               Seamless Integration{" "}
-              <span className="tracking-tight text-[20px] md:text-[24px] lg:text-[40px] block text-[#1976D2] font-normal">
+              <span className="tracking-tight text-[20px] font-medium md:text-[30px] block text-[#1976D2]">
                 Enterprise Scalability
               </span>
             </h2>
@@ -168,9 +168,9 @@ export default function AccountSections() {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] mb-6 text-[20px] lg:text-[40px] md:mb-[32px] md:text-[24px] font-semibold leading-snug">
+            <h2 className="text-[#1976D2] mb-6 text-[20px] font-medium md:text-[30px] leading-snug">
               Robust Control,{" "}
-              <span className="tracking-tight block text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] font-normal">
+              <span className="tracking-tight block text-[#1976D2] text-[20px] font-medium md:text-[30px]">
                 Total Compliance
               </span>
             </h2>
