@@ -70,15 +70,15 @@ export default function FeatureSection() {
     <>
       <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
         {/* Heading */}
-        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-4 md:mb-[32px]">
+        <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
           Flexible Deployment
         </h2>
 
         {/* Shared description */}
-        <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center max-w-3xl mx-auto">
+        <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
           Accqrate Books is fully cloud-native – no complex installations, no
-          specialized IT needed. Set up your accounting in minutes, not weeks.
+          specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
         </p>
         <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px] md:mb-[56px]">
           {/* Card 1 */}
@@ -104,10 +104,10 @@ export default function FeatureSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4 md:mb-[32px]">
+        <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
           <span className="text-[#1976D2]">Zero-Friction</span> Setup
         </h2>
-        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6 md:pb-[32px]">
+        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
           As your business grows, Accqrate Retail grows with you. Flip the
           switch to add procurement, finance, HR and supply-chain modules—no
           data migration, no downtime.
@@ -117,7 +117,7 @@ export default function FeatureSection() {
           type="single"
           collapsible
           className="flex flex-col gap-4
-        sm:grid sm:grid-cols-2 md:gap-6
+        sm:grid sm:grid-cols-2
         md:grid md:grid-cols-3 md:max-w-5xl md:mb-[32px] mx-auto"
         >
           <AccordionCard
@@ -152,11 +152,11 @@ export default function FeatureSection() {
         <div className="mt-6">
           <div
             className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
-              p-6 sm:p-6 md:p-10 md:max-w-5xl
-              h-auto sm:h-[110px] md:h-[129px] lg:h-[182px]
+              p-6 sm:p-6 md:max-w-5xl
+              h-auto sm:h-[110px] md:h-[129px]
               flex flex-col items-center justify-center"
           >
-            <div className="max-w-[1000px] w-full">
+            <div className="max-w-[800px] mx-auto w-full">
               <p className="text-fluid-body font-normal text-[#333333] md:leading-10 text-left md:text-center">
                 “We set up 5 new outlets in under an hour—no IT team needed.”
               </p>
@@ -174,7 +174,7 @@ export default function FeatureSection() {
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
         </h2>
-        <h2 className="hidden lg:block text-fluid-h2 mt-[24px] text-[#333333] font-medium mb-[24px]">
+        <h2 className="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
           Compliance
         </h2>
