@@ -14,7 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "./ui/accordion"
+} from "./ui/accordion";
 
 const menus = [
   {
@@ -223,8 +223,7 @@ const LangCountryDropdown = ({
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setShow]);
 
   return (
@@ -239,9 +238,8 @@ const LangCountryDropdown = ({
           className="w-5 h-5"
         />
         <span className="text-black truncate text-sm lg:text-base">
-          {
-            languages.find((l) => l.name === selectedLanguage)?.display
-          } / {countries.find((c) => c.name === selectedCountry)?.code}
+          {languages.find((l) => l.name === selectedLanguage)?.display} /{" "}
+          {countries.find((c) => c.name === selectedCountry)?.code}
         </span>
         <i className="fa-solid fa-angle-down ml-1"></i>
       </button>
@@ -319,8 +317,7 @@ const Header = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -350,11 +347,11 @@ const Header = () => {
   };
 
   // Get the current active menu data
-  const activeMenuData = menus.find(menu => menu.id === activeMenu);
+  const activeMenuData = menus.find((menu) => menu.id === activeMenu);
 
   return (
     <header ref={headerRef} className="z-50 m-0 p-0 w-full bg-white lg:border">
-      <div className="w-full px-6 mt-[30px] md:px-[32px]">
+      <div className="w-full px-6 pt-6 lg:pt-0 md:px-[32px]">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="logo-container flex items-center justify-around gap-6">
@@ -372,7 +369,7 @@ const Header = () => {
               className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1"
             >
               <NavigationMenu className="w-full">
-                <NavigationMenuList className='py-4'>
+                <NavigationMenuList className="py-4">
                   {menus.map(({ title, id }) => (
                     <NavigationMenuItem
                       key={id}
@@ -408,11 +405,16 @@ const Header = () => {
                                         ? "font-semibold"
                                         : "text-gray-700"
                                         }`}
-                                      onMouseEnter={() => setActiveSection(section.heading)}
+                                      onMouseEnter={() =>
+                                        setActiveSection(section.heading)
+                                      }
                                     >
                                       <div className="flex items-center gap-2">
                                         <img
-                                          src={section.images.replace(/^\.\//, "/")}
+                                          src={section.images.replace(
+                                            /^\.\//,
+                                            "/"
+                                          )}
                                           alt={section.heading}
                                           className="w-4 h-4"
                                         />
@@ -431,7 +433,9 @@ const Header = () => {
                                 {activeSection === "E-Invoicing Solution" ? (
                                   <ul className="grid grid-cols-2 gap-3">
                                     {activeMenuData.sections
-                                      .find((sec) => sec.heading === activeSection)
+                                      .find(
+                                        (sec) => sec.heading === activeSection
+                                      )
                                       ?.subItems.map((item) => (
                                         <ListItem
                                           key={item.title}
@@ -446,7 +450,9 @@ const Header = () => {
                                 ) : (
                                   <ul className="grid grid-cols-2 gap-3 mb-2">
                                     {activeMenuData.sections
-                                      .find((sec) => sec.heading === activeSection)
+                                      .find(
+                                        (sec) => sec.heading === activeSection
+                                      )
                                       ?.subItems.map((item) => (
                                         <ListItem
                                           key={item.title}
@@ -468,22 +474,28 @@ const Header = () => {
                                 Resources
                               </h6>
                               <div className="grid grid-cols-3 gap-8">
-                                {activeMenuData.sections.map((section, index) => (
-                                  <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
-                                    <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                    <ul className="space-y-4">
-                                      {section.subItems.map((item, i) => (
-                                        <ResourcesListItem
-                                          key={i}
-                                          title={item.title}
-                                          href={item.href}
-                                          img={item.icon}
-                                        >
-                                        </ResourcesListItem>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
+                                {activeMenuData.sections.map(
+                                  (section, index) => (
+                                    <div
+                                      key={index}
+                                      className="border-r last:border-r-0 pr-6 last:pr-0"
+                                    >
+                                      <h3 className="font-semibold text-lg mb-2">
+                                        {section.heading}
+                                      </h3>
+                                      <ul className="space-y-4">
+                                        {section.subItems.map((item, i) => (
+                                          <ResourcesListItem
+                                            key={i}
+                                            title={item.title}
+                                            href={item.href}
+                                            img={item.icon}
+                                          ></ResourcesListItem>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )
+                                )}
                               </div>
                             </div>
                           ) : (
@@ -493,24 +505,33 @@ const Header = () => {
                                 Success Stories
                               </h6>
                               <div className="grid grid-cols-3 gap-8">
-                                {activeMenuData.sections.map((section, index) => (
-                                  <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
-                                    <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                    <p className="text-sm text-gray-500 mb-4">{section.description}</p>
-                                    <ul className="space-y-4">
-                                      {section.subItems.map((item, i) => (
-                                        <SuccessStoriesListItem
-                                          key={i}
-                                          title={item.title}
-                                          href={item.href}
-                                          stats={item.stats}
-                                        >
-                                          {item.description}
-                                        </SuccessStoriesListItem>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
+                                {activeMenuData.sections.map(
+                                  (section, index) => (
+                                    <div
+                                      key={index}
+                                      className="border-r last:border-r-0 pr-6 last:pr-0"
+                                    >
+                                      <h3 className="font-semibold text-lg mb-2">
+                                        {section.heading}
+                                      </h3>
+                                      <p className="text-sm text-gray-500 mb-4">
+                                        {section.description}
+                                      </p>
+                                      <ul className="space-y-4">
+                                        {section.subItems.map((item, i) => (
+                                          <SuccessStoriesListItem
+                                            key={i}
+                                            title={item.title}
+                                            href={item.href}
+                                            stats={item.stats}
+                                          >
+                                            {item.description}
+                                          </SuccessStoriesListItem>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )
+                                )}
                               </div>
                             </div>
                           )}
@@ -613,7 +634,10 @@ const Header = () => {
                 <AccordionContent>
                   <Accordion type="single" collapsible className="pl-4">
                     {sections.map((section, sectionIndex) => (
-                      <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
+                      <AccordionItem
+                        key={sectionIndex}
+                        value={`${id}-${section.heading}`}
+                      >
                         <AccordionTrigger className="fflex items-center justify-start gap-2 text-gray-700 font-medium">
                           {section.images && (
                             <img
@@ -675,86 +699,107 @@ const Header = () => {
   );
 };
 
-const ListItem = React.forwardRef(({ className, title, children, img, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-          {...props}
-        >
-          {img && <img src={img} alt={title} className="w-[45px] h-[45px] mr-3" />}
-          <div>
-            <div className="text-sm font-semibold leading-none">{title}</div>
-            <p className="line-clamp-2 text-[12px] text-slate-500 leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </div>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+const ListItem = React.forwardRef(
+  ({ className, title, children, img, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            {...props}
+          >
+            {img && (
+              <img src={img} alt={title} className="w-[45px] h-[45px] mr-3" />
+            )}
+            <div>
+              <div className="text-sm font-semibold leading-none">{title}</div>
+              <p className="line-clamp-2 text-[12px] text-slate-500 leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
 ListItem.displayName = "ListItem";
 
-const ResourcesListItem = React.forwardRef(({ className, title, children, icon, img, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
-          {...props}
-        >
-          <div className="w-8 h-8 flex items-center justify-center rounded-full mr-3">
-            {(() => {
-              const source = img || icon;
-              if (!source) return null;
-              // Treat as image if it starts with './' or '/' or has a common image extension
-              const isImagePath = /^\.|^\//.test(source) || /\.(png|jpe?g|svg|webp|gif)$/i.test(source);
-              if (isImagePath) {
-                const normalized = source.replace(/^\.\//, "/");
-                return <img src={normalized} alt={title} className="w-6 h-6 object-contain" />;
-              }
-              // Otherwise treat as a font-awesome class name
-              return <i className={`fa-solid ${source} text-gray-600`} aria-hidden="true"></i>;
-            })()}
-          </div>
-          <div>
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </div>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+const ResourcesListItem = React.forwardRef(
+  ({ className, title, children, icon, img, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
+            {...props}
+          >
+            <div className="w-8 h-8 flex items-center justify-center rounded-full mr-3">
+              {(() => {
+                const source = img || icon;
+                if (!source) return null;
+                // Treat as image if it starts with './' or '/' or has a common image extension
+                const isImagePath =
+                  /^\.|^\//.test(source) ||
+                  /\.(png|jpe?g|svg|webp|gif)$/i.test(source);
+                if (isImagePath) {
+                  const normalized = source.replace(/^\.\//, "/");
+                  return (
+                    <img
+                      src={normalized}
+                      alt={title}
+                      className="w-6 h-6 object-contain"
+                    />
+                  );
+                }
+                // Otherwise treat as a font-awesome class name
+                return (
+                  <i
+                    className={`fa-solid ${source} text-gray-600`}
+                    aria-hidden="true"
+                  ></i>
+                );
+              })()}
+            </div>
+            <div>
+              <div className="text-sm font-medium leading-none">{title}</div>
+              <p className="text-sm leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
 ResourcesListItem.displayName = "ResourcesListItem";
 
-const SuccessStoriesListItem = React.forwardRef(({ className, title, children, stats, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border border-gray-200"
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none mb-1">{title}</div>
-          <p className="text-sm leading-snug text-muted-foreground mb-2">
-            {children}
-          </p>
-          <div className="text-xs font-semibold text-[#F05A28] bg-orange-50 px-2 py-1 rounded-full inline-block">
-            {stats}
-          </div>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+const SuccessStoriesListItem = React.forwardRef(
+  ({ className, title, children, stats, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border border-gray-200"
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none mb-1">{title}</div>
+            <p className="text-sm leading-snug text-muted-foreground mb-2">
+              {children}
+            </p>
+            <div className="text-xs font-semibold text-[#F05A28] bg-orange-50 px-2 py-1 rounded-full inline-block">
+              {stats}
+            </div>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
 SuccessStoriesListItem.displayName = "SuccessStoriesListItem";
 
 export default Header;
