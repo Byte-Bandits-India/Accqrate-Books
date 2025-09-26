@@ -5,6 +5,7 @@ import React, { useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
 import Skeleton from "../components/skeleton";
 import useInView from "../utils/useInView";
+import ButtonGroup from "@/components/ui/ButtonGroup";
 
 export default function Hero() {
   const { loading } = useContext(LoadingContext);
@@ -68,7 +69,7 @@ export default function Hero() {
         <Skeleton
           height="400px"
           width="100%"
-          className="mt-12 max-w-7xl rounded-xl"
+          className="mt-12 max-w-[1128px] rounded-xl"
         />
 
         {/* Trusted text skeleton */}
@@ -134,67 +135,84 @@ export default function Hero() {
     <section
       id="heroSection"
       ref={heroRef}
-      className="w-full font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
+      className="w-full font-inter flex flex-col items-center justify-center text-center px-6 md:px-[32px]"
     >
-      {/* Headings */}
-      <h1 className="text-fluid-h1 font-semibold">
-        Accqrate <span className="text-[#1976D2]">Books</span>
-      </h1>
-      <h2 className="text-fluid-h2 mt-6 font-medium tracking-wide max-w-[800px]">
-        <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
-        Accounting Software for Saudi Arabia
-      </h2>
-      <p className="text-fluid-body tracking-tight md:font-semibold md:leading-10 mt-6 max-w-[800px]">
-        Run your entire business accounting—faster, smarter, always ZATCA Phase-2 ready.
-      </p>
+      <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
+        {/* Headings */}
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px]">
+          Accqrate <span className="text-[#1976D2]">Books</span>
+        </h1>
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[24px]">
+            <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
+            Accounting Software for Saudi Arabia
+          </h2>
+          <p className="text-[14px] md:text-[18px] lg:text-[20px] tracking-tight md:font-semibold md:leading-10 mb-[16px] md:mb-[24px] text-[#333333]">
+            Run your entire business accounting—faster,<br className="hidden md:block" /> smarter, always ZATCA Phase-2 ready.
+          </p>
 
-      {/* Supporting text */}
-      <p className="text-[#000000B2] text-fluid-small mt-4 max-w-[800px] md:hidden">
-        Launch your store in minutes, manage everything in one place—from sales to stock,
-        from any device.
-      </p>
-      <p className="text-[#000000B2] hidden md:block text-fluid-body mt-4 max-w-[800px]">
-        Manage accounts, automate ZATCA compliance, and unlock actionable insights
-        from anywhere, on any device.
-      </p>
 
-      {/* Buttons */}
-      <div className="mt-8 md:mt-12 flex flex-col md:flex-row gap-4 md:text-lg">
-        <button className="bg-[#1976D2] text-white px-16 py-4 rounded-full font-semibold">
-          REQUEST A DEMO
-        </button>
-        <button className="border border-[#1976D2] text-[#1976D2] px-16 py-4 rounded-full font-semibold">
-          CONTACT SALES
-        </button>
+          {/* Supporting text */}
+          <p className="text-[#737373] text-fluid-small md:hidden">
+            Launch your store in minutes, manage everything in one place—from sales to stock,
+            from any device.
+          </p>
+          <p className="text-[#737373] md:text-[16px] hidden md:block text-fluid-body">
+            Manage accounts, automate ZATCA compliance, and <br /> unlock actionable insights
+            from anywhere, on any device.
+          </p>
+        </div>
+
+        {/* buttonGroup */}
+        <div className="flex justify-center">
+          <ButtonGroup
+            buttons={[
+              {
+                text: "REQUEST A DEMO",
+                href: "/demo",
+                variant: "filled",
+                bgColor: "bg-[#1976D2]",
+                textColor: "text-white",
+              },
+              {
+                text: "CONTACT SALES",
+                href: "/contact",
+                variant: "outline",
+                borderColor: "border-[#1976D2]",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       {/* Dashboard Video */}
-      <div className="mt-12 w-full max-w-7xl rounded-xl overflow-hidden">
+      <div className="mb-[32px] md:mb-[40px] w-full max-w-[1128px] mx-auto rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/Hero.mp4" type="video/mp4" />
         </video>
       </div>
 
+
       {/* Trusted text */}
-      <div className="py-6 mt-16">
-        <h3 className="text-fluid-body px-2 lg:hidden md:text-fluid-body lg:text-fluid-h2 font-medium text-center mx-auto">
-          Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
+      <div className="mb-8 md:mb-[40px]">
+        <h3 className="text-[14px] md:text-[16px] lg:text-[20px] font-medium text-[#333333] text-center mx-auto">
+          Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing <br className="hidden md:block" /> compliance
           and business accounting.
         </h3>
       </div>
 
-      <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
-        <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-7xl font-bold text-center mx-auto">
+      {/* <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
+        <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-[1280px] font-bold text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
           and business accounting.
         </h3>
-      </div>
+      </div> */}
 
       {/* Logo Marquee */}
-      <div className="w-screen bg-[#E6F4FF] relative">
+      <div className="w-screen bg-[#FFFFFF] relative mb-[48px]">
         <div className="max-w-5xl overflow-hidden py-6 mx-auto">
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#E6F4FF] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#E6F4FF] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#FEFEFE] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#FEFEFE] to-transparent" />
 
           <div className="flex flex-col gap-6">
             <div className="flex animate-scrollLeft w-max flex-shrink-0">

@@ -122,7 +122,7 @@ export default function Footer() {
         id="footerSection"
         className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]"
       >
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
+        <div className="flex justify-between flex-nowrap max-w-[1280px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {[...Array(6)].map((_, idx) => (
             <div key={idx}>
               <Skeleton height="24px" width="60%" className="mb-4" />
@@ -154,10 +154,10 @@ export default function Footer() {
   return (
     <footer
       id="footerSection"
-      className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]"
+      className="bg-white border-gray-200 font-inter min-h-full px-6 md:px-[32px]"
     >
       {showSections && (
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
+        <div className="flex justify-between flex-nowrap max-w-[1280px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
           {sections.map((section, idx) => (
             <div key={idx} className="flex flex-col">
               <h3 className="font-bold mb-4 text-[16px] leading-6 whitespace-normal break-words">
@@ -177,7 +177,7 @@ export default function Footer() {
       )}
 
       <div>
-        <div className="flex flex-wrap justify-center gap-3 my-4 mt-5 mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 my-4 mt-5 mx-auto">
           {socialLinks.map(({ href, src }, idx) => (
             <a
               key={idx}
@@ -189,13 +189,13 @@ export default function Footer() {
               <img
                 src={src}
                 alt="social icon"
-                className="w-6 h-6 sm:w-5 sm:h-5"
+                className="w-[20px] h-[20px] sm:w-5 sm:h-5"
               />
             </a>
           ))}
         </div>
 
-        <div className="border-t border-black/25 w-full my-2 mx-auto py-8 text-center text-xs text-gray-600">
+        <div className="border-t border-black/25 w-full mx-auto py-6 text-center text-xs text-gray-600">
           © Copyright 2021 - 2025{" "}
           <span className="text-[#194BED] text-sm leading-6 font-medium">
             Accqrate
