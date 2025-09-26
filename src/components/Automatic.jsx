@@ -112,7 +112,7 @@ export default function AutomationSection() {
     <>
       <div className="bg-white py-12 px-4 sm:px-6  max-w-[1440px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
-        <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
+        <section className="border-[#CECECE] border font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 
   md:flex md:items-center md:px-6 lg:px-10 md:mx-10 lg:mx-20 mx-auto md:mt-[4%]">
 
           {/* Left Side */}
