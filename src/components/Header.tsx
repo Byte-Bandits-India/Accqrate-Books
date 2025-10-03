@@ -2,6 +2,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "./ui/accordion";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -397,7 +403,7 @@ const CustomNavigationTrigger: React.FC<{
 
 // ===================== Header =====================
 const Header: React.FC = () => {
-  const [activeMenu, setActiveMenu] = useState<string>("products");
+  const [activeMenu, setActiveMenu] = useState<string>("");
   const [activeSection, setActiveSection] = useState<string>("Business Solution");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [selectedLanguage, setSelectedLanguage] = useState<string>("Arabic");
@@ -584,9 +590,102 @@ const Header: React.FC = () => {
               setShow={setShowLangCountryDropdown}
               align="right"
             />
+            <Link
+              href="/request-demo"
+              className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#F05A28]"
+            >
+              Contact Sales
+            </Link>
+            <Link
+              href="/request-demo"
+              className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-[#F05A28]"
+            >
+              Book a Demo
+              <Arrow45 />
+            </Link>
+          </div>
+
+          {/* Mobile / Tablet */}
+          <div className="flex md:flex xl:hidden items-center gap-3">
+            <LangCountryDropdown
+              selectedLanguage={selectedLanguage}
+              setSelectedLanguage={setSelectedLanguage}
+              selectedCountry={selectedCountry}
+              setSelectedCountry={setSelectedCountry}
+              show={showLangCountryDropdown}
+              setShow={setShowLangCountryDropdown}
+              align="right"
+            />
+            <button
+              className="block bg-transparent border-none text-gray-700 text-2xl cursor-pointer shrink-0"
+              aria-label="Toggle mobile menu"
+              onClick={() => setIsMobileMenuOpen((p) => !p)}
+            >
+              <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
+          <Accordion type="single" collapsible className="w-full">
+            {menus.map(({ id, title, sections }) => (
+              <AccordionItem key={id} value={id}>
+                <AccordionTrigger className="text-gray-800 font-semibold hover:text-[#534ED3]">
+                  {title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <Accordion type="single" collapsible className="pl-4">
+                    {sections.map((section, sectionIndex) => (
+                      <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
+                        <AccordionTrigger className="fflex items-center justify-start gap-2 text-gray-700 font-medium">
+                          {section.images && <img src={section.images} alt={section.heading} className="w-4 h-4" />}
+                          <span>{section.heading}</span>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="pl-4 mt-2 space-y-2">
+                            {section.subItems.map((item, i) => (
+                              <li
+                                key={i}
+                                className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
+                              >
+                                {item.img && <img src={item.img} alt={item.title} className="w-5 h-5" />}
+                                <Link href={item.href} className="flex-1">
+                                  {item.title}
+                                </Link>
+                                <Arrow45 />
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          {/* CTA Buttons */}
+          <div className="mt-10 flex gap-4">
+            <Link
+              href="/contact-sales"
+              className="block w-full text-center text-[#F05A28] border border-[#F05A28] py-3 rounded-full text-sm font-bold"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact Sales
+            </Link>
+            <Link
+              href="/book-demo"
+              className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-[#F05A28]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Book a Demo
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
