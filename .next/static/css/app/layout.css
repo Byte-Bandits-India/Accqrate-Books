@@ -1080,9 +1080,6 @@ video {
 .animate-scrollRight{
   animation: scrollRight 50s linear infinite;
 }
-.animate-skeleton{
-  animation: skeleton 1.2s ease-in-out infinite;
-}
 .cursor-pointer{
   cursor: pointer;
 }
@@ -1375,9 +1372,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
-.bg-\[linear-gradient\(90deg\2c \#D9D9D9_25\%\2c \#eaeaea_37\%\2c \#D9D9D9_63\%\)\]{
-  background-image: linear-gradient(90deg,#D9D9D9 25%,#eaeaea 37%,#D9D9D9 63%);
-}
 .bg-gradient-to-l{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
@@ -1399,9 +1393,6 @@ video {
 }
 .to-transparent{
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
-}
-.bg-\[length\:400\%_100\%\]{
-  background-size: 400% 100%;
 }
 .object-contain{
   -o-object-fit: contain;
@@ -1732,11 +1723,6 @@ video {
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-sm{
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .shadow-xl{
