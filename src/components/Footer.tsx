@@ -2,8 +2,7 @@
 
 import React, { useContext, useState, useEffect, JSX } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import Skeleton from "../components/skeleton";
-
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface Section {
   title: string;
@@ -86,22 +85,42 @@ export default function Footer(): JSX.Element {
   if (loading || !isVisible) {
     return (
       <footer id="footerSection" className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]">
+        {/* Sections Skeleton */}
         <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
-          {[...Array(6)].map((_, idx) => (
-            <div key={idx}>
-              <Skeleton height="24px" width="60%" className="mb-4" />
-              {[...Array(6)].map((_, i) => (
-                <Skeleton key={i} height="18px" width="80%" className="mb-2" />
-              ))}
+          {sections.map((section, idx) => (
+            <div key={idx} className="flex flex-col min-w-[150px]">
+              {/* Section Title Skeleton */}
+              <Skeleton className="h-6 w-3/4 mb-4" />
+
+              {/* Section Items Skeleton */}
+              <div className="space-y-2">
+                {section.items.map((_, i) => (
+                  <Skeleton
+                    key={i}
+                    className={`h-4 ${i % 2 === 0 ? 'w-full' : 'w-5/6'}`}
+                  />
+                ))}
+              </div>
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap justify-center gap-3 mt-5 mx-auto">
-          {[...Array(8)].map((_, i) => (
-            <Skeleton key={i} height="20px" width="20px" className="ml-2" />
+
+        {/* Social Links Skeleton */}
+        <div className="flex flex-wrap justify-center gap-4 my-4 mt-5 mx-auto">
+          {socialLinks.map((_, idx) => (
+            <Skeleton
+              key={idx}
+              className="w-6 h-6 rounded-full"
+            />
           ))}
         </div>
-        <Skeleton height="20px" width="40%" className="mx-auto mt-6 text-center" />
+
+        {/* Copyright Skeleton */}
+        <div className="border-t border-gray-200 w-full my-2 mx-auto py-8">
+          <div className="text-center">
+            <Skeleton className="h-4 w-64 mx-auto" />
+          </div>
+        </div>
       </footer>
     );
   }
