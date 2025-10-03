@@ -2262,6 +2262,10 @@ video {
     margin-top: 56px;
     margin-bottom: 56px;
   }
+  .md\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   .md\:mb-4{
     margin-bottom: 1rem;
   }

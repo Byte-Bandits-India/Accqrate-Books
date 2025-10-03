@@ -29,11 +29,11 @@ export default function FeatureSection(): JSX.Element {
         </div>
 
         {/* Feature Cards Skeleton */}
-        <div className="flex flex-col md:flex-row justify-center gap-6 lg:gap-16 mb-12 w-full">
+        <div className="flex flex-col items-center md:items-stretch md:flex-row justify-center gap-6 lg:gap-16 mb-12 w-full">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="w-full max-w-[320px] md:w-[340px] h-[270px] md:h-[400px] rounded-xl p-4 bg-[#F2F2F2] shadow"
+              className="w-full max-w-[320px] md:w-[340px] h-[270px] md:h-[400px] rounded-xl p-4 bg-[#F2F2F2] shadow mx-auto md:mx-0"
             >
               <Skeleton className="w-full h-32 md:h-48 rounded-lg mb-4" />
               <Skeleton className="h-6 w-3/4 mb-3" />
