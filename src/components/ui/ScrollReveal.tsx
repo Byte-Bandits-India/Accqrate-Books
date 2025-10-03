@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useMemo, JSX } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface ScrollRevealProps<T extends keyof JSX.IntrinsicElements = "h2"> {
   children: string | React.ReactNode;
@@ -51,11 +49,13 @@ const ScrollReveal = <T extends keyof JSX.IntrinsicElements = "h2">({
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    let triggers: gsap.core.ScrollTrigger[] = [];
+    let triggers: Array<{ kill: () => void }> = [];
 
     (async () => {
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-      gsap.registerPlugin(ScrollTrigger);
+      try {
+        const { default: gsap } = await import("gsap");
+        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+        gsap.registerPlugin(ScrollTrigger);
 
       const el = containerRef.current;
       if (!el) return;
@@ -64,8 +64,7 @@ const ScrollReveal = <T extends keyof JSX.IntrinsicElements = "h2">({
       ScrollTrigger.refresh();
 
       // Rotation animation
-      triggers.push(
-        gsap.fromTo(
+      const rot = gsap.fromTo(
           el,
           { transformOrigin: "0% 50%", rotate: baseRotation },
           {
@@ -80,15 +79,14 @@ const ScrollReveal = <T extends keyof JSX.IntrinsicElements = "h2">({
               invalidateOnRefresh: true,
             },
           }
-        ).scrollTrigger as gsap.core.ScrollTrigger
-      );
+        );
+      if (rot && (rot as any).scrollTrigger) triggers.push((rot as any).scrollTrigger);
 
       // Opacity/Y/blur animation
       const targets =
         typeof children === "string" ? el.querySelectorAll(".word") : [el];
 
-      triggers.push(
-        gsap.fromTo(
+      const fade = gsap.fromTo(
           targets,
           {
             opacity: baseOpacity,
@@ -111,8 +109,12 @@ const ScrollReveal = <T extends keyof JSX.IntrinsicElements = "h2">({
               invalidateOnRefresh: true,
             },
           }
-        ).scrollTrigger as gsap.core.ScrollTrigger
-      );
+        );
+      if (fade && (fade as any).scrollTrigger) triggers.push((fade as any).scrollTrigger);
+      } catch (e) {
+        // gsap not available; skip animations gracefully
+        return;
+      }
     })();
 
     return () => triggers.forEach((t) => t.kill());

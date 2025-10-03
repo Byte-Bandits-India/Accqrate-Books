@@ -30,7 +30,7 @@ export default function FeatureSection(): JSX.Element {
         <div className="flex flex-col md:flex-row justify-center gap-6 lg:gap-16 mt-6">
           {[1, 2, 3].map((i) => (
             <div
-              key={i}    
+              key={i}
               className="w-[320px] md:w-[340px] h-[270px] md:h-[400px] rounded-xl p-4 bg-[#F2F2F2] shadow"
             >
               <Skeleton className="w-full h-32 md:h-48 rounded-lg mb-4" />
