@@ -20,21 +20,21 @@ export default function AutomationSection(): JSX.Element {
     {
       label: "AI Bank Reconciliation",
       content:
-        "Automates the reconciliation of bank statements with transactions, saving hours of manual work.",
+        "Imports, matches, and reconciles your statements—up to 10x faster.",
     },
     {
       label: "Auto-Invoice Conversion",
       content:
-        "Automatically converts invoices into structured formats ready for compliance and accounting.",
+        "Turn POs into invoices or bills in a single click.",
     },
     {
       label: "Expense Classification",
       content:
-        "Uses AI to classify and categorize expenses, ensuring accurate reporting and compliance.",
+        "AI suggests categories, flags anomalies for review.",
     },
   ];
 
-  
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { loading } = useContext(LoadingContext);
   const automationRef = useRef<HTMLDivElement | null>(null);

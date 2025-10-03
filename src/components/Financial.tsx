@@ -30,16 +30,16 @@ export default function AccountSections(): JSX.Element {
 
   // Seamless Integration
   const integrationDropdowns: DropdownItem[] = [
-    { title: "Instant ERP Integration", content: "Sample content for ERP Integration." },
-    { title: "API & Marketplace", content: "Sample content for API & Marketplace." },
-    { title: "No Vendor Lock-in", content: "Sample content for No Vendor Lock-in." },
+    { title: "Instant ERP Integration", content: "Add procurement, inventory, payroll, and HR modules without migrations or reimplementation." },
+    { title: "API & Marketplace", content: "Connect to banks, e-commerce, or any third-party -future-proof your finance stack." },
+    { title: "No Vendor Lock-in", content: "Data is always yours; export, back up, and migrate on demand." },
   ];
 
   // Robust Control
   const controlDropdowns: DropdownItem[] = [
-    { title: "Role-Based Access", content: "Sample content for Role-Based Access." },
-    { title: "Automated Audit Logs", content: "Sample content for Automated Audit Logs." },
-    { title: "Disaster Recovery & Data Security", content: "Sample content for Disaster Recovery & Data Security." },
+    { title: "Role-Based Access", content: "Define granular permissions, approve sensitive actions, monitor changes." },
+    { title: "Automated Audit Logs", content: "Every entry, change, or deletion is tracked—satisfy any auditor instantly." },
+    { title: "Disaster Recovery & Data Security", content: "Bank-level encryption, real-time backups, local data hosting for KSA." },
   ];
 
   if (loading || !isVisible) {

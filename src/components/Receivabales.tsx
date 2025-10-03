@@ -22,42 +22,42 @@ export default function AccountSections(): JSX.Element {
   const isVisible = useInView(receivableRef, { threshold: 0 });
 
   const receivableDropdowns: DropdownItem[] = [
-    { title: "Automated Invoicing", content: "Sample content for Automated Invoicing." },
-    { title: "Payment Tracking", content: "Sample content for Payment Tracking." },
-    { title: "Receipts & Reconciliations", content: "Sample content for Receipts & Reconciliations." },
-    { title: "Aging Analysis", content: "Sample content for Aging Analysis." },
+    { title: "Automated Invoicing", content: "Generate, send, and track customer invoices in one click." },
+    { title: "Payment Tracking", content: "Real-time view of outstanding, overdue, and incoming payments." },
+    { title: "Receipts & Reconciliations", content: "Instantly post customer payments; AI matches receipts to open invoices." },
+    { title: "Aging Analysis", content: "Visual dashboards and reports flag slow-paying accounts for action." },
   ];
 
   const payableDropdowns: DropdownItem[] = [
-    { title: "Smart Invoice Capture", content: "Sample content for Smart Invoice Capture." },
-    { title: "Approval Routing", content: "Sample content for Approval Routing." },
-    { title: "Automated Payments", content: "Sample content for Automated Payments." },
-    { title: "Supplier Payments", content: "Sample content for Supplier Payments." },
-    { title: "Payable Dashboard", content: "Sample content for Payable Dashboard." },
+    { title: "Smart Invoice Capture", content: "Snap, or scan; AI reads and map them instantly." },
+    { title: "Approval Routing", content: "Automated checks flag out of policy spends and duplicates." },
+    { title: "Automated Payments", content: "Route expenses to the right managers for instant digital sign-off." },
+    { title: "Supplier Payments", content: "See spend by department, project, or cost center in real time." },
+    { title: "Payable Dashboard", content: "Submit, review, and approve on any device." },
   ];
 
   const expenseDropdowns: DropdownItem[] = [
-    { title: "AI-Powered Capture", content: "Sample content for AI-Powered Capture." },
-    { title: "Policy Enforcement", content: "Sample content for Policy Enforcement." },
-    { title: "Approval Workflows", content: "Sample content for Approval Workflows." },
-    { title: "Live Dashboards", content: "Sample content for Live Dashboards." },
-    { title: "Mobile-Friendly", content: "Sample content for Mobile-Friendly." },
+    { title: "AI-Powered Capture", content: "Snap, or scan; AI reads and map them instantly." },
+    { title: "Policy Enforcement", content: "Automated checks flag out of policy spends and duplicates." },
+    { title: "Approval Workflows", content: "Route expenses to the right managers for instant digital sign-off." },
+    { title: "Live Dashboards", content: "See spend by department, project, or cost center in real time." },
+    { title: "Mobile-Friendly", content: "Submit, review, and approve on any device - no paper, no delays." },
   ];
 
   const financialDropdowns: DropdownItem[] = [
-    { title: "Live Financials", content: "Sample content for Live Financials." },
-    { title: "Regulatory Formats", content: "Sample content for Regulatory Formats." },
-    { title: "Drill Down Detail", content: "Sample content for Drill Down Detail." },
-    { title: "Division & Consolidation", content: "Sample content for Division & Consolidation." },
-    { title: "Export & Share", content: "Sample content for Export & Share." },
+    { title: "Live Financials", content: "P&L, Balance Sheet, Trial Balance, and Cash Flow always up-to-date." },
+    { title: "Regulatory Formats", content: "Instantly generate statements in KSA or IFRS layouts, as required." },
+    { title: "Drill Down Detail", content: "Click any line for instant drill-down to source transactions." },
+    { title: "Division & Consolidation", content: "Produce division-wise, consolidated, or project-based financials." },
+    { title: "Export & Share", content: "One-click PDF/XLS export; schedule auto-email to management or auditors." },
   ];
 
   const operationsDropdowns: DropdownItem[] = [
-    { title: "Live Financial Dashboards", content: "Sample content for Live Financial Dashboards." },
-    { title: "Automated Bank Reconciliation", content: "Sample content for Automated Bank Reconciliation." },
-    { title: "Advanced Reporting", content: "Sample content for Advanced Reporting." },
-    { title: "Multi-Entity, Multi-Currency", content: "Sample content for Multi-Entity, Multi-Currency." },
-    { title: "Customizable Chart of Accounts", content: "Sample content for Chart of Accounts." },
+    { title: "Live Financial Dashboards", content: "Snap, or scan; AI reads and map them instantly." },
+    { title: "Automated Bank Reconciliation", content: "Automated checks flag out of policy spends and duplicates." },
+    { title: "Advanced Reporting", content: "Route expenses to the right managers for instant digital sign-off." },
+    { title: "Multi-Entity, Multi-Currency", content: "Consolidate accounts, report across companies or divisions in one click." },
+    { title: "Customizable Chart of Accounts", content: "Adapt to any business or regulatory need—flexibility without complexity." },
   ];
 
   if (loading || !isVisible) {
