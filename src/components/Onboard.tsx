@@ -2,7 +2,7 @@
 
 import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import Skeleton from "./skeleton";
+import { Skeleton } from "@/components/ui/skeleton"
 import useInView from "../utils/useInView";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, AccordionCard } from "@/components/ui/accordion"; // import Accordion components
 import { FaChevronDown } from "react-icons/fa";
@@ -22,48 +22,82 @@ export default function FeatureSection(): JSX.Element {
         ref={onboardRef}
         className="w-full max-w-[1280px] mx-auto font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
       >
-        {/* Heading skeletons */}
-        <Skeleton height="28px" width="70%" className="mb-4 mx-auto" />
-        <Skeleton height="22px" width="50%" className="mb-4 mt-4 mx-auto" />
-        <Skeleton height="22px" width="60%" className="mb-4 mx-auto" />
+        {/* Main Heading Skeleton */}
+        <div className="w-full max-w-4xl mx-auto mb-8">
+          <Skeleton className="h-8 md:h-9 lg:h-10 w-3/4 mx-auto mb-4" />
+          <Skeleton className="h-6 w-1/2 mx-auto" />
+        </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-6 lg:gap-16 mt-6">
+        {/* Feature Cards Skeleton */}
+        <div className="flex flex-col md:flex-row justify-center gap-6 lg:gap-16 mb-12 w-full">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="w-[320px] md:w-[340px] h-[270px] md:h-[400px] rounded-xl p-4 bg-[#F2F2F2] shadow"
+              className="w-full max-w-[320px] md:w-[340px] h-[270px] md:h-[400px] rounded-xl p-4 bg-[#F2F2F2] shadow"
             >
               <Skeleton className="w-full h-32 md:h-48 rounded-lg mb-4" />
-              <Skeleton className="w-3/4 h-5 rounded mb-2" />
-              <Skeleton className="w-full h-4 rounded mb-2" />
-              <Skeleton className="w-5/6 h-4 rounded" />
+              <Skeleton className="h-6 w-3/4 mb-3" />
+              <Skeleton className="h-4 w-full mb-2" />
+              <Skeleton className="h-4 w-5/6" />
             </div>
           ))}
         </div>
 
-        <div className="mt-12 bg-[#F2F2F2] font-inter w-full md:rounded-lg md:h-[560px] px-6 py-10">
-          <Skeleton height="28px" width="70%" className="mb-4 mx-auto" />
-          <Skeleton height="20px" width="50%" className="mb-8 mx-auto" />
-          <div className="flex flex-col gap-4 max-w-xs md:mt-14 mx-auto md:grid md:grid-cols-3 md:max-w-5xl md:gap-12">
+        {/* Zero-Friction Setup Section Skeleton */}
+        <div className="w-full max-w-4xl mx-auto mb-12">
+          <Skeleton className="h-8 w-2/3 mx-auto mb-4" />
+          <Skeleton className="h-5 w-4/5 mx-auto mb-2" />
+          <Skeleton className="h-5 w-3/4 mx-auto" />
+        </div>
+
+        {/* Accordion Section Skeleton */}
+        <div className="w-full max-w-5xl mx-auto mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="relative group bg-[#dddcdc] rounded-md w-full h-[200px] overflow-hidden"
+                className="bg-[#F2F2F2] rounded-lg p-6 h-[120px] flex flex-col justify-center"
               >
-                <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] -translate-x-1/2 scale-90"></div>
-                <Skeleton
-                  height="28px"
-                  width="80%"
-                  className="relative z-10 mx-auto mt-8"
-                />
-                <Skeleton
-                  height="16px"
-                  width="90%"
-                  className="absolute inset-0 flex items-center justify-center text-center opacity-50 mx-auto my-auto"
-                />
+                <div className="flex items-center gap-3 mb-3">
+                  <Skeleton className="w-8 h-8 rounded-full" />
+                  <Skeleton className="h-6 flex-1" />
+                </div>
+                <Skeleton className="h-4 w-full" />
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Testimonial Section Skeleton */}
+        <div className="w-full max-w-5xl mx-auto mb-12">
+          <div className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg p-6 h-[129px]">
+            <Skeleton className="h-5 w-full mb-3" />
+            <Skeleton className="h-5 w-4/5 mb-3" />
+            <Skeleton className="h-4 w-1/4 ml-auto" />
+          </div>
+        </div>
+
+        {/* ZATCA Compliance Section Skeleton */}
+        <div className="w-full max-w-6xl mx-auto">
+          {/* Heading */}
+          <Skeleton className="h-8 w-3/4 mx-auto mb-4" />
+          <Skeleton className="h-5 w-2/3 mx-auto mb-8" />
+
+          {/* Compliance Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="bg-[#F2F2F2] rounded-xl p-6 h-[190px] md:h-[251px] lg:h-[292px] flex flex-col items-center justify-center"
+              >
+                <Skeleton className="h-6 w-2/3 mb-4" />
+                <Skeleton className="w-full h-32 md:h-36 rounded-lg" />
+              </div>
+            ))}
+          </div>
+
+          {/* Video Skeleton */}
+          <Skeleton className="w-full h-[201px] md:h-[400px] rounded-lg" />
         </div>
       </section>
     );

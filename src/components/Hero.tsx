@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import Skeleton from "./skeleton";
+import { Skeleton } from "@/components/ui/skeleton"
 import useInView from "../utils/useInView";
 import ButtonGroup from "@/components/ui/ButtonGroup";
 
@@ -57,30 +57,28 @@ export default function Hero(): JSX.Element {
         className="w-full font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
       >
         {/* Heading skeletons */}
-        <Skeleton height="40px" width="60%" className="mb-6 mx-auto" />
-        <Skeleton height="28px" width="70%" className="mb-4 mx-auto" />
-        <Skeleton height="20px" width="80%" className="mb-4 mx-auto" />
+        <Skeleton style={{ height: "40px", width: "60%" }} className="mb-6 mx-auto" />
+        <Skeleton style={{ height: "28px", width: "70%" }} className="mb-4 mx-auto" />
+        <Skeleton style={{ height: "20px", width: "80%" }} className="mb-4 mx-auto" />
 
-        <Skeleton height="22px" width="50%" className="mb-4 mt-4 mx-auto" />
-        <Skeleton height="22px" width="60%" className="mb-4 mx-auto" />
+        <Skeleton style={{ height: "22px", width: "50%" }} className="mb-4 mt-4 mx-auto" />
+        <Skeleton style={{ height: "22px", width: "60%" }} className="mb-4 mx-auto" />
 
         {/* Buttons skeleton */}
         <div className="flex gap-4 mt-8">
-          <Skeleton height="50px" width="160px" className="rounded-full" />
-          <Skeleton height="50px" width="160px" className="rounded-full" />
+          <Skeleton style={{ height: "50px", width: "160px" }} className="rounded-full" />
+          <Skeleton style={{ height: "50px", width: "160px" }} className="rounded-full" />
         </div>
 
         {/* Video skeleton */}
         <Skeleton
-          height="400px"
-          width="100%"
+          style={{ height: "400px", width: "100%" }}
           className="mt-12 max-w-[1128px] rounded-xl"
         />
 
         {/* Trusted text skeleton */}
         <Skeleton
-          height="24px"
-          width="70%"
+          style={{ height: "24px", width: "70%" }}
           className="mt-12 mx-auto mb-6"
         />
 
@@ -96,13 +94,11 @@ export default function Hero(): JSX.Element {
                     className="flex flex-col items-center mx-4"
                   >
                     <Skeleton
-                      width="135px"
-                      height="56px"
+                      style={{ width: "135px", height: "56px" }}
                       className="h-14 md:h-16 md:w-60"
                     />
                     <Skeleton
-                      height="12px"
-                      width="80px"
+                      style={{ height: "12px", width: "80px" }}
                       className="mt-2"
                     />
                   </div>

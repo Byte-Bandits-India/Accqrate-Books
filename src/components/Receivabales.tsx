@@ -1,8 +1,8 @@
 "use client";
 
-import React, { JSX, useContext, useRef } from "react";
+import React, { useContext, useRef, useMemo } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import Skeleton from "./skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import useInView from "../utils/useInView";
 import {
   Accordion,
@@ -16,57 +16,86 @@ interface DropdownItem {
   content: string;
 }
 
-export default function AccountSections(): JSX.Element {
+export default function AccountSections(): React.JSX.Element {
   const { loading } = useContext(LoadingContext);
   const receivableRef = useRef<HTMLDivElement>(null);
   const isVisible = useInView(receivableRef, { threshold: 0 });
 
-  const receivableDropdowns: DropdownItem[] = [
-    { title: "Automated Invoicing", content: "Generate, send, and track customer invoices in one click." },
-    { title: "Payment Tracking", content: "Real-time view of outstanding, overdue, and incoming payments." },
-    { title: "Receipts & Reconciliations", content: "Instantly post customer payments; AI matches receipts to open invoices." },
-    { title: "Aging Analysis", content: "Visual dashboards and reports flag slow-paying accounts for action." },
-  ];
+  // Memoized dropdowns so they don’t re-create on every render
+  const receivableDropdowns = useMemo<DropdownItem[]>(
+    () => [
+      { title: "Automated Invoicing", content: "Generate, send, and track customer invoices in one click." },
+      { title: "Payment Tracking", content: "Real-time view of outstanding, overdue, and incoming payments." },
+      { title: "Receipts & Reconciliations", content: "Instantly post customer payments; AI matches receipts to open invoices." },
+      { title: "Aging Analysis", content: "Visual dashboards and reports flag slow-paying accounts for action." },
+    ],
+    []
+  );
 
-  const payableDropdowns: DropdownItem[] = [
-    { title: "Smart Invoice Capture", content: "Snap, or scan; AI reads and map them instantly." },
-    { title: "Approval Routing", content: "Automated checks flag out of policy spends and duplicates." },
-    { title: "Automated Payments", content: "Route expenses to the right managers for instant digital sign-off." },
-    { title: "Supplier Payments", content: "See spend by department, project, or cost center in real time." },
-    { title: "Payable Dashboard", content: "Submit, review, and approve on any device." },
-  ];
+  const payableDropdowns = useMemo<DropdownItem[]>(
+    () => [
+      { title: "Smart Invoice Capture", content: "Snap, or scan; AI reads and maps them instantly." },
+      { title: "Approval Routing", content: "Automated checks flag out-of-policy spends and duplicates." },
+      { title: "Automated Payments", content: "Route expenses to the right managers for instant digital sign-off." },
+      { title: "Supplier Payments", content: "See spend by department, project, or cost center in real time." },
+      { title: "Payable Dashboard", content: "Submit, review, and approve on any device." },
+    ],
+    []
+  );
 
-  const expenseDropdowns: DropdownItem[] = [
-    { title: "AI-Powered Capture", content: "Snap, or scan; AI reads and map them instantly." },
-    { title: "Policy Enforcement", content: "Automated checks flag out of policy spends and duplicates." },
-    { title: "Approval Workflows", content: "Route expenses to the right managers for instant digital sign-off." },
-    { title: "Live Dashboards", content: "See spend by department, project, or cost center in real time." },
-    { title: "Mobile-Friendly", content: "Submit, review, and approve on any device - no paper, no delays." },
-  ];
+  const expenseDropdowns = useMemo<DropdownItem[]>(
+    () => [
+      { title: "AI-Powered Capture", content: "Snap, or scan; AI reads and maps them instantly." },
+      { title: "Policy Enforcement", content: "Automated checks flag out-of-policy spends and duplicates." },
+      { title: "Approval Workflows", content: "Route expenses to the right managers for instant digital sign-off." },
+      { title: "Live Dashboards", content: "See spend by department, project, or cost center in real time." },
+      { title: "Mobile-Friendly", content: "Submit, review, and approve on any device - no paper, no delays." },
+    ],
+    []
+  );
 
-  const financialDropdowns: DropdownItem[] = [
-    { title: "Live Financials", content: "P&L, Balance Sheet, Trial Balance, and Cash Flow always up-to-date." },
-    { title: "Regulatory Formats", content: "Instantly generate statements in KSA or IFRS layouts, as required." },
-    { title: "Drill Down Detail", content: "Click any line for instant drill-down to source transactions." },
-    { title: "Division & Consolidation", content: "Produce division-wise, consolidated, or project-based financials." },
-    { title: "Export & Share", content: "One-click PDF/XLS export; schedule auto-email to management or auditors." },
-  ];
+  const financialDropdowns = useMemo<DropdownItem[]>(
+    () => [
+      { title: "Live Financials", content: "P&L, Balance Sheet, Trial Balance, and Cash Flow always up-to-date." },
+      { title: "Regulatory Formats", content: "Instantly generate statements in KSA or IFRS layouts, as required." },
+      { title: "Drill Down Detail", content: "Click any line for instant drill-down to source transactions." },
+      { title: "Division & Consolidation", content: "Produce division-wise, consolidated, or project-based financials." },
+      { title: "Export & Share", content: "One-click PDF/XLS export; schedule auto-email to management or auditors." },
+    ],
+    []
+  );
 
-  const operationsDropdowns: DropdownItem[] = [
-    { title: "Live Financial Dashboards", content: "Snap, or scan; AI reads and map them instantly." },
-    { title: "Automated Bank Reconciliation", content: "Automated checks flag out of policy spends and duplicates." },
-    { title: "Advanced Reporting", content: "Route expenses to the right managers for instant digital sign-off." },
-    { title: "Multi-Entity, Multi-Currency", content: "Consolidate accounts, report across companies or divisions in one click." },
-    { title: "Customizable Chart of Accounts", content: "Adapt to any business or regulatory need—flexibility without complexity." },
-  ];
+  const operationsDropdowns = useMemo<DropdownItem[]>(
+    () => [
+      { title: "Live Financial Dashboards", content: "See your business performance in real time, visualized clearly." },
+      { title: "Automated Bank Reconciliation", content: "Match transactions automatically and reduce manual effort." },
+      { title: "Advanced Reporting", content: "Get deep insights with customizable, drill-down reports." },
+      { title: "Multi-Entity, Multi-Currency", content: "Consolidate accounts and report across companies or divisions in one click." },
+      { title: "Customizable Chart of Accounts", content: "Adapt to any business or regulatory need—flexibility without complexity." },
+    ],
+    []
+  );
 
   if (loading || !isVisible) {
     return (
       <section
         ref={receivableRef}
-        className="space-y-6 my-6 max-w-[1440px] mx-auto"
+        className="space-y-6 px-6 md:px-8 my-6 max-w-[1280px] mx-auto"
       >
-        <Skeleton />
+        {/* Receivables Section Skeleton */}
+        <SectionSkeleton hasSubtitle />
+
+        {/* Payables Section Skeleton */}
+        <SectionSkeleton hasSubtitle />
+
+        {/* Expenses Section Skeleton */}
+        <SectionSkeleton />
+
+        {/* Financial Statements Section Skeleton */}
+        <SectionSkeleton hasSubtitle bgWhite />
+
+        {/* Finance Operations Section Skeleton */}
+        <SectionSkeleton />
       </section>
     );
   }
@@ -76,7 +105,7 @@ export default function AccountSections(): JSX.Element {
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
         {/* Receivables */}
         <SectionWithAccordion
-          title="Account Receivables"
+          title="Accounts Receivable"
           subtitle="Accelerate your cash flow"
           description="Stay on top of collections and improve working capital - without chasing payments manually."
           items={receivableDropdowns}
@@ -85,8 +114,8 @@ export default function AccountSections(): JSX.Element {
 
         {/* Payables */}
         <SectionWithAccordion
-          title="Accounts Payables"
-          subtitle="Control of Vendor Spend"
+          title="Accounts Payable"
+          subtitle="Control Vendor Spend"
           description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
           items={payableDropdowns}
           video="videos/Accounts_payables.mp4"
@@ -122,7 +151,70 @@ export default function AccountSections(): JSX.Element {
   );
 }
 
-/* Reusable Subcomponent */
+interface SectionSkeletonProps {
+  hasSubtitle?: boolean;
+  bgWhite?: boolean;
+}
+
+/* Skeleton Subcomponent */
+function SectionSkeleton({
+  hasSubtitle = false,
+  bgWhite = false,
+}: SectionSkeletonProps): React.JSX.Element {
+  return (
+    <div className="my-6 md:my-[32px]">
+      <section
+        className={`${bgWhite ? "bg-white" : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
+      >
+        {/* Left Content Column */}
+        <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+          {/* Title Skeleton */}
+          <div className="pb-6 md:pb-[32px]">
+            <Skeleton className="h-6 md:h-8 lg:h-10 w-3/4 mb-2" />
+            {hasSubtitle && (
+              <Skeleton className="h-5 md:h-7 lg:h-8 w-2/3" />
+            )}
+          </div>
+
+          {/* Description Skeleton */}
+          <div className="pb-6 md:pb-[32px] space-y-2">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-5/6" />
+            <Skeleton className="h-4 w-4/5" />
+            {!hasSubtitle && (
+              <>
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-3/4" />
+              </>
+            )}
+          </div>
+
+          {/* Accordion Items Skeleton */}
+          <div className="w-full max-w-[400px] space-y-3">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="border-b border-[#E2E8F0] pb-3">
+                <div className="flex justify-between items-center">
+                  <Skeleton className="h-5 w-3/4" />
+                  <Skeleton className="h-4 w-4 rounded" />
+                </div>
+                <div className="mt-2">
+                  <Skeleton className="h-3 w-full" />
+                  <Skeleton className="h-3 w-5/6 mt-1" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Video Column */}
+        <div className="flex-1 mt-6 lg:mt-0 flex justify-center items-center">
+          <Skeleton className="rounded-lg w-full max-w-[500px] h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]" />
+        </div>
+      </section>
+    </div>
+  );
+}
+
 interface SectionWithAccordionProps {
   title: string;
   subtitle?: string;
@@ -132,6 +224,7 @@ interface SectionWithAccordionProps {
   className?: string;
 }
 
+/* Section With Accordion Subcomponent */
 function SectionWithAccordion({
   title,
   subtitle,
@@ -139,7 +232,7 @@ function SectionWithAccordion({
   items,
   video,
   className,
-}: SectionWithAccordionProps): JSX.Element {
+}: SectionWithAccordionProps): React.JSX.Element {
   return (
     <div className="my-6 md:my-[32px]">
       <section
@@ -160,7 +253,10 @@ function SectionWithAccordion({
 
           <Accordion type="single" collapsible className="w-full max-w-[400px]">
             {items.map((item, index) => (
-              <AccordionItem key={index} value={`${title}-${index}`}>
+              <AccordionItem
+                key={index}
+                value={`${title.replace(/\s/g, "-")}-${index}`}
+              >
                 <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-medium text-left">
                   {item.title}
                 </AccordionTrigger>
@@ -178,6 +274,7 @@ function SectionWithAccordion({
             autoPlay
             muted
             loop
+            aria-label={`${title} demo video`}
           >
             <source src={video} type="video/mp4" />
           </video>
