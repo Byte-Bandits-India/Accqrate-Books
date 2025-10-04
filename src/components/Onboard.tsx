@@ -217,7 +217,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
                     Seamless Integration
                   </h4>
                   <img
@@ -244,7 +244,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
                     Digital Archive
                   </h4>
                   <video
@@ -276,7 +276,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
                     Regulation-Ready
                   </h4>
                   <video

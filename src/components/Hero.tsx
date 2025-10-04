@@ -189,7 +189,7 @@ export default function Hero(): JSX.Element {
       {/* Dashboard Video */}
       <div className="mb-[32px] md:mb-[40px] w-full max-w-[1128px] mx-auto rounded-xl overflow-hidden">
         <video autoPlay loop muted playsInline poster="/images/video-poster.jpg" className="w-full h-auto">
-          <source src="/videos/Hero.mp4" type="video/mp4" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -201,13 +201,6 @@ export default function Hero(): JSX.Element {
           and business accounting.
         </h3>
       </div>
-
-      {/* <div className="hidden lg:block bg-[#E6F4FF] py-6 -mx-4 mt-16 w-screen">
-        <h3 className="text-fluid-small md:text-fluid-body lg:text-fluid-h2 max-w-[1280px] font-bold text-center mx-auto">
-          Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing compliance
-          and business accounting.
-        </h3>
-      </div> */}
 
       {/* Logo Marquee */}
       <div className="w-screen bg-[#FFFFFF] relative mb-[48px]">
