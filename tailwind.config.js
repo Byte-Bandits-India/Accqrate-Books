@@ -58,7 +58,11 @@ module.exports = {
   			skeleton: 'skeleton 1.2s ease-in-out infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+		 letterSpacing: {
+        heading: "-0.05em",
+        para: "-0.02em",
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],
