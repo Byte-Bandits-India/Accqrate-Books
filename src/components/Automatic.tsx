@@ -7,6 +7,7 @@ import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import React from "react";
+import FadeUp from "./ui/FadeUp"
 
 
 
@@ -119,7 +120,7 @@ export default function AutomationSection(): JSX.Element {
     <>
       <div className="bg-white px-6 md:px-[32px] max-w-[1280px] mx-auto">
         {/* ================= AI-Driven Automation ================= */}
-        <section className="border-[#E3E3E3] border-[22px] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto mb-6 md:mb-[56px]
+        <FadeUp className="border-[#E3E3E3] border-[22px] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto mb-6 md:mb-[56px]
   md:flex md:items-center">
 
           {/* Left Side */}
@@ -159,32 +160,32 @@ export default function AutomationSection(): JSX.Element {
               <source src="videos/Ai-driven_automation.mp4" type="video/mp4" />
             </video>
           </div>
-        </section>
+        </FadeUp>
 
 
         {/* Bottom Section */}
         <div className="my-12 mx-auto font-inter md:max-w-5xl ">
           {/* Heading */}
-          <div className="text-center mb-6 md:mb-4 md:flex md:justify-center">
+          <FadeUp className="text-center mb-6 md:mb-4 md:flex md:justify-center">
             <h2 className="text-[20px] md:text-[24px] font-semibold">
               Support, Training, &
             </h2>
             <h2 className="text-[20px] md:text-[24px] font-semibold text-[#1976D2] mb-6 md:mb-[32px]">
               Onboarding
             </h2>
-          </div>
+          </FadeUp>
 
-          <div>
+          <FadeUp>
             <p className="text-[14px] md:text-[18px] lg:text-[20px] mb-6 md:mb-[32px] text-center text-base leading-relaxed">
               Expert onboarding for ZATCA compliance software— get your team ready for
               e-invoicing in KSA, fast.
             </p>
-          </div>
+          </FadeUp>
 
           {/* Unified Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
             {/* Box 1 - On Demand Training */}
-            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -250,11 +251,11 @@ export default function AutomationSection(): JSX.Element {
                   <FaArrowRightLong className="text-[20px] md:text-[30px]" />
                 </div>
               </div>
-            </div>
+            </FadeUp>
 
 
             {/* Box 2 - Local Support */}
-            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -309,10 +310,10 @@ export default function AutomationSection(): JSX.Element {
                   <FaArrowRightLong className="text-[20px] md:text-[30px]" />
                 </div>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Box 3 - Knowledge Center */}
-            <div className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
+            <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
                 className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
                 style={{
@@ -378,36 +379,38 @@ export default function AutomationSection(): JSX.Element {
                   <FaArrowRightLong className="text-[20px] md:text-[30px]" />
                 </div>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </div>
       </div >
       {/* Why Choose Section */}
       <div className="my-12 md:my-[56px] lg:my-10 bg-[#F2F2F2] w-full py-6" >
         <div className="max-w-[1280px] mx-auto px-6 md:px-[32px] font-inter">
-          <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 md:mb-[32px] text-center leading-snug">
+          <FadeUp className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 md:mb-[32px] text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
-          </h2>
+          </FadeUp>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12">
             {/* Image */}
-            <div className="flex  items-center justify-center">
+            <FadeUp className="flex  items-center justify-center">
               <img
                 src="/images/why-choose.svg"
                 alt="Why Choose Accqrate Books"
                 className="w-[320px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto"
               />
-            </div>
+            </FadeUp>
 
             {/* Text List */}
-            <ul className="text-left list-disc list-inside text-[14px] leading-6 sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
-              <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
-              <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
-              <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
-              <li>Future-Proof Scaling: Move from startup to multi-entity enterprise—no reimplementation, no data loss.</li>
-              <li>Total Business Control: Real-time insights, automation, and bulletproof security.</li>
-              <li>Flexible price: Flexible plans for every business, from startups to enterprises. Your data stays secure on our Saudi e-invoicing platform with cloud accounting software benefits.</li>
-            </ul>
+            <FadeUp>
+              <ul className="text-left list-disc list-inside text-[14px] leading-6 sm:text-[15px] md:text-[16px] lg:text-[18px] space-y-4 md:space-y-6">
+                <li>Stay Ahead of ZATCA Compliance by Design: Never worry about last-minute regulations or audits.</li>
+                <li>Modern Cloud Accounting: Access your accounting software anywhere. Simplify financial management for every team member.</li>
+                <li>Device and Vendor Freedom: Use any device, integrate any bank, no hardware lock-in.</li>
+                <li>Future-Proof Scaling: Move from startup to multi-entity enterprise—no reimplementation, no data loss.</li>
+                <li>Total Business Control: Real-time insights, automation, and bulletproof security.</li>
+                <li>Flexible price: Flexible plans for every business, from startups to enterprises. Your data stays secure on our Saudi e-invoicing platform with cloud accounting software benefits.</li>
+              </ul>
+            </FadeUp>
           </div>
         </div>
       </div>

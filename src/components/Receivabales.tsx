@@ -4,6 +4,7 @@ import React, { useContext, useRef, useMemo } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
 import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
+import FadeUp from "./ui/FadeUp";
 import {
   Accordion,
   AccordionContent,
@@ -234,7 +235,7 @@ function SectionWithAccordion({
   className,
 }: SectionWithAccordionProps): React.JSX.Element {
   return (
-    <div className="my-6 md:my-[32px] font-inter">
+    <FadeUp className="my-6 md:my-[32px] font-inter">
       <section
         className={`${className ?? "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
       >
@@ -277,6 +278,6 @@ function SectionWithAccordion({
           </video>
         </div>
       </section>
-    </div>
+    </FadeUp>
   );
 }

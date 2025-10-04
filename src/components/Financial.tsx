@@ -4,6 +4,7 @@ import { LoadingContext } from "../utils/LoadingContext";
 import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import { useContext, useRef } from "react";
+import FadeUp from "./ui/FadeUp";
 import {
   Accordion,
   AccordionContent,
@@ -78,7 +79,7 @@ export default function AccountSections(): React.JSX.Element {
     <div className="w-full font-inter">
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
         {/* ================= Seamless Integration ================= */}
-        <section className="bg-[#E8F1FB] font-inter xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
+        <FadeUp className="bg-[#E8F1FB] font-inter xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
             <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
@@ -116,10 +117,10 @@ export default function AccountSections(): React.JSX.Element {
               <source src="videos/Seamless_integration.mp4" type="video/mp4" />
             </video>
           </div>
-        </section>
+        </FadeUp>
 
         {/* ================= Robust Control ================= */}
-        <section className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter xl:h-[615px] pt-6 px-6 md:px-[32px] md:pt-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
+        <FadeUp className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter xl:h-[615px] pt-6 px-6 md:px-[32px] md:pt-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
             <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
@@ -158,7 +159,7 @@ export default function AccountSections(): React.JSX.Element {
               <source src="videos/robust-control.mp4" type="video/mp4" />
             </video>
           </div>
-        </section>
+        </FadeUp>
       </div>
     </div>
   );

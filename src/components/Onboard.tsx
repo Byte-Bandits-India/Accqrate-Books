@@ -6,6 +6,8 @@ import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import FeatureCard from "./ui/FeatureCard";
 import { Accordion, AccordionCard } from "./ui/accordion";
+import Animated from '../components/ui/FadeUp';
+import FadeUp from "../components/ui/FadeUp";
 
 export default function FeatureSection(): JSX.Element {
   const { loading } = useContext(LoadingContext);
@@ -95,16 +97,18 @@ export default function FeatureSection(): JSX.Element {
       <section id="OnboardSection" className="w-full py-10 mt-10">
         <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
           {/* Heading */}
-          <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
-            Effortless <span className="text-[#1976D2]">Onboarding</span> &
-            Flexible Deployment
-          </h2>
+          <FadeUp>
+            <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
+              Effortless <span className="text-[#1976D2]">Onboarding</span> &
+              Flexible Deployment
+            </h2>
 
-          {/* Shared description */}
-          <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
-            Accqrate Books is fully cloud-native – no complex installations, no
-            specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
-          </p>
+            {/* Shared description */}
+            <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
+              Accqrate Books is fully cloud-native – no complex installations, no
+              specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
+            </p>
+          </FadeUp>
           <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px] md:mb-[56px]">
             {/* Card 1 */}
             <FeatureCard
@@ -129,14 +133,17 @@ export default function FeatureSection(): JSX.Element {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
-            <span className="text-[#1976D2]">Zero-Friction</span> Setup
-          </h2>
-          <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
-            As your business grows, Accqrate Retail grows with you. Flip the
-            switch to add procurement, finance, HR and supply-chain modules—no
-            data migration, no downtime.
-          </p>
+
+          <FadeUp>
+            <h1 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
+              <span className="text-[#1976D2]">Zero-Friction</span> Setup
+            </h1>
+            <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
+              As your business grows, Accqrate Retail grows with you. Flip the
+              switch to add procurement, finance, HR and supply-chain modules—no
+              data migration, no downtime.
+            </p>
+          </FadeUp>
           {/* Accordion Section */}
           <Accordion
             type="single"
@@ -174,7 +181,7 @@ export default function FeatureSection(): JSX.Element {
           </Accordion>
 
           {/* Testimonial Section */}
-          <div className="mt-6">
+          <FadeUp className="mt-6">
             <div
               className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:max-w-5xl
@@ -190,29 +197,31 @@ export default function FeatureSection(): JSX.Element {
                 </p>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
 
         {/* -------- ZATCA Compliance Section -------- */}
         <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
-          <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
-            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
-            E-Invoicing Compliance
-          </h2>
-          <h2 className="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
-            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
-            Compliance
-          </h2>
+          <FadeUp>
+            <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
+              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
+              E-Invoicing Compliance
+            </h2>
+            <h2 className="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
+              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
+              Compliance
+            </h2>
 
-          <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
-            Compliance is non-negotiable. With Accqrate Books, you’re always
-            audit-ready.
-          </p>
+            <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
+              Compliance is non-negotiable. With Accqrate Books, you’re always
+              audit-ready.
+            </p>
+          </FadeUp>
 
           <div className="flex flex-col md:grid md:grid-cols-3 gap-6 lg:gap-12 max-w-[1280px] mx-auto mb-10">
 
             {/* Seamless Integration */}
-            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+            <FadeUp className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
@@ -235,11 +244,11 @@ export default function FeatureSection(): JSX.Element {
                   </p>
                 </section>
               </div>
-            </article>
+            </FadeUp>
 
 
             {/* Digital Archive */}
-            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+            <FadeUp className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
@@ -267,11 +276,11 @@ export default function FeatureSection(): JSX.Element {
                   </p>
                 </section>
               </div>
-            </article>
+            </FadeUp>
 
 
             {/* Regulation Ready */}
-            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+            <FadeUp className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
@@ -299,7 +308,7 @@ export default function FeatureSection(): JSX.Element {
                   </p>
                 </section>
               </div>
-            </article>
+            </FadeUp>
           </div>
 
           {/* 100_zatcha_e-invoicing-complaince Video */}

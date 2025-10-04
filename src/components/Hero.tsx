@@ -6,6 +6,7 @@ import { LoadingContext } from "../utils/LoadingContext";
 import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import ButtonGroup from "./ui/ButtonGroup";
+import FadeUp from "./ui/FadeUp";
 
 interface Logo {
   src: string;
@@ -195,12 +196,12 @@ export default function Hero(): JSX.Element {
 
 
       {/* Trusted text */}
-      <div className="mb-8 md:mb-[40px]">
+      <FadeUp className="mb-8 md:mb-[40px]">
         <h3 className="text-[14px] md:text-[16px] lg:text-[20px] font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing <br className="hidden md:block" /> compliance
           and business accounting.
         </h3>
-      </div>
+      </FadeUp>
 
       {/* Logo Marquee */}
       <div className="w-screen bg-[#FFFFFF] relative mb-[48px]">
