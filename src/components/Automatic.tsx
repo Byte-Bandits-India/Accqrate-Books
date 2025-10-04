@@ -124,10 +124,10 @@ export default function AutomationSection(): JSX.Element {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug lg:leading-tight">
+            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
               AI-Driven Automation
             </h2>
-            <p className="pb-6 text-[14px] md:text-[16px] lg:text-[18px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[16px] lg:text-[18px] md:leading-relaxed md:tracking-wide">
               Let AI handle the repetitive—free your team for what matters.
             </p>
 
@@ -136,7 +136,7 @@ export default function AutomationSection(): JSX.Element {
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {dropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
-                    <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal md:font-medium">
+                    <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
                       {item.label}
                     </AccordionTrigger>
                     <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
@@ -225,7 +225,7 @@ export default function AutomationSection(): JSX.Element {
 
                   {/* Content */}
                   <div className="p-4 flex-1 space-y-[24px]">
-                    <h3 className="font-semibold text-[14px] md:text-[18px] text-center">
+                    <h3 className="font-semibold text-[16px] md:text-[18px] lg:text-fluid-body text-center">
                       On Demand Training
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
@@ -285,7 +285,7 @@ export default function AutomationSection(): JSX.Element {
                   </video>
 
                   <div className="p-4 flex-1">
-                    <h3 className="font-bold text-fluid-body text-center">
+                    <h3 className="font-bold text-[16px] md:text-fluid-body text-center">
                       24/7 Local Support
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
@@ -321,23 +321,39 @@ export default function AutomationSection(): JSX.Element {
                 }}
               >
                 <div
-                  className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
+                  className="relative w-full h-full bg-white rounded-lg flex flex-col text-left overflow-hidden"
                   style={{
                     clipPath:
                       "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
                   }}
                 >
-                  <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
-                    <video autoPlay loop muted playsInline className="hidden md:block w-full h-[200px] object-cover rounded-t-lg">
-                      <source src="/videos/knowledge-center.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                  <video autoPlay loop muted playsInline className="hidden md:block w-full h-[170px] object-cover rounded-t-lg">
+                  {/* Video */}
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-[200px] md:h-[170px] object-cover rounded-t-lg hidden md:block"
+                  >
                     <source src="/videos/knowledge-center.mp4" type="video/mp4" />
                   </video>
 
-                  <div className="p-4 flex-1">
-                    <h3 className="font-bold text-fluid-body text-center">
+                  {/* Mobile Video */}
+                  <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-[125px] mt-8 object-cover rounded-t-lg"
+                    >
+                      <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+
+                  {/* Text content */}
+                  <div className="p-4 flex-1 relative">
+                    <h3 className="font-bold text-[16px] md:text-fluid-body text-center">
                       Knowledge Center
                     </h3>
                     <p className="text-[#737373] text-fluid-small mt-2 text-center">
@@ -350,6 +366,7 @@ export default function AutomationSection(): JSX.Element {
                 </div>
               </div>
 
+              {/* Overlay arrow */}
               <div className="pointer-events-none absolute inset-0 z-20">
                 <div
                   className="absolute inset-0 bg-[#1976D2] rounded-lg"
@@ -366,7 +383,7 @@ export default function AutomationSection(): JSX.Element {
         </div>
       </div >
       {/* Why Choose Section */}
-      <div className="my-12 md:my-[56px] lg:my-10 bg-[#F2F2F2] w-full py-6">
+      <div className="my-12 md:my-[56px] lg:my-10 bg-[#F2F2F2] w-full py-6" >
         <div className="max-w-[1280px] mx-auto px-6 md:px-[32px] font-inter">
           <h2 className="text-[26px] sm:text-[28px] md:text-[32px] lg:text-[38px] font-bold mb-6 md:mb-[32px] text-center leading-snug">
             Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?

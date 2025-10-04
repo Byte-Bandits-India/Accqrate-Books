@@ -239,12 +239,12 @@ function SectionWithAccordion({
         className={`${className ?? "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
       >
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-          <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[30px] leading-snug lg:leading-tight pb-6 md:pb-[32px] tracking-[-2%]">
+          <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
             {title} <br />
             {subtitle}
           </h2>
 
-          <p className="text-[14px] md:text-[16px] lg:text-[18px] pb-6 md:pb-[32px] lg:leading-relaxed break-words">
+          <p className="pb-6 md:pb-[32px] text-[14px] md:text-[16px] lg:text-[18px] md:leading-relaxed md:tracking-wide">
             {description}
           </p>
 
@@ -254,10 +254,10 @@ function SectionWithAccordion({
                 key={index}
                 value={`${title.replace(/\s/g, "-")}-${index}`}
               >
-                <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-medium text-left">
+                <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
+                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>
