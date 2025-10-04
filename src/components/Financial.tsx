@@ -1,7 +1,7 @@
 "use client";
 
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import { useContext, useRef } from "react";
 import {
@@ -9,7 +9,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "./ui/accordion";
 import React from "react";
 
 interface DropdownItem {

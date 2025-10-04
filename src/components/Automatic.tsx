@@ -3,9 +3,9 @@
 import { useState, useContext, useRef, JSX } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import React from "react";
 
 

@@ -2,14 +2,14 @@
 
 import React, { useContext, useRef, useMemo } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "./ui/accordion";
 
 interface DropdownItem {
   title: string;

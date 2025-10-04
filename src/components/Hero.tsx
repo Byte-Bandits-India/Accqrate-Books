@@ -3,9 +3,9 @@
 import Image from "next/image";
 import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
-import ButtonGroup from "@/components/ui/ButtonGroup";
+import ButtonGroup from "./ui/ButtonGroup";
 
 interface Logo {
   src: string;

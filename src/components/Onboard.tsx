@@ -2,10 +2,10 @@
 
 import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import FeatureCard from "./ui/FeatureCard";
-import { Accordion, AccordionCard } from "@/components/ui/accordion";
+import { Accordion, AccordionCard } from "./ui/accordion";
 
 export default function FeatureSection(): JSX.Element {
   const { loading } = useContext(LoadingContext);

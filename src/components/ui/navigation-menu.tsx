@@ -6,10 +6,10 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva, VariantProps } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 interface NavigationMenuProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> {}
+  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> { }
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -30,7 +30,7 @@ const NavigationMenu = React.forwardRef<
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
 
 interface NavigationMenuListProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List> {}
+  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List> { }
 
 const NavigationMenuList = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.List>,
@@ -80,7 +80,7 @@ const NavigationMenuTrigger = React.forwardRef<
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
 
 interface NavigationMenuContentProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content> {}
+  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content> { }
 
 const NavigationMenuContent = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Content>,
@@ -100,7 +100,7 @@ NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
 const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 interface NavigationMenuViewportProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> {}
+  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> { }
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
@@ -120,7 +120,7 @@ const NavigationMenuViewport = React.forwardRef<
 NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName;
 
 interface NavigationMenuIndicatorProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator> {}
+  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator> { }
 
 const NavigationMenuIndicator = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
