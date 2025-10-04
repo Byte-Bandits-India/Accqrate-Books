@@ -124,10 +124,10 @@ export default function AutomationSection(): JSX.Element {
 
           {/* Left Side */}
           <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[30px] pb-6 leading-snug lg:leading-tight">
+            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug lg:leading-tight">
               AI-Driven Automation
             </h2>
-            <p className="pb-6 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
+            <p className="pb-6 text-[14px] md:text-[16px] lg:text-[18px] lg:max-w-[520px] md:leading-relaxed md:tracking-wide break-words">
               Let AI handle the repetitive—free your team for what matters.
             </p>
 
@@ -136,10 +136,10 @@ export default function AutomationSection(): JSX.Element {
               <Accordion type="single" collapsible className="w-full max-w-[400px]">
                 {dropdowns.map((item, index) => (
                   <AccordionItem key={index} value={`rec-${index}`}>
-                    <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-normal md:font-medium">
+                    <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal md:font-medium">
                       {item.label}
                     </AccordionTrigger>
-                    <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                    <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
                       {item.content}
                     </AccordionContent>
                   </AccordionItem>

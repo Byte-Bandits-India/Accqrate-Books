@@ -2,23 +2,23 @@
 
 import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "../utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton";
 import useInView from "../utils/useInView";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, AccordionCard } from "@/components/ui/accordion"; // import Accordion components
-import { FaChevronDown } from "react-icons/fa";
 import FeatureCard from "./ui/FeatureCard";
-
-// import scrollReveal
-import ScrollReveal from "../components/ui/ScrollReveal";
+import { Accordion, AccordionCard } from "@/components/ui/accordion";
 
 export default function FeatureSection(): JSX.Element {
   const { loading } = useContext(LoadingContext);
   const onboardRef = useRef<HTMLElement>(null);
-  const isVisible = useInView(onboardRef);
 
+  // Trigger as soon as any part of the section enters viewport
+  const isVisible = useInView(onboardRef, { threshold: 0 });
+
+  // --- SKELETON SECTION ---
   if (loading || !isVisible) {
     return (
       <section
+        id="OnboardSection"
         ref={onboardRef}
         className="w-full max-w-[1280px] mx-auto font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
       >
@@ -29,7 +29,7 @@ export default function FeatureSection(): JSX.Element {
         </div>
 
         {/* Feature Cards Skeleton */}
-        <div className="flex flex-col items-center md:items-stretch md:flex-row justify-center gap-6 lg:gap-16 mb-12 w-full">
+        <div className="flex flex-col md:flex-row justify-center gap-6 lg:gap-16 mb-12 w-full">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
@@ -43,7 +43,7 @@ export default function FeatureSection(): JSX.Element {
           ))}
         </div>
 
-        {/* Zero-Friction Setup Section Skeleton */}
+        {/* Zero-Friction Setup Skeleton */}
         <div className="w-full max-w-4xl mx-auto mb-12">
           <Skeleton className="h-8 w-2/3 mx-auto mb-4" />
           <Skeleton className="h-5 w-4/5 mx-auto mb-2" />
@@ -51,39 +51,28 @@ export default function FeatureSection(): JSX.Element {
         </div>
 
         {/* Accordion Section Skeleton */}
-        <div className="w-full max-w-5xl mx-auto mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-[#F2F2F2] rounded-lg p-6 h-[120px] flex flex-col justify-center"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <Skeleton className="w-8 h-8 rounded-full" />
-                  <Skeleton className="h-6 flex-1" />
-                </div>
-                <Skeleton className="h-4 w-full" />
-              </div>
-            ))}
-          </div>
+        <div className="w-full max-w-5xl mx-auto mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="bg-[#F2F2F2] rounded-lg p-6 h-[120px] flex flex-col justify-center"
+            >
+              <Skeleton className="w-8 h-8 rounded-full mb-3" />
+              <Skeleton className="h-6 flex-1" />
+              <Skeleton className="h-4 w-full mt-2" />
+            </div>
+          ))}
         </div>
 
-        {/* Testimonial Section Skeleton */}
+        {/* Testimonial Skeleton */}
         <div className="w-full max-w-5xl mx-auto mb-12">
-          <div className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg p-6 h-[129px]">
-            <Skeleton className="h-5 w-full mb-3" />
-            <Skeleton className="h-5 w-4/5 mb-3" />
-            <Skeleton className="h-4 w-1/4 ml-auto" />
-          </div>
+          <div className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg p-6 h-[129px]" />
         </div>
 
-        {/* ZATCA Compliance Section Skeleton */}
+        {/* ZATCA Compliance Skeleton */}
         <div className="w-full max-w-6xl mx-auto">
-          {/* Heading */}
           <Skeleton className="h-8 w-3/4 mx-auto mb-4" />
           <Skeleton className="h-5 w-2/3 mx-auto mb-8" />
-
-          {/* Compliance Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             {[1, 2, 3].map((i) => (
               <div
@@ -95,8 +84,6 @@ export default function FeatureSection(): JSX.Element {
               </div>
             ))}
           </div>
-
-          {/* Video Skeleton */}
           <Skeleton className="w-full h-[201px] md:h-[400px] rounded-lg" />
         </div>
       </section>
@@ -105,268 +92,227 @@ export default function FeatureSection(): JSX.Element {
 
   return (
     <>
-      <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
-        {/* Heading */}
-        <ScrollReveal as="h2" containerClassName="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
-          Effortless <span className="text-[#1976D2]">Onboarding</span> &
-          Flexible Deployment
-        </ScrollReveal>
+      <section id="OnboardSection" className="w-full py-10 mt-10">
+        <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
+          {/* Heading */}
+          <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
+            Effortless <span className="text-[#1976D2]">Onboarding</span> &
+            Flexible Deployment
+          </h2>
 
-        {/* Shared description */}
-        <ScrollReveal as="p" containerClassName="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
-          Accqrate Books is fully cloud-native – no complex installations, no
-          specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
-        </ScrollReveal>
-        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px] md:mb-[56px]">
-          {/* Card 1 */}
-          <FeatureCard
-            videoSrc="videos/cloud-first.mp4"
-            title="Cloud-first or On-Prem"
-            description="Choose cloud for instant launch, or on-premises for full data control."
-          />
+          {/* Shared description */}
+          <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
+            Accqrate Books is fully cloud-native – no complex installations, no
+            specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-[48px] md:mb-[56px]">
+            {/* Card 1 */}
+            <FeatureCard
+              videoSrc="videos/cloud-first.mp4"
+              title="Cloud-first or On-Prem"
+              description="Choose cloud for instant launch, or on-premises for full data control."
+            />
 
-          {/* Card 2 */}
-          <FeatureCard
-            videoSrc="videos/all-devices.mp4"
-            title="Works on all devices"
-            description="Manage accounts from  desktop, laptop, tablet, or mobile."
-          />
+            {/* Card 2 */}
+            <FeatureCard
+              videoSrc="videos/all-devices.mp4"
+              title="Works on all devices"
+              description="Manage accounts from  desktop, laptop, tablet, or mobile."
+            />
 
-          {/* Card 3 */}
-          <FeatureCard
-            videoSrc="videos/no-special-hardware.mp4"
-            title="No special hardware"
-            description="Access your books anywhere – your data is always secure, always available."
-          />
-        </div>
+            {/* Card 3 */}
+            <FeatureCard
+              videoSrc="videos/no-special-hardware.mp4"
+              title="No special hardware"
+              description="Access your books anywhere – your data is always secure, always available."
+            />
+          </div>
 
-        {/* Heading */}
-        <ScrollReveal as="h2" containerClassName="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
-          <span className="text-[#1976D2]">Zero-Friction</span> Setup
-        </ScrollReveal>
-        <ScrollReveal as="p" containerClassName="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
-          As your business grows, Accqrate Retail grows with you. Flip the
-          switch to add procurement, finance, HR and supply-chain modules—no
-          data migration, no downtime.
-        </ScrollReveal>
-        {/* Accordion Section */}
-        <Accordion
-          type="single"
-          collapsible
-          className="flex flex-col gap-4
+          {/* Heading */}
+          <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
+            <span className="text-[#1976D2]">Zero-Friction</span> Setup
+          </h2>
+          <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
+            As your business grows, Accqrate Retail grows with you. Flip the
+            switch to add procurement, finance, HR and supply-chain modules—no
+            data migration, no downtime.
+          </p>
+          {/* Accordion Section */}
+          <Accordion
+            type="single"
+            collapsible
+            className="flex flex-col gap-4
         sm:grid sm:grid-cols-2
         md:grid md:grid-cols-3 md:max-w-5xl md:mb-[32px] mx-auto"
-        >
-          <AccordionCard
-            value="card-1"
-            icon="/images/Mask group.png"
-            title="Instant Access"
-            content={
-              <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
-            }
-          />
+          >
+            <AccordionCard
+              value="card-1"
+              icon="/images/Mask group.png"
+              title="Instant Access"
+              content={
+                <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+              }
+            />
 
-          <AccordionCard
-            value="card-2"
-            icon="/images/Mask group (1).png"
-            title="Automated Data Migration"
-            content={
-              <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
-            }
-          />
+            <AccordionCard
+              value="card-2"
+              icon="/images/Mask group (1).png"
+              title="Automated Data Migration"
+              content={
+                <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+              }
+            />
 
-          <AccordionCard
-            value="card-3"
-            icon="/images/Mask group (2).png"
-            title="Role-Based User Setup"
-            content={
-              <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
-            }
-          />
-        </Accordion>
+            <AccordionCard
+              value="card-3"
+              icon="/images/Mask group (2).png"
+              title="Role-Based User Setup"
+              content={
+                <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
+              }
+            />
+          </Accordion>
 
-        {/* Testimonial Section */}
-        <div className="mt-6">
-          <div
-            className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
+          {/* Testimonial Section */}
+          <div className="mt-6">
+            <div
+              className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:max-w-5xl
               h-auto sm:h-[110px] md:h-[129px]
               flex flex-col items-center justify-center"
-          >
-            <div className="max-w-[800px] mx-auto w-full">
-              <ScrollReveal as="p" containerClassName="text-fluid-body font-normal text-[#333333] md:leading-10 text-left md:text-center">
-                “We set up 5 new outlets in under an hour—no IT team needed.”
-              </ScrollReveal>
-              <ScrollReveal as="p" containerClassName="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] mt-2 text-right pr-4">
-                — Retail Owner, Jeddah
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
-        <ScrollReveal as="h2" containerClassName="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
-          100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
-          E-Invoicing Compliance
-        </ScrollReveal>
-        <ScrollReveal as="h2" containerClassName="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
-          100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
-          Compliance
-        </ScrollReveal>
-
-        <ScrollReveal as="p" containerClassName="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
-          Compliance is non-negotiable. With Accqrate Books, you’re always
-          audit-ready.
-        </ScrollReveal>
-
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[16px] mx-w-[1280px] mx-auto lg:gap-12 mb-6 md:mb-8 lg:mb-10">
-          {/* Seamless Integration */}
-          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6
-            md:h-[251px] lg:h-[292px] w-full h-[190px]
-            flex flex-col items-center justify-center text-center"
-          >
-            <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-              -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-              group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
-
-            <div className="transition-opacity duration-500 
-              w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
-              mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center"
             >
-              <h4 className="lg:text-[28px] xl:text-[24px] text-[20px] 
-                font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
-              >
-                Seamless Integration
-              </h4>
-              <img
-                src="images/zatcha.svg"
-                alt="Seamless Integration"
-                className="h-[142px] md:h-[149px] lg:h-[149px]
-                  mx-auto rounded-lg object-cover"
-              />
-            </div>
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center 
-              text-white opacity-0 transition-opacity duration-500 
-              group-hover:opacity-100 text-center px-[70px] py-[27px]"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Seamless Integration
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Phase 2 E-invoicing Integration – Generate, validate and
-                transmit XML e-invoices directly to ZATCA.
-              </p>
-            </div>
-          </div>
-
-          {/* Digital Archive */}
-          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
-            md:h-[251px] lg:h-[292px] w-full h-[190px]
-            flex flex-col items-center justify-center text-center"
-          >
-            <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-              -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-              group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
-
-            <div className="transition-opacity duration-500 
-              w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
-              mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center p-2"
-            >
-              <h4 className="lg:text-[28px] xl:text-[24px]
-                font-semibold md:font-normal text-[#1976D2] mb-4 text-[20px] leading-tight">
-                Digital Archive
-              </h4>
-              <video
-                className="h-[142px] md:h-[149px] lg:h-[149px]
-                  mx-auto rounded-lg object-contain"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-              >
-                <source src="videos/digital-archive.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center 
-              text-white opacity-0 transition-opacity duration-500 
-              group-hover:opacity-100 text-center px-[70px] py-[27px]"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Digital Archive
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Securely store all e-invoices with audit trails and QR code
-                integration.
-              </p>
-            </div>
-          </div>
-
-          {/* Regulation Ready */}
-          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
-            md:h-[251px] lg:h-[292px] w-full h-[190px]
-            flex flex-col items-center justify-center text-center"
-          >
-            <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-              -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-              group-hover:top-1/2 group-hover:scale-[2.2] z-0"
-            ></div>
-
-            <div className="transition-opacity duration-500 
-              w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
-              mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center p-2"
-            >
-              <h4 className="lg:text-[28px] xl:text-[24px] 
-                font-semibold md:font-normal text-[#1976D2] mb-4 text-[20px] leading-tight"
-              >
-                Regulation-Ready
-              </h4>
-              <video
-                className="h-[142px] md:h-[149px] lg:h-[149px]
-                  mx-auto rounded-lg object-contain"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-              >
-                <source src="videos/regulation-ready.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-[70px] py-[27px] 
-              text-white opacity-0 transition-opacity duration-500 
-              group-hover:opacity-100 text-center"
-            >
-              <h4 className="text-fluid-body font-bold mb-2">
-                Regulation-Ready
-              </h4>
-              <p className="text-fluid-small leading-relaxed">
-                Real-time updates keep you in sync with KSA rules.
-              </p>
+              <div className="max-w-[800px] mx-auto w-full">
+                <p className="text-fluid-body font-normal text-[#333333] md:leading-10 text-left md:text-center">
+                  “We set up 5 new outlets in under an hour—no IT team needed.”
+                </p>
+                <p className="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] mt-2 text-right pr-4">
+                  — Retail Owner, Jeddah
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* 100_zatcha_e-invoicing-complaince Video */}
-        <video
-          className="w-full h-[201px] md:h-full max-w-[1128px] mx-auto"
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/videos/100_zatcha_e-invoicing-complaince.mp4" type="video/mp4" />
-        </video>
-      </div>
+        {/* -------- ZATCA Compliance Section -------- */}
+        <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
+          <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
+            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
+            E-Invoicing Compliance
+          </h2>
+          <h2 className="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
+            100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
+            Compliance
+          </h2>
+
+          <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
+            Compliance is non-negotiable. With Accqrate Books, you’re always
+            audit-ready.
+          </p>
+
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-6 lg:gap-12 max-w-[1280px] mx-auto mb-10">
+
+            {/* Seamless Integration */}
+            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
+
+                {/* Front */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                    Seamless Integration
+                  </h4>
+                  <img
+                    src="images/zatcha.svg"
+                    alt="Seamless Integration"
+                    className="h-[142px] md:h-[149px] lg:h-[149px] mx-auto rounded-lg object-cover"
+                  />
+                </section>
+
+                {/* Back */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-xl font-bold">Seamless Integration</h4>
+                  <p className="text-sm leading-relaxed">
+                    Phase 2 E-invoicing Integration – Generate, validate and transmit XML e-invoices directly to ZATCA.
+                  </p>
+                </section>
+              </div>
+            </article>
+
+
+            {/* Digital Archive */}
+            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
+
+                {/* Front */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                    Digital Archive
+                  </h4>
+                  <video
+                    className="h-[142px] md:h-[149px] lg:h-[149px] mx-auto rounded-lg object-contain"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                  >
+                    <source src="videos/digital-archive.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                {/* Back */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-xl font-bold">Digital Archive</h4>
+                  <p className="text-sm leading-relaxed">
+                    Securely store all e-invoices with audit trails and QR code integration.
+                  </p>
+                </section>
+              </div>
+            </article>
+
+
+            {/* Regulation Ready */}
+            <article className="group h-[292px] w-full [perspective:1000px] cursor-pointer">
+              <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
+
+                {/* Front */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                  <h4 className="text-[20px] lg:text-[28px] xl:text-[24px] font-medium text-[#1976D2] leading-tight">
+                    Regulation-Ready
+                  </h4>
+                  <video
+                    className="h-[142px] md:h-[149px] lg:h-[149px] mx-auto rounded-lg object-contain"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                  >
+                    <source src="videos/regulation-ready.mp4" type="video/mp4" />
+                  </video>
+                </section>
+
+                {/* Back */}
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-xl font-bold">Regulation-Ready</h4>
+                  <p className="text-sm leading-relaxed">
+                    Real-time updates keep you in sync with KSA rules.
+                  </p>
+                </section>
+              </div>
+            </article>
+          </div>
+
+          {/* 100_zatcha_e-invoicing-complaince Video */}
+          <video
+            className="w-full h-[201px] md:h-full max-w-[1128px] mx-auto"
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/videos/100_zatcha_e-invoicing-complaince.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
     </>
   );
 }

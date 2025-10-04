@@ -1,4 +1,4 @@
-// File: /Users/abc/Desktop/Byte Bandits/Projects/Accqrate Website/accqrate-books/src/app/layout.js
+// File: /Users/abc/Desktop/Byte Bandits/Projects/Accqrate Website/accqrate-books/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -505,9 +505,6 @@ video {
 .left-1{
   left: 0.25rem;
 }
-.left-1\/2{
-  left: 50%;
-}
 .left-4{
   left: 1rem;
 }
@@ -531,9 +528,6 @@ video {
 }
 .top-full{
   top: 100%;
-}
-.z-0{
-  z-index: 0;
 }
 .z-10{
   z-index: 10;
@@ -805,6 +799,9 @@ video {
 .h-\[270px\]{
   height: 270px;
 }
+.h-\[292px\]{
+  height: 292px;
+}
 .h-\[30px\]{
   height: 30px;
 }
@@ -983,9 +980,6 @@ video {
 .max-w-\[250px\]{
   max-width: 250px;
 }
-.max-w-\[280px\]{
-  max-width: 280px;
-}
 .max-w-\[300px\]{
   max-width: 300px;
 }
@@ -1022,10 +1016,6 @@ video {
 .shrink-0{
   flex-shrink: 0;
 }
-.-translate-x-1\/2{
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .-rotate-45{
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1040,11 +1030,6 @@ video {
 }
 .rotate-45{
   --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.scale-90{
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform{
@@ -1157,9 +1142,6 @@ video {
 }
 .gap-\[12px\]{
   gap: 12px;
-}
-.gap-\[16px\]{
-  gap: 16px;
 }
 .gap-\[20px\]{
   gap: 20px;
@@ -1448,10 +1430,6 @@ video {
   padding-left: 24px;
   padding-right: 24px;
 }
-.px-\[70px\]{
-  padding-left: 70px;
-  padding-right: 70px;
-}
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1487,10 +1465,6 @@ video {
 .py-\[24px\]{
   padding-top: 24px;
   padding-bottom: 24px;
-}
-.py-\[27px\]{
-  padding-top: 27px;
-  padding-bottom: 27px;
 }
 .pb-1{
   padding-bottom: 0.25rem;
@@ -1591,6 +1565,10 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .text-xs{
   font-size: 0.75rem;
@@ -1704,9 +1682,6 @@ video {
 .no-underline{
   text-decoration-line: none;
 }
-.opacity-0{
-  opacity: 0;
-}
 .opacity-90{
   opacity: 0.9;
 }
@@ -1763,11 +1738,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-opacity{
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
 .transition-transform{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1779,14 +1749,8 @@ video {
 .duration-300{
   transition-duration: 300ms;
 }
-.duration-500{
-  transition-duration: 500ms;
-}
 .duration-700{
   transition-duration: 700ms;
-}
-.ease-in-out{
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 @keyframes enter{
   from{
@@ -1806,14 +1770,20 @@ video {
 .duration-300{
   animation-duration: 300ms;
 }
-.duration-500{
-  animation-duration: 500ms;
-}
 .duration-700{
   animation-duration: 700ms;
 }
-.ease-in-out{
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.\[backface-visibility\:hidden\]{
+  backface-visibility: hidden;
+}
+.\[perspective\:1000px\]{
+  perspective: 1000px;
+}
+.\[transform-style\:preserve-3d\]{
+  transform-style: preserve-3d;
+}
+.\[transform\:rotateX\(180deg\)\]{
+  transform: rotateX(180deg);
 }
 
 
@@ -1906,25 +1876,8 @@ video {
 }
 
 
-.group:hover .group-hover\:top-1\/2{
-  top: 50%;
-}
-
-
-.group:hover .group-hover\:scale-\[2\.2\]{
-  --tw-scale-x: 2.2;
-  --tw-scale-y: 2.2;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-
-.group:hover .group-hover\:opacity-0{
-  opacity: 0;
-}
-
-
-.group:hover .group-hover\:opacity-100{
-  opacity: 1;
+.group:hover .group-hover\:\[transform\:rotateX\(180deg\)\]{
+  transform: rotateX(180deg);
 }
 
 
@@ -2151,9 +2104,6 @@ video {
   .md\:mb-4{
     margin-bottom: 1rem;
   }
-  .md\:mb-8{
-    margin-bottom: 2rem;
-  }
   .md\:mb-\[24px\]{
     margin-bottom: 24px;
   }
@@ -2314,9 +2264,6 @@ video {
   .md\:rounded-2xl{
     border-radius: 1rem;
   }
-  .md\:border-none{
-    border-style: none;
-  }
   .md\:p-\[32px\]{
     padding: 32px;
   }
@@ -2369,9 +2316,6 @@ video {
   }
   .md\:text-\[24px\]{
     font-size: 24px;
-  }
-  .md\:text-\[28px\]{
-    font-size: 28px;
   }
   .md\:text-\[30px\]{
     font-size: 30px;
@@ -2427,9 +2371,6 @@ video {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
   }
-  .lg\:mb-10{
-    margin-bottom: 2.5rem;
-  }
   .lg\:mb-4{
     margin-bottom: 1rem;
   }
@@ -2477,9 +2418,6 @@ video {
   }
   .lg\:w-\[480px\]{
     width: 480px;
-  }
-  .lg\:max-w-\[260px\]{
-    max-width: 260px;
   }
   .lg\:max-w-\[400px\]{
     max-width: 400px;
@@ -2539,17 +2477,11 @@ video {
   .lg\:text-\[30px\]{
     font-size: 30px;
   }
-  .lg\:text-\[32px\]{
-    font-size: 32px;
-  }
   .lg\:text-\[36px\]{
     font-size: 36px;
   }
   .lg\:text-\[38px\]{
     font-size: 38px;
-  }
-  .lg\:text-\[40px\]{
-    font-size: 40px;
   }
   .lg\:text-base{
     font-size: 1rem;
@@ -2589,9 +2521,6 @@ video {
   .xl\:w-\[1044px\]{
     width: 1044px;
   }
-  .xl\:max-w-\[240px\]{
-    max-width: 240px;
-  }
   .xl\:gap-5{
     gap: 1.25rem;
   }
@@ -2613,9 +2542,9 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.js","import":"Inter","arguments":[{"variable":"--font-inter","subsets":["latin"]}],"variableName":"inter"} ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Inter","arguments":[{"variable":"--font-inter","subsets":["latin"]}],"variableName":"inter"} ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: 'Inter';

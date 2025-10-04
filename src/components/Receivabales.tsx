@@ -234,20 +234,17 @@ function SectionWithAccordion({
   className,
 }: SectionWithAccordionProps): React.JSX.Element {
   return (
-    <div className="my-6 md:my-[32px]">
+    <div className="my-6 md:my-[32px] font-inter">
       <section
         className={`${className ?? "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
       >
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-          <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[40px] leading-snug lg:leading-tight pb-6 md:pb-[32px] tracking-[-2%]">
-            {title}{" "}
-            {subtitle && (
-              <span className="tracking-tight block text-[#1976D2] font-normal text-[20px] md:text-[28px] lg:text-[32px]">
-                {subtitle}
-              </span>
-            )}
+          <h2 className="text-[#1976D2] text-[20px] md:text-[24px] lg:text-[30px] leading-snug lg:leading-tight pb-6 md:pb-[32px] tracking-[-2%]">
+            {title} <br />
+            {subtitle}
           </h2>
-          <p className="text-[14px] md:text-[18px] pb-6 md:pb-[32px] lg:text-[20px] lg:leading-relaxed break-words">
+
+          <p className="text-[14px] md:text-[16px] lg:text-[18px] pb-6 md:pb-[32px] lg:leading-relaxed break-words">
             {description}
           </p>
 
@@ -257,10 +254,10 @@ function SectionWithAccordion({
                 key={index}
                 value={`${title.replace(/\s/g, "-")}-${index}`}
               >
-                <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-medium text-left">
+                <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-medium text-left">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>
