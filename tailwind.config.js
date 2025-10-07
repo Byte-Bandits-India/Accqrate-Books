@@ -3,11 +3,6 @@ module.exports = {
   darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    // ensure md = 768, lg = 1280 (you asked lg ≈ 1280)
-    screens: {
-      md: "768px",
-      lg: "1024px",
-    },
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],

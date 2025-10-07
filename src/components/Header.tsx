@@ -272,7 +272,7 @@ const countries: Country[] = [
 // ===================== Components =====================
 
 // Language & Country Dropdown
-const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
+const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: string }> = ({
   selectedLanguage,
   setSelectedLanguage,
   selectedCountry,
@@ -280,6 +280,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
   show,
   setShow,
   align = "left",
+  className = "", // accept className
 }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -294,7 +295,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
   }, [setShow]);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md"
         onClick={() => setShow(!show)}
@@ -313,8 +314,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
 
       {show && (
         <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"
-            } top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
+          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
         >
           {/* Languages */}
           <div className="mb-2 font-semibold text-black">Select Language</div>
@@ -322,10 +322,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
             {languages.map((lang) => (
               <button
                 key={lang.code}
-                className={`px-3 py-1 rounded-full transition ${selectedLanguage === lang.name
-                  ? "bg-gray-100 text-black font-semibold"
-                  : "text-black"
-                  }`}
+                className={`px-3 py-1 rounded-full transition ${selectedLanguage === lang.name ? "bg-gray-100 text-black font-semibold" : "text-black"}`}
                 onClick={() => {
                   setSelectedLanguage(lang.name);
                   setShow(false);
@@ -349,11 +346,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
                   setShow(false);
                 }}
               >
-                <img
-                  src={country.flag}
-                  alt={country.name}
-                  className="w-5 h-5 mr-2"
-                />
+                <img src={country.flag} alt={country.name} className="w-5 h-5 mr-2" />
                 <span className="text-black">{country.name}</span>
               </div>
             ))}
@@ -363,6 +356,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps> = ({
     </div>
   );
 };
+
 
 // Arrow
 const Arrow45: React.FC = () => (
@@ -461,7 +455,7 @@ const Header: React.FC = () => {
         className="xl:sticky xl:top-0 z-50 m-0 p-0 w-full bg-white xl:border-b border-gray-200"
       >
         <div className="max-w-[1440px] mx-auto">
-          <div className="w-full px-6 pt-6 lg:pt-0 md:px-[32px]">
+          <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px]">
             <div className="flex items-center justify-between gap-4">
               {/* Logo */}
               <div className="logo-container flex items-center justify-around gap-6">
@@ -469,18 +463,18 @@ const Header: React.FC = () => {
                   <img
                     src="/images/logo.svg"
                     alt="Accqrate Logo"
-                    className="h-[1.625rem] w-auto cursor-pointer max-w-[115px] sm:max-w-[100px] md:max-w-[140px]"
+                    className="h-[1.620rem] w-auto cursor-pointer max-w-[115px] sm:max-w-[100px] md:max-w-[140px]"
                   />
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav ref={navRef} className="hidden lg:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1">
+                <nav ref={navRef} className="hidden xl:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1">
                   <div className="w-full">
-                    <ul className="flex items-center py-4 space-x-6">
+                    <ul className="flex items-center py-4">
                       {menus.map((menu) => (
                         <li key={menu.id} className="relative">
                           <button
-                            className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${activeMenu === menu.id ? "text-[#534ED3]" : "text-gray-600 hover:text-gray-900"}`}
+                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id ? "text-[#534ED3]" : "text-gray-700  hover:text-[#534ED3]"} `}
                             onClick={() => handleMenuClick(menu.id)}
                           >
                             <span>{menu.title}</span>
@@ -508,7 +502,10 @@ const Header: React.FC = () => {
                                         {activeMenuData.sections.map((section) => (
                                           <li
                                             key={section.heading}
-                                            className={`cursor-pointer px-2 py-1 ${activeSection === section.heading ? "font-semibold text-[#534ED3]" : "text-gray-700"}`}
+                                            className={`cursor-pointer px-2 py-2 rounded-md transition-colors duration-200 ${activeSection === section.heading
+                                              ? "text-[#534ED3] bg-[#f0f3ff]"
+                                              : "text-gray-700 hover:bg-[#f0f3ff] hover:text-[#534ED3]"
+                                              }`}
                                             onClick={() => handleSectionChange(section.heading)}
                                           >
                                             <div className="flex items-center gap-2">
@@ -551,7 +548,6 @@ const Header: React.FC = () => {
                                       {activeMenuData.sections.map((section, index) => (
                                         <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
                                           <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                          <p className="text-sm text-gray-500 mb-4">{section.description}</p>
                                           <ul className="space-y-4">
                                             {section.subItems.map((item, i) => (
                                               <ResourcesListItem
@@ -561,7 +557,6 @@ const Header: React.FC = () => {
                                                 img={item.icon}
                                                 onClick={handleMenuItemClick}
                                               >
-                                                {item.description}
                                               </ResourcesListItem>
                                             ))}
                                           </ul>
@@ -602,20 +597,33 @@ const Header: React.FC = () => {
                                 <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
                                   <Link
                                     href="/book-demo"
-                                    className="inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
+                                    className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
-                                    Book a Demo →
+                                    Book a Demo
+                                    <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
+                                      →
+                                    </span>
                                   </Link>
-                                  <span role="separator" aria-orientation="vertical" className="self-center h-8 w-px bg-gray-300"></span>
+
+                                  <span
+                                    role="separator"
+                                    aria-orientation="vertical"
+                                    className="self-center h-8 w-px bg-gray-300"
+                                  ></span>
+
                                   <Link
                                     href="/contact-sales"
-                                    className="inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-black"
+                                    className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
-                                    Contact Sales →
+                                    Contact Sales
+                                    <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
+                                      →
+                                    </span>
                                   </Link>
                                 </div>
+
                               </div>
                             </div>
                           )}
@@ -652,8 +660,7 @@ const Header: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Mobile / Tablet */}
-              <div className="flex md:flex xl:hidden items-center gap-3">
+              <div className="flex xl:hidden items-center gap-3">
                 <LangCountryDropdown
                   selectedLanguage={selectedLanguage}
                   setSelectedLanguage={setSelectedLanguage}
@@ -662,13 +669,17 @@ const Header: React.FC = () => {
                   show={showLangCountryDropdown}
                   setShow={setShowLangCountryDropdown}
                   align="right"
+                  className="hidden md:flex"
                 />
+
                 <button
                   className="block bg-transparent border-none text-gray-700 text-2xl cursor-pointer shrink-0"
                   aria-label="Toggle mobile menu"
                   onClick={() => setIsMobileMenuOpen((p) => !p)}
                 >
-                  <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+                  <div className="w-[36px] h-[20px] flex items-center justify-center">
+                    <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"} text-[28px]`}></i>
+                  </div>
                 </button>
               </div>
             </div>
@@ -773,7 +784,7 @@ const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemP
       <li>
         <a
           ref={ref}
-          className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 cursor-pointer"
+          className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#f0f3ff] hover:text-[#534ED3] focus:bg-[#f0f3ff] cursor-pointer"
           onClick={onClick}
           {...props}
         >
