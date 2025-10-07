@@ -10,6 +10,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionCard
 } from "./ui/accordion";
 
 interface DropdownItem {
@@ -103,7 +104,33 @@ export default function AccountSections(): React.JSX.Element {
 
   return (
     <div className="w-full">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px]">
+        <Accordion
+          type="single"
+          collapsible
+          className="flex flex-col gap-4
+        sm:grid sm:grid-cols-2
+        md:grid md:grid-cols-2 md:max-w-5xl md:mb-[32px] mx-auto"
+        >
+          <AccordionCard
+            value="card-1"
+            icon="/images/Mask group.png"
+            title="Custom Invoice Templates"
+            children={
+              <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+            }
+          />
+
+          <AccordionCard
+            value="card-2"
+            icon="/images/Mask group (1).png"
+            title="Comprehensive Audit Trails "
+            children={
+              <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+            }
+          />
+        </Accordion>
+
         {/* Receivables */}
         <SectionWithAccordion
           title="Accounts Receivable"
@@ -165,7 +192,7 @@ function SectionSkeleton({
   return (
     <div className="my-6 md:my-[32px]">
       <section
-        className={`${bgWhite ? "bg-white" : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
+        className={`${bgWhite ? "bg-white" : "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:py-0 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
       >
         {/* Left Content Column */}
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
@@ -237,15 +264,15 @@ function SectionWithAccordion({
   return (
     <FadeUp className="my-6 md:my-[32px] font-inter">
       <section
-        className={`${className ?? "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-[32px] lg:px-10`}
+        className={`${className ?? "bg-[#E8F1FB]"} border border-[#CECECE] py-6 px-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex md:px-[32px] lg:px-10`}
       >
         <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-          <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
+          <h2 className="text-[#1976D2] text-fluid-body pb-6 leading-snug">
             {title} <br />
             {subtitle}
           </h2>
 
-          <p className="pb-6 md:pb-[32px] text-[14px] md:text-[16px] lg:text-[18px] md:leading-relaxed md:tracking-wide">
+          <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] lg:text-[16px] md:leading-relaxed md:tracking-wide">
             {description}
           </p>
 
@@ -255,10 +282,10 @@ function SectionWithAccordion({
                 key={index}
                 value={`${title.replace(/\s/g, "-")}-${index}`}
               >
-                <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
+                <AccordionTrigger className="text-fluid-small md:text-[16px] font-normal">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
+                <AccordionContent className="text-fluid-small md:text-[16px] font-normal">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>

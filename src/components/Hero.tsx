@@ -145,7 +145,7 @@ export default function Hero(): JSX.Element {
           Accqrate <span className="text-[#1976D2]">Books</span>
         </h1>
         <div className="max-w-[1000px] mx-auto">
-          <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-medium text-[#333333] tracking-wide mb-[24px]">
+          <h2 className="text-fluid-body font-medium text-[#333333] tracking-wide mb-[24px]">
             <span className="text-[#1976D2] font-semibold md:font-medium ">ZATCA Approved</span>{" "}
             Accounting Software for Saudi Arabia
           </h2>
@@ -197,7 +197,7 @@ export default function Hero(): JSX.Element {
 
       {/* Trusted text */}
       <FadeUp className="mb-8 md:mb-[40px]">
-        <h3 className="text-[14px] md:text-[16px] lg:text-[20px] font-medium text-[#333333] text-center mx-auto">
+        <h3 className="text-fluid-h3 font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing <br className="hidden md:block" /> compliance
           and business accounting.
         </h3>

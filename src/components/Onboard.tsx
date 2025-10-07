@@ -6,7 +6,6 @@ import { Skeleton } from "./ui/skeleton";
 import useInView from "../utils/useInView";
 import FeatureCard from "./ui/FeatureCard";
 import { Accordion, AccordionCard } from "./ui/accordion";
-import Animated from '../components/ui/FadeUp';
 import FadeUp from "../components/ui/FadeUp";
 
 export default function FeatureSection(): JSX.Element {
@@ -98,13 +97,13 @@ export default function FeatureSection(): JSX.Element {
         <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
           {/* Heading */}
           <FadeUp>
-            <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-6">
+            <h2 className="text-fluid-h2 font-inter text-[#000000] text-center mb-6">
               Effortless <span className="text-[#1976D2]">Onboarding</span> &
               Flexible Deployment
             </h2>
 
             {/* Shared description */}
-            <p className="mb-6 md:mb-[32px] text-[#000000B2] lg:text-fluid-body text-[14px] md:text-[16px] text-center">
+            <p className="text-fluid-small lg:text-[16px] mb-6 md:mb-[32px] text-[#000000B2] text-center">
               Accqrate Books is fully cloud-native – no complex installations, no
               specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
             </p>
@@ -135,10 +134,10 @@ export default function FeatureSection(): JSX.Element {
           {/* Heading */}
 
           <FadeUp>
-            <h1 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-6">
+            <h1 className="text-fluid-h2 font-semibold text-center mb-6">
               <span className="text-[#1976D2]">Zero-Friction</span> Setup
             </h1>
-            <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto pb-6">
+            <p className="text-center text-gray-700 text-fluid-small lg:text-[16px] max-w-5xl mx-auto pb-6">
               As your business grows, Accqrate Retail grows with you. Flip the
               switch to add procurement, finance, HR and supply-chain modules—no
               data migration, no downtime.
@@ -156,7 +155,7 @@ export default function FeatureSection(): JSX.Element {
               value="card-1"
               icon="/images/Mask group.png"
               title="Instant Access"
-              content={
+              children={
                 <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
               }
             />
@@ -165,7 +164,7 @@ export default function FeatureSection(): JSX.Element {
               value="card-2"
               icon="/images/Mask group (1).png"
               title="Automated Data Migration"
-              content={
+              children={
                 <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
               }
             />
@@ -174,7 +173,7 @@ export default function FeatureSection(): JSX.Element {
               value="card-3"
               icon="/images/Mask group (2).png"
               title="Role-Based User Setup"
-              content={
+              children={
                 <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
               }
             />
@@ -189,10 +188,10 @@ export default function FeatureSection(): JSX.Element {
               flex flex-col items-center justify-center"
             >
               <div className="max-w-[800px] mx-auto w-full">
-                <p className="text-fluid-body font-normal text-[#333333] md:leading-10 text-left md:text-center">
+                <p className="text-[14px] md:text-[20px] font-normal text-[#333333] md:leading-10 text-left md:text-center">
                   “We set up 5 new outlets in under an hour—no IT team needed.”
                 </p>
-                <p className="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] mt-2 text-right pr-4">
+                <p className="text-[14px] md:text-[18px] md:leading-10 text-[#333333] mt-2 text-right pr-4">
                   — Retail Owner, Jeddah
                 </p>
               </div>
@@ -203,16 +202,12 @@ export default function FeatureSection(): JSX.Element {
         {/* -------- ZATCA Compliance Section -------- */}
         <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
           <FadeUp>
-            <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold mb-4 md:mb-[32px]">
-              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
+            <h2 className="text-fluid-h2 text-[#333333] font-medium mb-4 md:mb-[32px]">
+              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br className="lg:hidden" />
               E-Invoicing Compliance
             </h2>
-            <h2 className="hidden lg:block text-fluid-h2 text-[#333333] font-medium mb-[24px]">
-              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
-              Compliance
-            </h2>
 
-            <p className="text-center text-fluid-body lg:text-[20px] mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
+            <p className="text-center text-fluid-small mb-[24px] md:mb-[32px] text-[#737373] leading-relaxed">
               Compliance is non-negotiable. With Accqrate Books, you’re always
               audit-ready.
             </p>
@@ -226,7 +221,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-fluid-body font-medium text-[#1976D2] leading-tight">
                     Seamless Integration
                   </h4>
                   <img
@@ -253,7 +248,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-fluid-body font-medium text-[#1976D2] leading-tight">
                     Digital Archive
                   </h4>
                   <video
@@ -285,7 +280,7 @@ export default function FeatureSection(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-fluid-body font-medium text-[#1976D2] leading-tight">
                     Regulation-Ready
                   </h4>
                   <video

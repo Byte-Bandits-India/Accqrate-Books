@@ -26,8 +26,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ videoSrc, title, description 
         </video>
       </div>
       <div className="p-2">
-        <h3 className="lg:text-[24px] lg:mb-4 font-medium">{title}</h3>
-        <p className="lg:text-[18px] text-[14px] text-[#808080] max-w-xl">{description}</p>
+        <h3 className="text-[20px] md:text-[16px] lg:text-[20px] lg:mb-4 font-medium">{title}</h3>
+        <p className="text-fluid-small lg:text-[16px] text-[#808080] max-w-xl">{description}</p>
       </div>
     </FadeUp>
   );

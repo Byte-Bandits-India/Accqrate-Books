@@ -77,16 +77,16 @@ export default function AccountSections(): React.JSX.Element {
 
   return (
     <div className="w-full font-inter">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-[40px]">
         {/* ================= Seamless Integration ================= */}
         <FadeUp className="bg-[#E8F1FB] font-inter xl:h-[615px] p-6 md:p-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
           {/* Left Side */}
-          <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
+          <div className="flex-1 md:max-w-[520px] md:pb-8">
+            <h2 className="text-[#1976D2] text-fluid-body font-medium pb-6 leading-snug">
               Seamless Integration{" "}<br />
               Enterprise Scalability
             </h2>
-            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[16px] lg:text-[18px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] lg:text-[16px] md:leading-relaxed md:tracking-wide">
               Grow with confidence — Accqrate Books is built for business evolution, not just accounting.
             </p>
 
@@ -94,10 +94,10 @@ export default function AccountSections(): React.JSX.Element {
             <Accordion type="single" collapsible className="w-full max-w-[400px]">
               {integrationDropdowns.map((item, index) => (
                 <AccordionItem key={index} value={`integration-${index}`}>
-                  <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
+                  <AccordionTrigger className="text-fluid-small md:text-[16px] font-normal">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
+                  <AccordionContent className="text-fluid-small md:text-[16px]">
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>
@@ -120,15 +120,15 @@ export default function AccountSections(): React.JSX.Element {
         </FadeUp>
 
         {/* ================= Robust Control ================= */}
-        <FadeUp className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter xl:h-[615px] pt-6 px-6 md:px-[32px] md:pt-[32px] rounded-xl md:rounded-2xl mx-auto md:flex">
+        <FadeUp className="bg-[#E8F1FB] mt-6 md:mt-[32px] font-inter xl:h-[615px] pt-6 px-6 md:px-[32px] md:pt-[32px] rounded-xl md:rounded-2xl mx-auto md:flex md:pb-8">
           {/* Left Side */}
           <div className="flex-1 md:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[20px] font-medium md:text-[24px] lg:text-[30px] pb-6 leading-snug">
+            <h2 className="text-[#1976D2] text-fluid-body font-medium pb-6 leading-snug">
               Robust Control{" "}
               <br />
               Total Compliance
             </h2>
-            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[16px] lg:text-[18px] md:leading-relaxed md:tracking-wide">
+            <p className="pb-6 md:pb-[32px] text-[14px] md:text-[18px] lg:text-[16px] md:leading-relaxed md:tracking-wide">
               Mitigate risk, enforce policy, and maintain visibility.
             </p>
 
@@ -136,10 +136,10 @@ export default function AccountSections(): React.JSX.Element {
             <Accordion type="single" collapsible className="w-full max-w-[400px]">
               {controlDropdowns.map((item, index) => (
                 <AccordionItem key={index} value={`control-${index}`}>
-                  <AccordionTrigger className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
+                  <AccordionTrigger className="text-fluid-small md:text-[16px] font-normal">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
+                  <AccordionContent className="text-fluid-small md:text-[16px]">
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>
