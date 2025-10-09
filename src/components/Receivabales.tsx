@@ -117,7 +117,7 @@ export default function AccountSections(): React.JSX.Element {
             icon="/images/Mask group.png"
             title="Custom Invoice Templates"
             children={
-              <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+              <>Add your logo, adjust fields, and localize content no developer needed.</>
             }
           />
 
@@ -126,7 +126,7 @@ export default function AccountSections(): React.JSX.Element {
             icon="/images/Mask group (1).png"
             title="Comprehensive Audit Trails "
             children={
-              <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+              <>Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.</>
             }
           />
         </Accordion>
@@ -308,3 +308,4 @@ function SectionWithAccordion({
     </FadeUp>
   );
 }
+
