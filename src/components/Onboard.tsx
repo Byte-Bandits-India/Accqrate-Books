@@ -156,7 +156,7 @@ export default function FeatureSection(): JSX.Element {
               icon="/images/Mask group.png"
               title="Instant Access"
               children={
-                <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+                <>Sign up, configure, and start transacting in less than 2 hours.</>
               }
             />
 
@@ -165,7 +165,7 @@ export default function FeatureSection(): JSX.Element {
               icon="/images/Mask group (1).png"
               title="Automated Data Migration"
               children={
-                <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+                <>Import legacy data and chart of accounts with guided tools.</>
               }
             />
 
@@ -174,7 +174,7 @@ export default function FeatureSection(): JSX.Element {
               icon="/images/Mask group (2).png"
               title="Role-Based User Setup"
               children={
-                <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
+                <>Assign permissions instantly for team members no IT bottlenecks.</>
               }
             />
           </Accordion>
@@ -320,3 +320,4 @@ export default function FeatureSection(): JSX.Element {
     </>
   );
 }
+
