@@ -234,7 +234,7 @@ export default function FeatureSection(): JSX.Element {
                 {/* Back */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
                   <h4 className="text-xl font-bold">Seamless Integration</h4>
-                  <p className="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-left">
                     Phase 2 E-invoicing Integration – Generate, validate and transmit XML e-invoices directly to ZATCA.
                   </p>
                 </section>
@@ -266,7 +266,7 @@ export default function FeatureSection(): JSX.Element {
                 {/* Back */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
                   <h4 className="text-xl font-bold">Digital Archive</h4>
-                  <p className="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-left">
                     Securely store all e-invoices with audit trails and QR code integration.
                   </p>
                 </section>
@@ -298,7 +298,7 @@ export default function FeatureSection(): JSX.Element {
                 {/* Back */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
                   <h4 className="text-xl font-bold">Regulation-Ready</h4>
-                  <p className="text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-left">
                     Real-time updates keep you in sync with KSA rules.
                   </p>
                 </section>
@@ -320,4 +320,5 @@ export default function FeatureSection(): JSX.Element {
     </>
   );
 }
+
 
